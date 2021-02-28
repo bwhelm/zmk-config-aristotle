@@ -1,0 +1,276 @@
+// ================ COPYRIGHT AND INCLUDES ================== {{{1
+// Copyright (c) 2021 The ZMK Contributors
+//
+// SPDX-License-Identifier: MIT
+//
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// }}}
+// ====================== SHORTHANDS ======================== {{{1
+// These are shorthand references to keep things simple and tidy in the keymap
+// below.
+
+// Layer Names: Default, Numbers, Functions, GUI/Misc
+#define DEF 0
+#define NUM 1
+#define FUN 2
+#define GUI 3
+
+// WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
+#define WIN_LFT &kp LA(LG(LEFT))
+#define WIN_RGT &kp LA(LG(RIGHT))
+#define WIN_BIG &kp LC(LA(LG(RIGHT)))
+#define WIN_SML &kp LC(LA(LG(LEFT)))
+#define WIN_NXT &kp LG(GRAVE)
+#define WIN_PRV &kp LS(LG(GRAVE))
+#define WIN3LFT &kp LC(LA(LEFT))
+#define WIN3RGT &kp LC(LA(RIGHT))
+#define WIN_CNT &kp LC(LG(LA(I)))
+
+// (Not) Home Row Mods
+#define LSFT_SC &hm LSHFT SEMI
+#define LCTL_Q  &hm LCTRL Q
+#define LALT_J  &hm LALT J
+#define LGUI_K  &hm LGUI K
+#define RGUI_M  &hm RGUI M
+#define RALT_W  &hm RALT W
+#define RCTL_V  &hm RCTRL V
+#define RSFT_Z  &hm RSHFT Z
+
+/* #define LSFT_A  &hm LSHFT A */
+/* #define LCTL_O  &hm LCTRL O */
+/* #define LALT_E  &hm LALT E */
+/* #define LGUI_U  &hm LGUI U */
+/* #define RGUI_H  &hm RGUI H */
+/* #define RALT_T  &hm RALT T */
+/* #define RCTL_N  &hm RCTRL N */
+/* #define RSFT_S  &hm RSHFT S */
+
+// Other
+#define BTLDR &bootloader
+
+// }}}
+// ==================== OTHER SETTINGS ====================== {{{1
+// Set options for mod-tap behavior
+&mt {
+    tapping-term-ms = <180>;
+};
+// Set options for layer-tap behavior
+&lt {
+    tapping-term-ms = <250>;
+};
+
+// }}}
+/ {
+// ======================= BEHAVIORS ======================== {{{1
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            /* retro-tap; */
+            bindings = <&kp>, <&kp>;
+        };
+    };
+// }}}
+// ========================= COMBOS ========================= {{{1
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <0 1>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            layers = <0 1 2>;
+        };
+        combo_grave {
+            timeout-ms = <20>;
+            key-positions = <2 3>;
+            bindings = <&kp GRAVE>;
+            layers = <0>;
+        };
+        combo_minus {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp MINUS>;
+            layers = <0>;
+        };
+        combo_equal {
+            timeout-ms = <20>;
+            key-positions = <7 8>;
+            bindings = <&kp EQUAL>;
+            layers = <0>;
+        };
+        combo_bs {
+            timeout-ms = <20>;
+            key-positions = <8 9>;
+            bindings = <&kp BACKSPACE>;
+            layers = <0 1>;
+        };
+        combo_dquote {
+            timeout-ms = <20>;
+            key-positions = <1 11>;
+            bindings = <&kp DOUBLE_QUOTES>;
+            layers = <0>;
+        };
+        combo_dquote2 {
+            timeout-ms = <20>;
+            key-positions = <10 11>;
+            bindings = <&kp DOUBLE_QUOTES>;
+            layers = <0>;
+        };
+        combo_question {
+            timeout-ms = <20>;
+            key-positions = <11 12>;
+            bindings = <&kp QUESTION>;
+            layers = <0>;
+        };
+        combo_lparen {
+            timeout-ms = <20>;
+            key-positions = <12 13>;
+            bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+        combo_lbracket {
+            timeout-ms = <20>;
+            key-positions = <13 14>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <0>;
+        };
+        combo_rbracket {
+            timeout-ms = <20>;
+            key-positions = <15 16>;
+            bindings = <&kp RIGHT_BRACKET>;
+            layers = <0>;
+        };
+        combo_rparen {
+            timeout-ms = <20>;
+            key-positions = <16 17>;
+            bindings = <&kp RPAR>;
+            layers = <0>;
+        };
+        combo_slash {
+            timeout-ms = <20>;
+            key-positions = <17 18>;
+            bindings = <&kp SLASH>;
+            layers = <0>;
+        };
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <8 18>;
+            bindings = <&kp ENTER>;
+            layers = <0 1 2 3>;
+        };
+        combo_return2 {
+            timeout-ms = <20>;
+            key-positions = <18 19>;
+            bindings = <&kp ENTER>;
+            layers = <0 1 2 3>;
+        };
+        combo_zero {
+            timeout-ms = <20>;
+            key-positions = <26 27>;
+            bindings = <&kp N0>;
+            layers = <1>;
+        };
+        combo_period {
+            timeout-ms = <20>;
+            key-positions = <27 28>;
+            bindings = <&kp E>;
+            layers = <1>;
+        };
+        // TEST SOME NEW ONES:
+
+    };
+// }}}
+// ======================== KEYMAPS ========================= {{{1
+    keymap {
+        compatible = "zmk,keymap";
+
+// --------------------------------------- DVORAK ---------------------------------------- {{{2
+// |   '   |   ,   |   .   |   P   |   Y   |     |   F   |   G   |   C   |   R   |   L   |
+// |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
+// | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
+//                                 | NUM/BS|     | FUN/SP| GUI/RE|
+//
+    default {
+    bindings = <
+    &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
+    &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S
+    LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z
+                               &lt NUM BSPC       &lt FUN SPACE &lt GUI RET
+    >;
+// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
+// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
+    /* LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S */
+    /* &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z */
+    };
+// }}}
+// --------------------------------------- NUMBERS --------------------------------------- {{{2
+// |   TAB |    &  |    *  |    §  |       |     |       |    7  |    8  |    9  |    =  |
+// |  SHFT |    $  |    %  |    ^  |       |     |       |    4  |    5  |    6  |    -  |
+// | NUMTog|    !  |    @  |    #  |    ˚  |     |    0  |    1  |    2  |    3  |    `  |
+//                                 |  ---- |     |  ---- |    \  |
+//
+    numbers {
+      bindings = <
+    &kp TAB   &kp AMPS &kp ASTRK &kp LA(N6) &none      &none   &kp N7 &kp N8 &kp N9 &kp EQUAL
+    &kp LSHFT &kp DLLR &kp PRCNT &kp CARET &none       &none   &kp N4 &kp N5 &kp N6 &kp MINUS
+    &tog NUM  &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0  &kp N1 &kp N2 &kp N3 &kp GRAVE
+                                           &trans      &trans  &kp BSLH
+      >;
+    };
+// }}}
+// -------------------------------------- FUNCTIONS -------------------------------------- {{{2
+// | BLOADR|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |  Br-Up|
+// | FUNTog|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |  Br-Dn|
+// |  SHFT | F1/CTL| F2/OPT| F3/CMD|   F11 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
+//                                 |  ---- |     |  ---- |  ---- |
+//
+    functions {
+    bindings = <
+    BTLDR    &kp F7  &kp F8 &kp F9 &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
+    &tog FUN &kp F4  &kp F5 &kp F6 &kp F11     &kp C_VOL_DN &kp LEFT &kp DOWN &kp RIGHT &kp C_BRI_DN
+    &kp LSFT &hm LCTRL F1 &hm LALT F2 &hm LGUI F3 &kp F10   &kp C_MUTE &kp END &none &kp PG_DN &kp CAPS
+                                &trans         &trans &trans
+    >;
+    };
+// }}}
+// -------------------------------------- GUI/MISC --------------------------------------- {{{2
+// | BT CLR| BT TOG|  M Up | Whl Up|  Accl2|     |       | PrvWin| WinBig| NxtWin|       |
+// |  SHFT |  M Lft|  M Dn |  M Rgt|  Accl1|     |       |  Win3L|  WinSm|  Win3R|       |
+// |  BT 1 |  BT 2 |  BT 3 | Whl Dn|  Accl0|     |  CMD-H| WinLft| WinCen| WinRgt|       |
+//                                 | LftBtn|     | LftBtn| RgtBtn|
+//
+  macro {
+    bindings = <
+  &bt BT_CLR   &bt OUT_TOG  &none &none &none         &none  WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
+  &kp LSFT     &kp S        &none &none &none         &none  WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
+  &none        &none        &none &none &none      &kp LG(H) WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
+                                        &none         &none  &none
+    >;
+/*     bindings = <*/
+/*   &trans &none    &kp MS_U  &kp WH_U  &kp ACL2
+/*   &kp LSFT   &kp MS_L &kp MS_D  &kp MS_R  &kp ACL1
+/*   &trans &none    &none     &kp WH_D  &kp ACL0
+/*                                          &kp BTN1       &kp BTN2     &none */
+/*     >;*/
+  };
+// }}}
+  };  // keymap
+// }}}
+};
+
+// vim: set fdm=marker:
