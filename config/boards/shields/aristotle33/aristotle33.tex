@@ -84,7 +84,7 @@
         /Right/number/2/2/.code=8,
         /Right/number/3/2/.code=9,
         /Right/number/4/2/.code=+\\{=},
-    /Right/number/0/1/.code=,
+    /Right/number/0/1/.code=:,
         /Right/number/1/1/.code=4,
         /Right/number/2/1/.code=5,
         /Right/number/3/1/.code=6,
@@ -137,18 +137,18 @@
 %
 % GUI/MISC LAYER
 %
-    /Left/gui/4/2/.code=\faBluetoothB{}Clear,
+    /Left/gui/4/2/.code=\faBluetoothB{} / \faUsb\\toggle,
         /Left/gui/3/2/.code=,
         /Left/gui/2/2/.code=Mouse\\\arrowkeyup,
         /Left/gui/1/2/.code=Wheel\\\arrowkeyup,
         /Left/gui/0/2/.code=Accel\\2,
-    /Left/gui/4/1/.code=\shift,
+    /Left/gui/4/1/.code=,
         /Left/gui/3/1/.code=Mouse\\\arrowkeyleft,
         /Left/gui/2/1/.code=Mouse\\\arrowkeydown,
         /Left/gui/1/1/.code=Mouse\\\arrowkeyright,
         /Left/gui/0/1/.code=Accel\\1,
-    /Left/gui/4/0/.code=,
-        /Left/gui/3/0/.code=,
+    /Left/gui/4/0/.code=\shift,
+        /Left/gui/3/0/.code=\ctrl,
         /Left/gui/2/0/.code=,
         /Left/gui/1/0/.code=Wheel\\\arrowkeydown,
         /Left/gui/0/0/.code=Accel\\0,
@@ -183,8 +183,8 @@
 
 \begin{tikzpicture}[
     rectStyle/.style={inner sep=0pt,minimum size=\keySizeVert in,draw,font=\Large,align=center},
-    vcomboStyle/.style={text width=\keySizeHoriz, font=\Large},
-    hcomboStyle/.style={text width=\keySepHoriz, font=\Large},
+    vcomboStyle/.style={minimum width=\keySizeHoriz, align=center, font=\Large},
+    hcomboStyle/.style={text width=\keySepHoriz, align=center, font=\Large},
     ]
 
     % VARIABLES. DISTANCES ARE IN INCHES
@@ -302,7 +302,8 @@
             right-4-2/west/\backdel/1,
             right-2-0/west/0/1,
             right-3-0/west/./1,
-            left-2-2/west/\esc/2
+            left-2-2/west/\esc/2,
+            left-4-2/south/\faBluetoothB{}Clear/3
         }
         {
             \ifthenelse { \layer=\x }

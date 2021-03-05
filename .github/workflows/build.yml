@@ -42,7 +42,7 @@ jobs:
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
         run: cp build/zephyr/zmk.uf2 aristotle33_nice_nano.uf2
-      - name: Archive (Aristotle33
+      - name: Archive (Aristotle33)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
