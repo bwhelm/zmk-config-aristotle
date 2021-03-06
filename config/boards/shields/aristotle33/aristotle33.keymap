@@ -89,34 +89,22 @@
             bindings = <&kp TAB>;
             layers = <DEF>;
         };
-        combo_BTclr {
-            timeout-ms = <20>;
-            key-positions = <0 10>;
-            bindings = <&bt BT_CLR>;
-            layers = <GUIMISC>;
-        };
         combo_esc {
             timeout-ms = <20>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
             layers = <DEF NUM FUN>;
         };
-        combo_grave {
+        combo_lbracket {
             timeout-ms = <20>;
             key-positions = <2 3>;
-            bindings = <&kp GRAVE>;
+            bindings = <&kp LEFT_BRACKET>;
             layers = <DEF>;
         };
-        combo_minus {
+        combo_rbracket {
             timeout-ms = <20>;
             key-positions = <6 7>;
-            bindings = <&kp MINUS>;
-            layers = <DEF>;
-        };
-        combo_equal {
-            timeout-ms = <20>;
-            key-positions = <7 8>;
-            bindings = <&kp EQUAL>;
+            bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF>;
         };
         combo_bs {
@@ -130,6 +118,30 @@
             key-positions = <1 11>;
             bindings = <&kp DOUBLE_QUOTES>;
             layers = <DEF>;
+        };
+        combo_grave {
+            timeout-ms = <20>;
+            key-positions = <3 13>;
+            bindings = <&kp GRAVE>;
+            layers = <DEF>;
+        };
+        combo_minus {
+            timeout-ms = <20>;
+            key-positions = <6 16>;
+            bindings = <&kp MINUS>;
+            layers = <DEF>;
+        };
+        combo_equal {
+            timeout-ms = <20>;
+            key-positions = <7 17>;
+            bindings = <&kp EQUAL>;
+            layers = <DEF>;
+        };
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <8 18>;
+            bindings = <&kp ENTER>;
+            layers = <DEF NUM FUN GUIMISC>;
         };
         combo_dquote2 {
             timeout-ms = <20>;
@@ -149,18 +161,6 @@
             bindings = <&kp LPAR>;
             layers = <DEF>;
         };
-        combo_lbracket {
-            timeout-ms = <20>;
-            key-positions = <13 14>;
-            bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF>;
-        };
-        combo_rbracket {
-            timeout-ms = <20>;
-            key-positions = <15 16>;
-            bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF>;
-        };
         combo_rparen {
             timeout-ms = <20>;
             key-positions = <16 17>;
@@ -172,12 +172,6 @@
             key-positions = <17 18>;
             bindings = <&kp SLASH>;
             layers = <DEF>;
-        };
-        combo_return {
-            timeout-ms = <20>;
-            key-positions = <8 18>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
         };
         combo_return2 {
             timeout-ms = <20>;
@@ -197,8 +191,12 @@
             bindings = <&kp E>;
             layers = <NUM>;
         };
-        // TEST SOME NEW ONES:
-
+        combo_BTclr {
+            timeout-ms = <20>;
+            key-positions = <0 10>;
+            bindings = <&bt BT_CLR>;
+            layers = <GUIMISC>;
+        };
     };
 // }}}
 // ======================== KEYMAPS ========================= {{{1

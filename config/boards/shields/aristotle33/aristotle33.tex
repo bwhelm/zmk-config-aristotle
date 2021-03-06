@@ -276,34 +276,35 @@
         % `\x` is the layer
     \foreach \key / \direction / \legend / \x in
         {
+            left-4-2/south/\faBluetoothB{}Clear/3,
             left-3-2/west/\tab/0,
             left-3-2/south/"/0,
-            left-2-2/west/\esc/0,
-            left-1-2/west/\textasciitilde{}\\`/0,
             left-3-1/west/"/0,
-            left-2-1/west/?/0,
-            left-1-1/west/(/0,
-            left-0-1/west/\{\\{[}/0,
-            right-4-2/west/\backdel/0,
-            right-3-2/west/+\\=/0,
-            right-3-2/south/\return/0,
-            right-3-2/south/\return/1,
-            right-3-2/south/\return/2,
-            right-3-2/south/\return/3,
-            right-2-2/west/~~\\\_\\-/0,
-            right-4-1/west/\return/0,
-            right-4-1/west/\return/1,
-            right-4-1/west/\return/2,
-            right-4-1/west/\return/3,
-            right-3-1/west/?\\{/}/0,
-            right-2-1/west/)/0,
-            right-1-1/west/\}\\{]}/0,
-            left-2-2/west/\esc/1,
-            right-4-2/west/\backdel/1,
-            right-2-0/west/0/1,
-            right-3-0/west/./1,
             left-2-2/west/\esc/2,
-            left-4-2/south/\faBluetoothB{}Clear/3
+            left-2-2/west/\esc/1,
+            left-2-2/west/\esc/0,
+            left-2-1/west/?/0,
+            left-1-2/west/\{\\{[}/0,
+            left-1-2/south/\textasciitilde{}~~`/0,
+            left-1-1/west/(/0,
+            right-4-2/west/\backdel/1,
+            right-4-2/west/\backdel/0,
+            right-4-1/west/\return/3,
+            right-4-1/west/\return/2,
+            right-4-1/west/\return/1,
+            right-4-1/west/\return/0,
+            right-3-2/south/\return/3,
+            right-3-2/south/\return/2,
+            right-3-2/south/\return/1,
+            right-3-2/south/\return/0,
+            right-3-1/west/?\\{/}/0,
+            right-3-0/west/./1,
+            right-2-2/west/\}\\{]}/0,
+            right-2-2/south/+~~=/0,
+            right-2-1/west/)/0,
+            right-2-0/west/0/1,
+            right-1-2/west//0,
+            right-1-2/south/\_~~-/0
         }
         {
             \ifthenelse { \layer=\x }
@@ -338,11 +339,5 @@
 \end{centering}
 
 } % foreach
-
-\section*{Notes}
-
-\begin{itemize}
-    \item Look into output selection (<https://zmkfirmware.dev/docs/behaviors/outputs>): should I use OUT\_TOG in the GUI layer?
-\end{itemize}
 
 \end{document}
