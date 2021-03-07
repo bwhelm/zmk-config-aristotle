@@ -238,8 +238,8 @@
     };
 // }}}
 // -------------------------------------- FUNCTIONS -------------------------------------- {{{2
-// | BLOADR|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |  Br-Up|
-// | FUNTog|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |  Br-Dn|
+// |BTLOADR|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
+// | FUNTog|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |Bright-|
 // |  SHFT | F1/CTL| F2/OPT| F3/CMD|   F11 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
 //                                 |  ---- |     |  ---- |  ---- |
 //
@@ -252,18 +252,18 @@
     >;
     };
 // }}}
-// -------------------------------------- GUI/MISC --------------------------------------- {{{2
-// | BT CLR| BT TOG|  M Up | Whl Up|  Accl2|     |       | PrvWin| WinBig| NxtWin|       |
-// |  SHFT |  M Lft|  M Dn |  M Rgt|  Accl1|     |       |  Win3L|  WinSm|  Win3R|       |
-// |  BT 1 |  BT 2 |  BT 3 | Whl Dn|  Accl0|     |  CMD-H| WinLft| WinCen| WinRgt|       |
-//                                 | LftBtn|     | LftBtn| RgtBtn|
+// --------------------------------------- GUI/MISC -------------------------------------- {{{2
+// |BT<>USB|       |  M Up | Whl Up|  Accl2|     |       | PrvWin| WinBig| NxtWin| BT #1 |
+// |       |  M Lft|  M Dn |  M Rgt|  Accl1|     |       |  Win3L|  WinSm|  Win3R| BT #2 |
+// |  SHFT |  CTRL |       | Whl Dn|  Accl0|     |       | WinLft| WinCen| WinRgt| BT #3 |
+//                                 | LftBtn|     | RgtBtn|  ---- |
 //
   macro {
     bindings = <
-  &bt OUT_TOG &none     &none &none &none         &none     WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
-  &none       &none     &none &none &none         &none     WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
-  &kp LSFT    &kp LCTRL &none &none &none         &kp LG(H) WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
-                                    &none         &none     &none
+  &bt OUT_TOG &none     &none &none &none         &none WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
+  &none       &none     &none &none &none         &none WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
+  &kp LSFT    &kp LCTRL &none &none &none         &none WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
+                                    &none         &none &none
     >;
   };
 // }}}

@@ -2,20 +2,23 @@
 \usepackage[oldstyle,sups]{fbb}% to use free Bembo font (old style numbers)
 \usepackage[margin=.75in]{geometry}
 \pagestyle{empty}
-\usepackage{arevmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
 \usepackage{fontawesome}
 \usepackage{menukeys}
 \usepackage{tikz}
 \usetikzlibrary{calc,math,shapes}
-% \renewcommand{\familydefault}{\sfdefault}
-% Define centering environment without extra vertical space
-\newenvironment{tightcenter}{%
-  \setlength\topsep{0pt}
-  \setlength\parskip{0pt}
-  \begin{center}
-}{%
-  \end{center}
+
+% Manually define visible space (which otherwise doesn't appear in fbb font)
+\newsavebox{\textvisiblespacebox}
+\savebox{\textvisiblespacebox}{M}
+\newcommand\vtextvisiblespace[1][\wd\textvisiblespacebox]{%
+  \makebox[#1]{\kern.1em\rule{.4pt}{.3ex}%
+  \hrulefill%
+  \rule{.4pt}{.3ex}\kern.1em}%
 }
+
 \begin{document}
 
 % Text on keycaps
@@ -57,7 +60,7 @@
         /Right/dvorak/3/0/.code=V\\\ctrl,
         /Right/dvorak/4/0/.code=Z\\\shift,
     /Right/dvorak/6/0/.code=\return\\\textsc{gui},
-        /Right/dvorak/6/1/.code=space\\\textsc{fun},
+        /Right/dvorak/6/1/.code=\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun},
 %
 % NUMBER LAYER
 %
@@ -179,22 +182,22 @@
 
 \begin{centering}
 
-\resizebox{6.5in}{!}{%  Make this `\textwidth` for portrait; `9in` for landscape.
+\resizebox{6.33in}{!}{%  Make this `\textwidth` for portrait; `9in` for landscape.
 
 \begin{tikzpicture}[
     rectStyle/.style={inner sep=0pt,minimum size=\keySizeVert in,draw,font=\Large,align=center},
     vcomboStyle/.style={minimum width=\keySizeHoriz, align=center, font=\Large},
-    hcomboStyle/.style={text width=\keySepHoriz, align=center, font=\Large},
+    hcomboStyle/.style={minimum width=\keySepHoriz, align=center, font=\Large},
     ]
 
     % VARIABLES. DISTANCES ARE IN INCHES
     \tikzmath{
         \rotAngle      = 0;
-        \separation    = 1.2;
-        \keySizeHoriz  = .625;
-        \keySizeVert   = .625;
+        \separation    = 1.0;
+        \keySizeHoriz  = .55;
+        \keySizeVert   = .55;
         \keySepHoriz   = .2;
-        \keySepVert    = .125;
+        \keySepVert    = .2;
         \keySpaceHoriz = \keySizeHoriz + \keySepHoriz;
         \keySpaceVert  = \keySizeVert + \keySepVert;
         \yoffset{0}    = 0;
@@ -285,7 +288,7 @@
             left-2-2/west/\esc/0,
             left-2-1/west/?/0,
             left-1-2/west/\{\\{[}/0,
-            left-1-2/south/\textasciitilde{}~~`/0,
+            left-1-2/south/\textasciigrave{}~~\textasciitilde/0,
             left-1-1/west/(/0,
             right-4-2/west/\backdel/1,
             right-4-2/west/\backdel/0,
@@ -300,23 +303,21 @@
             right-3-1/west/?\\{/}/0,
             right-3-0/west/./1,
             right-2-2/west/\}\\{]}/0,
-            right-2-2/south/+~~=/0,
+            right-2-2/south/=~~+/0,
             right-2-1/west/)/0,
             right-2-0/west/0/1,
-            right-1-2/west//0,
-            right-1-2/south/\_~~-/0
+            right-1-2/south/-~~\_/0
         }
         {
             \ifthenelse { \layer=\x }
             {
                 \ifthenelse {\equal{\direction}{south}}
                 {% combos between keys arranged vertically
-                    \node [vcomboStyle] at ($(\key.\direction) - (0,\keySepVert)$) {\legend};
+                    \node [vcomboStyle] at ($(\key.\direction) - (0,1.25*\keySepVert)$) {\legend};
                 }
                 {% combos between keys arranged horizontally
-                    \node [hcomboStyle] at ($(\key.\direction) - (2*\keySepHoriz,0)$)
-                        {\vspace{-1.25\baselineskip}\begin{tightcenter}%
-                        \legend\end{tightcenter}};
+                    \node [hcomboStyle] at ($(\key.\direction) - (1.25*\keySepHoriz,0)$)
+                        {\vspace{-1.25\baselineskip}\legend};
                 }
             }{}
         }
@@ -339,5 +340,7 @@
 \end{centering}
 
 } % foreach
+
+this is a test\vtextvisiblespace again
 
 \end{document}
