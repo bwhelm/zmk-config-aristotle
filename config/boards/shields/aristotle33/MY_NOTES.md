@@ -16,7 +16,7 @@ draftfooter: true
 
 1. Install zephyr
 
-2. Put the following in .zshrc:
+2. Put the following in `.zshrc`:
 
         export ZEPHYR_TOOLCHAIN_VARIANT=cross-compile
         export CROSS_COMPILE=/usr/local/bin/arm-none-eabi-
@@ -61,9 +61,9 @@ This is what I should put into the RC(x, y) settings in the .overlay file.
 # Things to Implement
 
 1. DEFAULT layer:
-    1. Need to update &mt keys ... setting tapping term and other things.
+    1. Need to update `&mt` keys ... setting tapping term and other things.
         - I think I can define different types of behaviors, each with its own tapping term. So while I can't get per-key tapping terms, I can get something pretty close.
-    2. Need to fix &lt for MAC. Perhaps this is done, but I need to test...
+    2. Need to fix `&lt` for `MAC`. Perhaps this is done, but I need to test...
 
 2. NUMBER layer
 
@@ -75,7 +75,7 @@ This is what I should put into the RC(x, y) settings in the .overlay file.
     - Otherwise, I think things should work.
 
 5. GENERALLY:
-    1. Need to test COMBOS.
+    1. Need to test `COMBO`s.
     2. Look into changing the BT power level by including this or something similar in .conf file:
 
         CONFIG_BT_CTLR_TX_PWR_MINUS_20=y
