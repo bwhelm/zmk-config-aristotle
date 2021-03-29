@@ -84,7 +84,7 @@
     combos {
         compatible = "zmk,combos";
         combo_tab {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <0 1>;
             bindings = <&kp TAB>;
             layers = <DEF>;
@@ -108,7 +108,7 @@
             layers = <DEF>;
         };
         combo_bs {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <8 9>;
             bindings = <&kp BACKSPACE>;
             layers = <DEF NUM>;
@@ -144,7 +144,7 @@
             layers = <DEF NUM FUN GUIMISC>;
         };
         combo_dquote2 {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <10 11>;
             bindings = <&kp DOUBLE_QUOTES>;
             layers = <DEF>;
@@ -174,7 +174,7 @@
             layers = <DEF>;
         };
         combo_return2 {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <18 19>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM FUN GUIMISC>;
