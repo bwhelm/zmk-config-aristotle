@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
-import os.path as path
+from os import path
 from ruamel.yaml import YAML
 from ruamel.yaml.composer import ComposerError
+from shutil import copy
+import subprocess
 from sys import argv
+from tempfile import gettempdir
 
 
 # VARIABLES. DISTANCES ARE IN INCHES
@@ -179,6 +182,7 @@ def readYaml(file):  # Read in YAML file
 
 
 def main(file):
+    # Generate LaTeX document
     k = readYaml(file)
     document = header
     counter = -1
@@ -204,7 +208,30 @@ def main(file):
         document += layerFooter
 
     document += footer
-    return document
+
+    # Write document to file in temporary directory
+    tempdir = gettempdir()
+    name = path.basename(file)
+    root, ext = path.splitext(name)
+    outputFile = path.join(tempdir, root + ".tex")
+    with open(outputFile, "w") as f:
+        f.write(document)
+
+    # Process with LaTeX
+    command = "latexmk -cd -pdf " + outputFile
+    try:
+        subprocess.call(command, shell=True)
+    except subprocess.CalledProcessError as e:
+        print(e)
+        subprocess.call("open " + path.join(tempdir, root + ".log"),
+                        shell=True)
+        exit(1)
+
+    # Copy result and open in Skim
+    copy(path.join(tempdir, root + ".pdf"), "./" + root + ".pdf")
+    subprocess.call("open -ga /Applications/Skim.app " +
+                    path.join(tempdir, root + ".pdf"),
+                    shell=True)
 
 
 if __name__ == "__main__":
@@ -215,9 +242,5 @@ if __name__ == "__main__":
     if not path.isfile(file):
         print(path.abspath(file) + " is not a file!")
         exit(1)
-    document = main(file)
-    root, ext = path.splitext(file)
-    outputFile = root + ".tex"
-    with open(outputFile, "w") as f:
-        f.write(document)
-        f.close()
+
+    main(file)

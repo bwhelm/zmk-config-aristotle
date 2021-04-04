@@ -1,3 +1,5 @@
+# Aristotle-33 Keymap
+
 dvorak:
   top: ["\"\\\\'", "<\\\\,", ">\\\\.", "P", "Y",
         "F", "G", "C", "R", "L"]
