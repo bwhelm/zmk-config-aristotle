@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 """
-This script will convert a properly formatted .yaml file specifying a keymap
+
+This script will convert a properly formatted YAML file specifying a keymap
 into a LaTeX file, which is then run to generate a .pdf of the keymap.
 
-The keymap is presented as a .yaml file that consists of a series of layer
+The keymap is presented as a YAML file that consists of a series of layer
 names. Each layer must have the following items, with corresponding number of
 elements:
 
@@ -28,6 +29,11 @@ column_number], both 0-based:
 
 - `lines`: keys to receive a horizontal line dividing them in half
 - `shading`: keys to be shaded
+
+Hint: Certain strings in YAML files must be escaped or quoted. Using single
+quotes is best where possible, and a single quote character can be
+represented within single quotes by doubling it: `''''` in a field will
+produce `'`.
 
 """
 
@@ -135,7 +141,7 @@ def createRow(keyLayout, layer, item):
     rowNum = itemRowNums[item]
     latex = "\n% Row #" + str(rowNum) + "\n"
     for col in range(10):
-        if row[col] != "None":  # Don't print a key if `None`
+        if str(row[col]) != "None":  # Don't print a key if `None`
             if col < 5:  # Calculate horizontal spacing for columns
                 horiz = -separation - keySpaceHoriz * (4 - col)
             else:
@@ -145,7 +151,7 @@ def createRow(keyLayout, layer, item):
                 + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
                 + "(" + str(horiz) + " in, " \
                 + str(keySpaceVert * rowNum) + " in) " \
-                + "{" + row[col] + "};\n"
+                + "{" + str(row[col]) + "};\n"
             # Add a horizontal line if needed
             latex += addLine(rowNum, col, lineList)
     return latex
@@ -155,7 +161,7 @@ def rowCombo(row, rowNum):
     # Generate LaTeX code for combos between keys on a given row
     latex = "\n% Combos: Row #" + str(rowNum) + "\n"
     for col in range(8):
-        if row[col] != "":
+        if str(row[col]) != "":
             if col < 5:  # Calculate horizontal spacing for columns
                 horiz = -separation - keySpaceHoriz * (4-col - .5)
             else:
@@ -163,7 +169,7 @@ def rowCombo(row, rowNum):
             latex += "\\node [hcomboStyle] at (" \
                 + str(horiz) + " in, " \
                 + str(keySpaceVert * rowNum) + " in) " \
-                + "{\\vspace{-1.25\\baselineskip}" + row[col] + "};\n"
+                + "{\\vspace{-1.25\\baselineskip}" + str(row[col]) + "};\n"
     return latex
 
 
@@ -172,7 +178,7 @@ def colCombo(row, rowNum):
     latex = "\n% Column Combos: Rows #" + str(rowNum) + "--" \
         + str(rowNum+1) + "\n"
     for col in range(10):
-        if row[col] != "":
+        if str(row[col]) != "":
             if col < 5:  # Calculate horizontal spacing for columns
                 horiz = -separation - keySpaceHoriz * (4-col)
             else:
@@ -180,7 +186,7 @@ def colCombo(row, rowNum):
             latex += "\\node [vcomboStyle] at " \
                 + "(" + str(horiz) + " in, " \
                 + str(keySpaceVert * (rowNum-.5)) + " in) " \
-                + "{" + row[col] + "};\n"
+                + "{" + str(row[col]) + "};\n"
     return latex
 
 
