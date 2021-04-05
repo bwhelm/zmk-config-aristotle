@@ -4,21 +4,31 @@
 This script will convert a properly formatted .yaml file specifying a keymap
 into a LaTeX file, which is then run to generate a .pdf of the keymap.
 
-The keymap is presented as a .yaml file with three main entries: `layout`,
-`shading`, and `lines`. `shading` and `lines` are lists of keys that are to
-be shaded or have horizontal lines added. `layout` specifies the keyboard
-layout.
+The keymap is presented as a .yaml file that consists of a series of layer
+names. Each layer must have the following items, with corresponding number of
+elements:
 
-The layout consists of a set of layer names, under which are specifications
-(as lists of LaTeX strings) of what characters are printed in the `top` row
-(10 items), the `mid`dle row (10 items), the `bot`tom row (10 items), and the
-`thumb` row (3 items). In addition, the layout must specify horizontal
-combinations for the top (`tcomb`), middle `(`mcomb`), and bottom (`bcomb`)
-rows. The assumption here is that combinations will only involve adjacent
-keys, and so there will be 8 locations for such combinations for each row.
-Finally, the layout must specify vertical combinations for adjacent keys
-between the top and middle rows (`tmcomb`) and the middle and bottom rows
-(`mbcomb`); each of these is a list of 10 items.
+- `top`: top row (10 keys)
+- `mid`dle: middle row (10 keys)
+- `bot`tom: bottom row (10 keys)
+- `thumb`: thumb row (10 keys)
+- `tcomb`: combos between horizontally adjacent top-row keys (8 items)
+- `mcomb`: combos between horizontally adjacent middle-row keys (8 items)
+- `bcomb`: combos between horizontally adjacent bottom-row keys (8 items)
+- `tmcomb`: combos between vertically adjacent keys between top and middle rows
+            (10 items)
+- `mbcomb`: combos between vertically adjacent keys between middle and bottom
+            rows (10 items)
+
+Each of these items is a list of LaTeX strings to be printed in the keyboard
+layout. Locations where a key should not be printed are identified as `None`.
+
+Optionally, each layer *may* include the following lists of [row_number,
+column_number], both 0-based:
+
+- `lines`: keys to receive a horizontal line dividing them in half
+- `shading`: keys to be shaded
+
 """
 
 from os import path
@@ -38,8 +48,14 @@ keySepHoriz = .2
 keySepVert = .2
 keySpaceHoriz = keySizeHoriz + keySepHoriz
 keySpaceVert = keySizeVert + keySepVert
-yoffset = [0, 0, 0, 0, 0]
 shading = "fill=black!7,"
+
+# Identify row numbers for each row label
+itemRowNums = dict()
+itemRowNums["top"] = 3
+itemRowNums["mid"] = 2
+itemRowNums["bot"] = 1
+itemRowNums["thumb"] = 0
 
 header = '''\\documentclass[]{article}
 \\usepackage[oldstyle,sups]{fbb}% to use free Bembo font (old style numbers)
@@ -89,15 +105,15 @@ layerFooter = '''
 footer = "\n\\end{document}"
 
 
-def addShading(layer, row, col, shadeList):
-    if [layer, row, col] in shadeList:
+def addShading(row, col, shadeList):
+    if [row, col] in shadeList:
         return shading
     else:
         return ""
 
 
-def addLine(layer, row, col, lineList):
-    if [layer, row, col] in lineList:
+def addLine(row, col, lineList):
+    if [row, col] in lineList:
         key = "key-" + str(col) + "-" + str(row)
         return "\\draw [color=gray] (" + key + ".west) -- (" \
             + key + ".east);\n"
@@ -105,71 +121,49 @@ def addLine(layer, row, col, lineList):
         return ""
 
 
-def createRow(row, rowNum, layer, keyboard):
+def createRow(keyLayout, layer, item):
     # Generate LaTeX code for standard rows
+    row = keyLayout[layer][item]
+    try:
+        shadeList = keyLayout[layer]["shading"]
+    except KeyError:
+        shadeList = []
+    try:
+        lineList = keyLayout[layer]["lines"]
+    except KeyError:
+        lineList = []
+    rowNum = itemRowNums[item]
     latex = "\n% Row #" + str(rowNum) + "\n"
-    for col in [0, 1, 2, 3, 4]:
-        latex += "\\node [" + addShading(layer, rowNum, col,
-                                         keyboard["shading"]) \
-            + "rectStyle] " \
-            + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
-            + "(" + str(-separation - keySpaceHoriz * (4 - col)) + " in, " \
-            + str(yoffset[4 - col] + keySpaceVert * rowNum) + " in) " \
-            + "{" + row[col] + "};\n"
-        latex += addLine(layer, rowNum, col, keyboard["lines"])
-
-    for col in [5, 6, 7, 8, 9]:
-        latex += "\\node [" + addShading(layer, rowNum, col,
-                                         keyboard["shading"]) \
-            + "rectStyle] " \
-            + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
-            + "(" + str(separation + keySpaceHoriz * (col - 5)) + " in, " \
-            + str(yoffset[col - 5] + keySpaceVert * rowNum) + " in) " \
-            + "{" + row[col] + "};\n"
-        # Add a horizontal line if needed
-        latex += addLine(layer, rowNum, col, keyboard["lines"])
-
-    return latex
-
-
-def createThumb(row, layer, keyboard):  # Generate LaTeX code for thumb row
-    latex = "\n% Thumb Keys\n"
-    latex += "\\node [" + addShading(layer, 0, 0, keyboard["shading"]) \
-        + "rectStyle] (key-4-0) at " \
-        + "(" + str(-separation + keySpaceHoriz / 2) + " in, " \
-        + "0 in) " \
-        + "{" + row[0] + "};\n"
-    latex += addLine(layer, 0, 4, keyboard["lines"])
-    latex += "\\node [" + addShading(layer, 0, 1, keyboard["shading"]) \
-        + "rectStyle] (key-5-0) at "\
-        + "(" + str(separation - keySpaceHoriz / 2) + " in, " \
-        + "0 in) " \
-        + "{" + row[1] + "};\n"
-    latex += addLine(layer, 0, 5, keyboard["lines"])
-    latex += "\\node [" + addShading(layer, 0, 2, keyboard["shading"]) \
-        + "rectStyle] (key-6-0) at "\
-        + "(" + str(separation + keySpaceHoriz / 2) + " in, " \
-        + "0 in) " \
-        + "{" + row[2] + "};\n"
-    latex += addLine(layer, 0, 6, keyboard["lines"])
+    for col in range(10):
+        if row[col] != "None":  # Don't print a key if `None`
+            if col < 5:  # Calculate horizontal spacing for columns
+                horiz = -separation - keySpaceHoriz * (4 - col)
+            else:
+                horiz = separation + keySpaceHoriz * (col - 5)
+            latex += "\\node [" + addShading(rowNum, col, shadeList) \
+                + "rectStyle] " \
+                + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
+                + "(" + str(horiz) + " in, " \
+                + str(keySpaceVert * rowNum) + " in) " \
+                + "{" + row[col] + "};\n"
+            # Add a horizontal line if needed
+            latex += addLine(rowNum, col, lineList)
     return latex
 
 
 def rowCombo(row, rowNum):
     # Generate LaTeX code for combos between keys on a given row
     latex = "\n% Combos: Row #" + str(rowNum) + "\n"
-    for col in [0, 1, 2, 3]:
+    for col in range(8):
         if row[col] != "":
+            if col < 5:  # Calculate horizontal spacing for columns
+                horiz = -separation - keySpaceHoriz * (4-col - .5)
+            else:
+                horiz = separation + keySpaceHoriz * (col-4 + .5)
             latex += "\\node [hcomboStyle] at (" \
-                + str(-separation - keySpaceHoriz * (4-col - .5)) + " in, " \
-                + str(yoffset[4-col] + keySpaceVert * rowNum) + " in) " \
+                + str(horiz) + " in, " \
+                + str(keySpaceVert * rowNum) + " in) " \
                 + "{\\vspace{-1.25\\baselineskip}" + row[col] + "};\n"
-    for col in [4, 5, 6, 7]:
-        if row[col] != "":
-            latex += "\\node [hcomboStyle] at (" \
-                + str(separation + keySpaceHoriz * (col-4 + .5)) + " in, " \
-                + str(yoffset[col-4] + keySpaceVert * rowNum) + " in) " \
-                + "{" + row[col] + "};\n"
     return latex
 
 
@@ -177,24 +171,23 @@ def colCombo(row, rowNum):
     # Generate LaTeX code for combos between keys in a given column
     latex = "\n% Column Combos: Rows #" + str(rowNum) + "--" \
         + str(rowNum+1) + "\n"
-    for col in [0, 1, 2, 3, 4]:
+    for col in range(10):
         if row[col] != "":
+            if col < 5:  # Calculate horizontal spacing for columns
+                horiz = -separation - keySpaceHoriz * (4-col)
+            else:
+                horiz = separation + keySpaceHoriz * (col-5)
             latex += "\\node [vcomboStyle] at " \
-                + "(" + str(-separation - keySpaceHoriz * (4-col)) + " in, " \
-                + str(yoffset[4-col] + keySpaceVert * (rowNum-.5)) + " in) " \
-                + "{" + row[col] + "};\n"
-    for col in [5, 6, 7, 8, 9]:
-        if row[col] != "":
-            latex += "\\node [vcomboStyle] at (" \
-                + str(separation + keySpaceHoriz * (col-5)) + " in, " \
-                + str(yoffset[col-5] + keySpaceVert * (rowNum-.5)) + " in) " \
+                + "(" + str(horiz) + " in, " \
+                + str(keySpaceVert * (rowNum-.5)) + " in) " \
                 + "{" + row[col] + "};\n"
     return latex
 
 
 def createTitle(layer):
+    # Put layer name as large label in middle-top of keyboard layout
     latex = "\n% Layer Name\n"
-    latex += "\\node at (0," + str(2 * keySpaceVert) + " in) " \
+    latex += "\\node at (0," + str(3 * keySpaceVert) + " in) " \
         "{\\huge\\textsc{" + layer + "}};\n"
     return latex
 
@@ -205,32 +198,32 @@ def readYaml(file):  # Read in YAML file
 
     yaml = YAML(typ='safe')
     try:
-        keyboard = yaml.load(text)
+        keyLayout = yaml.load(text)
     except ComposerError as e:
         print("ERROR: Cannot parse " + path.abspath(file) + "!")
         print(e)
         exit(1)
-    return keyboard
+    return keyLayout
 
 
 def main(file):
     # Generate LaTeX document
-    keyboard = readYaml(file)
-    keyLayout = keyboard["layout"]
+    keyLayout = readYaml(file)
     document = header
-    counter = -1
+
     for layer in keyLayout.keys():
-        counter += 1
+        # Put comment in document identifying new layer; add layer header
         document += "\n\n" + "%" * 78 + "\n"
         document += "% " + int((68-len(layer))/2 + .5) * " "
         document += layer.upper() + " LAYER " + int((68-len(layer))/2) * " "
         document += "%\n" + "%" * 78 + "\n\n"
         document += layerHeader
 
-        document += createRow(keyLayout[layer]["top"], 3, layer, keyboard)
-        document += createRow(keyLayout[layer]["mid"], 2, layer, keyboard)
-        document += createRow(keyLayout[layer]["bot"], 1, layer, keyboard)
-        document += createThumb(keyLayout[layer]["thumb"], layer, keyboard)
+        # Add in code for each row of layer's layout (including combos)
+        document += createRow(keyLayout, layer, "top")
+        document += createRow(keyLayout, layer, "mid")
+        document += createRow(keyLayout, layer, "bot")
+        document += createRow(keyLayout, layer, "thumb")
         document += rowCombo(keyLayout[layer]["tcomb"], 3)
         document += rowCombo(keyLayout[layer]["mcomb"], 2)
         document += rowCombo(keyLayout[layer]["bcomb"], 1)
@@ -262,8 +255,7 @@ def main(file):
 
     # Copy result and open in Skim
     copy(path.join(tempdir, root + ".pdf"), "./" + root + ".pdf")
-    subprocess.call("open -ga /Applications/Skim.app " +
-                    path.join(tempdir, root + ".pdf"),
+    subprocess.call("open -ga /Applications/Skim.app ./" + root + ".pdf",
                     shell=True)
 
 
