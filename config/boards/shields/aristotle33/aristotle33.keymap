@@ -18,7 +18,7 @@
 #define DEF 0
 #define NUM 1
 #define FUN 2
-#define GUIMISC 3
+#define GUI 3
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_LFT &kp LA(LG(LEFT))
@@ -31,7 +31,7 @@
 #define WIN3RGT &kp LC(LA(RIGHT))
 #define WIN_CNT &kp LC(LG(LA(I)))
 
-// (Not) Home Row Mods
+// Bottom Row Mods
 #define LSFT_SC &hm LSHFT SEMI
 #define LCTL_Q  &hm LCTRL Q
 #define LALT_J  &hm LALT J
@@ -41,6 +41,7 @@
 #define RCTL_V  &hm RCTRL V
 #define RSFT_Z  &hm RSHFT Z
 
+/* // Home Row Mods */
 /* #define LSFT_A  &hm LSHFT A */
 /* #define LCTL_O  &hm LCTRL O */
 /* #define LALT_E  &hm LALT E */
@@ -99,13 +100,13 @@
             timeout-ms = <20>;
             key-positions = <2 3>;
             bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
         combo_rbracket {
             timeout-ms = <20>;
             key-positions = <6 7>;
             bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
         combo_bs {
             timeout-ms = <35>;
@@ -117,7 +118,7 @@
             timeout-ms = <20>;
             key-positions = <1 11>;
             bindings = <&kp DOUBLE_QUOTES>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
         combo_grave {
             timeout-ms = <20>;
@@ -137,17 +138,11 @@
             bindings = <&kp EQUAL>;
             layers = <DEF NUM>;
         };
-        combo_return {
-            timeout-ms = <20>;
-            key-positions = <8 18>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
-        };
         combo_dquote2 {
             timeout-ms = <35>;
             key-positions = <10 11>;
             bindings = <&kp DOUBLE_QUOTES>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
         combo_question {
             timeout-ms = <15>;
@@ -159,25 +154,19 @@
             timeout-ms = <15>;
             key-positions = <12 13>;
             bindings = <&kp LPAR>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
         combo_rparen {
             timeout-ms = <15>;
             key-positions = <16 17>;
             bindings = <&kp RPAR>;
-            layers = <DEF>;
+            layers = <DEF NUM>;
         };
-        combo_slash {
-            timeout-ms = <15>;
-            key-positions = <17 18>;
-            bindings = <&kp SLASH>;
-            layers = <DEF>;
-        };
-        combo_return2 {
+        combo_return {
             timeout-ms = <35>;
-            key-positions = <18 19>;
+            key-positions = <17 18>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
+            layers = <DEF NUM FUN GUI>;
         };
         combo_zero {
             timeout-ms = <20>;
@@ -195,7 +184,7 @@
             timeout-ms = <20>;
             key-positions = <0 10>;
             bindings = <&bt BT_CLR>;
-            layers = <GUIMISC>;
+            layers = <GUI>;
         };
     };
 // }}}
@@ -207,14 +196,14 @@
 // |   '   |   ,   |   .   |   P   |   Y   |     |   F   |   G   |   C   |   R   |   L   |
 // |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
 // | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
-//                                 | NUM/BS|     | FUN/SP| GUI/RE|
+//                                 | NUM/BS|     | FUN/SP| GUI/ /|
 //
     default {
     bindings = <
     &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
     &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S
     LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z
-                               &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC RET
+                               &lt NUM BSPC       &lt FUN SPACE &lt GUI FSLH
     >;
 // | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
 // |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
@@ -223,30 +212,30 @@
     };
 // }}}
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
-// |   TAB |    &  |    *  |    §  |       |     |       |    7  |    8  |    9  |    =  |
-// |  SHFT |    $  |    %  |    ^  |       |     |    :  |    4  |    5  |    6  |    -  |
-// | NUMTog|    !  |    @  |    #  |    ˚  |     |    0  |    1  |    2  |    3  |    `  |
+// | NUMTog|    &  |    *  |    §  |       |     |       |    7  |    8  |    9  |    =  |
+// |  Tab  |    $  |    %  |    ^  |       |     |    :  |    4  |    5  |    6  |    -  |
+// | Shift |    !  |    @  |    #  |    ˚  |     |    0  |    1  |    2  |    3  |    `  |
 //                                 |  ---- |     |  ---- |    \  |
 //
     numbers {
       bindings = <
-    &kp TAB   &kp AMPS &kp ASTRK &kp LA(N6) &none      &none     &kp N7 &kp N8 &kp N9 &kp EQUAL
-    &kp LSHFT &kp DLLR &kp PRCNT &kp CARET &none       &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
-    &tog NUM  &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp GRAVE
+    &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &none      &none     &kp N7 &kp N8 &kp N9 &kp EQUAL
+    &kp TAB   &kp DLLR &kp PRCNT &kp CARET &none       &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
+    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp GRAVE
                                            &trans      &trans    &kp BSLH
       >;
     };
 // }}}
 // -------------------------------------- FUNCTIONS -------------------------------------- {{{2
-// |BTLOADR|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
-// | FUNTog|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |Bright-|
+// | FUNTog|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
+// |BTLOADR|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |Bright-|
 // |  SHFT | F1/CTL| F2/OPT| F3/CMD|   F11 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
 //                                 |  ---- |     |  ---- |  ---- |
 //
     functions {
     bindings = <
-    BTLDR    &kp F7  &kp F8 &kp F9 &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
-    &tog FUN &kp F4  &kp F5 &kp F6 &kp F11     &kp C_VOL_DN &kp LEFT &kp DOWN &kp RIGHT &kp C_BRI_DN
+    &tog FUN &kp F7  &kp F8 &kp F9 &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
+    BTLDR    &kp F4  &kp F5 &kp F6 &kp F11     &kp C_VOL_DN &kp LEFT &kp DOWN &kp RIGHT &kp C_BRI_DN
     &kp LSFT &hm LCTRL F1 &hm LALT F2 &hm LGUI F3 &kp F10   &kp C_MUTE &kp END &none &kp PG_DN &kp CAPS
                                 &trans         &trans &trans
     >;
