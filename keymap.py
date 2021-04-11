@@ -56,13 +56,6 @@ KEYSPACEHORIZ = KEYSIZEHORIZ + KEYSEPHORIZ
 KEYSPACEVERT = KEYSIZEVERT + KEYSEPVERT
 SHADING = "fill=black!7,"
 
-# Identify row numbers for each row label
-itemRowNums = dict()
-itemRowNums["top"] = 3
-itemRowNums["mid"] = 2
-itemRowNums["bot"] = 1
-itemRowNums["thumb"] = 0
-
 HEADER = '''\\documentclass[]{article}
 \\usepackage[oldstyle,sups]{fbb}% to use free Bembo font (old style numbers)
 \\usepackage[margin=.75in]{geometry}
@@ -127,9 +120,16 @@ def addLine(row, col, lineList):
         return ""
 
 
-def createRow(keyLayout, layer, item):
-    # Generate LaTeX code for standard rows
-    row = keyLayout[layer][item]
+def createLayer(layer, rows, columns, keyLayout):
+    # Generate LaTeX code for key layout of given layer
+    # Start with comment identifying new layer; add layer header
+    latex = "\n\n" + "%" * 78 + "\n"
+    latex += "% " + int((68-len(layer))/2 + .5) * " "
+    latex += layer.upper() + " LAYER " + int((68-len(layer))/2) * " "
+    latex += "%\n" + "%" * 78 + "\n\n"
+    latex += LAYERHEADER
+    latex += createTitle(layer, rows)
+
     try:
         shadeList = keyLayout[layer]["shading"]
     except KeyError:
@@ -138,62 +138,75 @@ def createRow(keyLayout, layer, item):
         lineList = keyLayout[layer]["lines"]
     except KeyError:
         lineList = []
-    rowNum = itemRowNums[item]
-    latex = "\n% Row #" + str(rowNum) + "\n"
-    for col in range(10):
-        if str(row[col]) != "None":  # Don't print a key if `None`
-            if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -SEPARATION - KEYSPACEHORIZ * (4 - col)
-            else:
-                horiz = SEPARATION + KEYSPACEHORIZ * (col - 5)
-            latex += "\\node [" + addShading(rowNum, col, shadeList) \
-                + "rectStyle] " \
-                + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
-                + "(" + str(horiz) + " in, " \
-                + str(KEYSPACEVERT * rowNum) + " in) " \
-                + "{" + str(row[col]) + "};\n"
-            # Add a horizontal line if needed
-            latex += addLine(rowNum, col, lineList)
+
+    for row in range(rows):
+        thisRow = keyLayout[layer]["keys"][row]
+        latex += "\n% Row #" + str(rows - row - 1) + "\n"
+        for column in range(columns):
+            if str(thisRow[column]) != "None":  # Don't print a key if `None`
+                if column < columns / 2:  # Calculate horiz spacing for columns
+                    horiz = -SEPARATION - KEYSPACEHORIZ * (columns / 2 - 1
+                                                           - column)
+                else:
+                    horiz = SEPARATION + KEYSPACEHORIZ * (column - columns / 2)
+                latex += "\\node [" + addShading(rows - row - 1, column,
+                                                 shadeList) \
+                    + "rectStyle] " \
+                    + "(key-" + str(column) + "-" + str(rows - row - 1) \
+                    + ") at (" + str(horiz) + " in, " \
+                    + str(KEYSPACEVERT * (rows - row - 1)) + " in) " \
+                    + "{" + str(thisRow[column]) + "};\n"
+                # Add a horizontal line if needed
+                latex += addLine(rows - row - 1, column, lineList)
+
     return latex
 
 
-def rowCombo(row, rowNum):
-    # Generate LaTeX code for combos between keys on a given row
-    latex = "\n% Combos: Row #" + str(rowNum) + "\n"
-    for col in range(8):
-        if str(row[col]) != "":
-            if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -SEPARATION - KEYSPACEHORIZ * (4-col - .5)
-            else:
-                horiz = SEPARATION + KEYSPACEHORIZ * (col-4 + .5)
-            latex += "\\node [hcomboStyle] at (" \
-                + str(horiz) + " in, " \
-                + str(KEYSPACEVERT * rowNum) + " in) " \
-                + "{\\vspace{-1.25\\baselineskip}" + str(row[col]) + "};\n"
+def createRowCombos(layer, rows, columns, keyLayout):
+    latex = ""
+    for row in range(rows):
+        latex += "\n% Row Combos: Row #" + str(rows - row - 1) + "\n"
+        thisRow = keyLayout[layer]["rowcombos"][row]
+        for column in range(columns - 2):
+            if str(thisRow[column]) != "":
+                if column < columns / 2:  # Calculate horiz spacing for columns
+                    horiz = -SEPARATION - KEYSPACEHORIZ * (columns / 2 - column
+                                                           - 1.5)
+                else:
+                    horiz = SEPARATION + KEYSPACEHORIZ * (column - columns / 2
+                                                          + 1.5)
+                latex += "\\node [hcomboStyle] at (" \
+                    + str(horiz) + " in, " \
+                    + str(KEYSPACEVERT * (rows - row - 1)) + " in) " \
+                    + "{\\vspace{-1.25\\baselineskip}" + str(thisRow[column]) \
+                    + "};\n"
     return latex
 
 
-def colCombo(row, rowNum):
+def createColCombos(layer, rows, columns, keyLayout):
     # Generate LaTeX code for combos between keys in a given column
-    latex = "\n% Column Combos: Rows #" + str(rowNum) + "--" \
-        + str(rowNum+1) + "\n"
-    for col in range(10):
-        if str(row[col]) != "":
-            if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -SEPARATION - KEYSPACEHORIZ * (4-col)
-            else:
-                horiz = SEPARATION + KEYSPACEHORIZ * (col-5)
-            latex += "\\node [vcomboStyle] at " \
-                + "(" + str(horiz) + " in, " \
-                + str(KEYSPACEVERT * (rowNum-.5)) + " in) " \
-                + "{" + str(row[col]) + "};\n"
+    latex = ""
+    for row in range(rows - 1):
+        latex += "\n% Column Combos: Rows #" + str(rows - row - 1) + "-" \
+            + str(rows - row - 2) + "\n"
+        thisRow = keyLayout[layer]["colcombos"][row]
+        for column in range(columns):
+            if str(thisRow[column]) != "":
+                if column < 5:  # Calculate horizontal spacing for columns
+                    horiz = -SEPARATION - KEYSPACEHORIZ * (4-column)
+                else:
+                    horiz = SEPARATION + KEYSPACEHORIZ * (column-5)
+                latex += "\\node [vcomboStyle] at " \
+                    + "(" + str(horiz) + " in, " \
+                    + str(KEYSPACEVERT * (rows-row-1.5)) + " in) " \
+                    + "{" + str(thisRow[column]) + "};\n"
     return latex
 
 
-def createTitle(layer):
+def createTitle(layer, rows):
     # Put layer name as large label in middle-top of keyboard layout
     latex = "\n% Layer Name\n"
-    latex += "\\node at (0," + str(3 * KEYSPACEVERT) + " in) " \
+    latex += "\\node at (0," + str((rows - 1) * KEYSPACEVERT) + " in) " \
         "{\\huge\\textsc{" + layer + "}};\n"
     return latex
 
@@ -226,25 +239,17 @@ def main(file):
     document = HEADER
 
     for layer in keyLayout.keys():
-        # Put comment in document identifying new layer; add layer header
-        document += "\n\n" + "%" * 78 + "\n"
-        document += "% " + int((68-len(layer))/2 + .5) * " "
-        document += layer.upper() + " LAYER " + int((68-len(layer))/2) * " "
-        document += "%\n" + "%" * 78 + "\n\n"
-        document += LAYERHEADER
-
         # Add in code for each row of layer's layout (including combos)
-        document += createRow(keyLayout, layer, "top")
-        document += createRow(keyLayout, layer, "mid")
-        document += createRow(keyLayout, layer, "bot")
-        document += createRow(keyLayout, layer, "thumb")
-        document += rowCombo(keyLayout[layer]["tcomb"], 3)
-        document += rowCombo(keyLayout[layer]["mcomb"], 2)
-        document += rowCombo(keyLayout[layer]["bcomb"], 1)
-        document += colCombo(keyLayout[layer]["tmcomb"], 3)
-        document += colCombo(keyLayout[layer]["mbcomb"], 2)
+        document += createLayer(layer, rows, columns, keyLayout)
+        document += createRowCombos(layer, rows, columns, keyLayout)
+        document += createColCombos(layer, rows, columns, keyLayout)
+        # document += rowCombo(keyLayout[layer]["tcomb"], 3)
+        # document += rowCombo(keyLayout[layer]["mcomb"], 2)
+        # document += rowCombo(keyLayout[layer]["bcomb"], 1)
+        # document += colCombo(keyLayout[layer]["tmcomb"], 3)
+        # document += colCombo(keyLayout[layer]["mbcomb"], 2)
 
-        document += createTitle(layer)
+        # document += createTitle(layer)
         document += LAYERFOOTER
 
     document += FOOTER
