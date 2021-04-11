@@ -46,18 +46,16 @@ dvorak:
     tcomb: [\tab, \esc, '\{\\{[}', '', '', '\}\\{]}', '', \backdel]
     mcomb: ['"', '?', '(', '', '', ')', \return, '']
     bcomb: ['', '', '', '', '', '', '', '']
-    tmcomb: ['', '"', '!', \textasciigrave~~\textasciitilde, '',
-             '', -~~\_, =~~+, '', '']
+    tmcomb: ['', '"', '!','', '', '', -~~\_, =~~+, '', '']
     mbcomb: ['', '', '', '', '', '', '', '', '', '']
     lines: [[1, 0], [1, 1], [1, 2], [1, 3], [1, 6], [1, 7], [1, 8], [1, 9],
             [0, 4], [0, 5], [0, 6]]
 
 number:
-    top: ['\textsc{num}\\\textsc{lock}', \&, '*', §, '', '', 7, 8, 9, '+\\=']
-    mid: [\tab, \$, \%, \textasciicircum, '',
+    top: ['\textsc{num}\\\textsc{lock}', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\=']
+    mid: [\tab, \$, \%, \textasciicircum, \textasciigrave,
           ":", 4, 5, 6, \_\\-]
-    bot: [\shift, '!', '@', \#, '$^{\circ}$',
-          0, 1, 2, 3, \textasciitilde\\\textasciigrave]
+    bot: [\shift, '!', '@', \#, '$^{\circ}$', 0, 1, 2, 3, '']
     thumb: [None, None, None, None, '\textsc{trns}',
             '\textsc{trns}', '|\\\textbackslash', None, None, None]
     tcomb: ['', \esc, '\{\\{[}', '', '', '\}\\{]}', '', \backdel]

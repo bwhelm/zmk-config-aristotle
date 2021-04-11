@@ -47,14 +47,14 @@ from tempfile import gettempdir
 
 
 # VARIABLES. DISTANCES ARE IN INCHES
-separation = 1.0
-keySizeHoriz = .55
-keySizeVert = .55
-keySepHoriz = .2
-keySepVert = .2
-keySpaceHoriz = keySizeHoriz + keySepHoriz
-keySpaceVert = keySizeVert + keySepVert
-shading = "fill=black!7,"
+SEPARATION = 1.0
+KEYSIZEHORIZ = .55
+KEYSIZEVERT = .55
+KEYSEPHORIZ = .2
+KEYSEPVERT = .2
+KEYSPACEHORIZ = KEYSIZEHORIZ + KEYSEPHORIZ
+KEYSPACEVERT = KEYSIZEVERT + KEYSEPVERT
+SHADING = "fill=black!7,"
 
 # Identify row numbers for each row label
 itemRowNums = dict()
@@ -63,7 +63,7 @@ itemRowNums["mid"] = 2
 itemRowNums["bot"] = 1
 itemRowNums["thumb"] = 0
 
-header = '''\\documentclass[]{article}
+HEADER = '''\\documentclass[]{article}
 \\usepackage[oldstyle,sups]{fbb}% to use free Bembo font (old style numbers)
 \\usepackage[margin=.75in]{geometry}
 \\pagestyle{empty}
@@ -87,18 +87,18 @@ header = '''\\documentclass[]{article}
 \\begin{document}
 '''
 
-layerHeader = '''\\begin{centering}
+LAYERHEADER = '''\\begin{centering}
 
 \\resizebox{6.33in}{!}{%  Make `\\textwidth` for portrait; `9in` for landscape.
 
 \\begin{tikzpicture}[
-    rectStyle/.style={inner sep=0pt,minimum size=''' + str(keySizeVert) + ''' in,draw,font=\\Large,align=center},
-    vcomboStyle/.style={minimum width=''' + str(keySizeHoriz) + ''', align=center, font=\\Large},
-    hcomboStyle/.style={minimum width=''' + str(keySepHoriz) + ''', align=center, font=\\Large},
+    rectStyle/.style={inner sep=0pt,minimum size=''' + str(KEYSIZEVERT) + ''' in,draw,font=\\Large,align=center},
+    vcomboStyle/.style={minimum width=''' + str(KEYSIZEHORIZ) + ''', align=center, font=\\Large},
+    hcomboStyle/.style={minimum width=''' + str(KEYSEPHORIZ) + ''', align=center, font=\\Large},
     ]
 '''
 
-layerFooter = '''
+LAYERFOOTER = '''
 \\end{tikzpicture}
 
 } % resize box
@@ -108,12 +108,12 @@ layerFooter = '''
 \\end{centering}
 '''
 
-footer = "\n\\end{document}"
+FOOTER = "\n\\end{document}"
 
 
 def addShading(row, col, shadeList):
     if [row, col] in shadeList:
-        return shading
+        return SHADING
     else:
         return ""
 
@@ -143,14 +143,14 @@ def createRow(keyLayout, layer, item):
     for col in range(10):
         if str(row[col]) != "None":  # Don't print a key if `None`
             if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -separation - keySpaceHoriz * (4 - col)
+                horiz = -SEPARATION - KEYSPACEHORIZ * (4 - col)
             else:
-                horiz = separation + keySpaceHoriz * (col - 5)
+                horiz = SEPARATION + KEYSPACEHORIZ * (col - 5)
             latex += "\\node [" + addShading(rowNum, col, shadeList) \
                 + "rectStyle] " \
                 + "(key-" + str(col) + "-" + str(rowNum) + ") at " \
                 + "(" + str(horiz) + " in, " \
-                + str(keySpaceVert * rowNum) + " in) " \
+                + str(KEYSPACEVERT * rowNum) + " in) " \
                 + "{" + str(row[col]) + "};\n"
             # Add a horizontal line if needed
             latex += addLine(rowNum, col, lineList)
@@ -163,12 +163,12 @@ def rowCombo(row, rowNum):
     for col in range(8):
         if str(row[col]) != "":
             if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -separation - keySpaceHoriz * (4-col - .5)
+                horiz = -SEPARATION - KEYSPACEHORIZ * (4-col - .5)
             else:
-                horiz = separation + keySpaceHoriz * (col-4 + .5)
+                horiz = SEPARATION + KEYSPACEHORIZ * (col-4 + .5)
             latex += "\\node [hcomboStyle] at (" \
                 + str(horiz) + " in, " \
-                + str(keySpaceVert * rowNum) + " in) " \
+                + str(KEYSPACEVERT * rowNum) + " in) " \
                 + "{\\vspace{-1.25\\baselineskip}" + str(row[col]) + "};\n"
     return latex
 
@@ -180,12 +180,12 @@ def colCombo(row, rowNum):
     for col in range(10):
         if str(row[col]) != "":
             if col < 5:  # Calculate horizontal spacing for columns
-                horiz = -separation - keySpaceHoriz * (4-col)
+                horiz = -SEPARATION - KEYSPACEHORIZ * (4-col)
             else:
-                horiz = separation + keySpaceHoriz * (col-5)
+                horiz = SEPARATION + KEYSPACEHORIZ * (col-5)
             latex += "\\node [vcomboStyle] at " \
                 + "(" + str(horiz) + " in, " \
-                + str(keySpaceVert * (rowNum-.5)) + " in) " \
+                + str(KEYSPACEVERT * (rowNum-.5)) + " in) " \
                 + "{" + str(row[col]) + "};\n"
     return latex
 
@@ -193,7 +193,7 @@ def colCombo(row, rowNum):
 def createTitle(layer):
     # Put layer name as large label in middle-top of keyboard layout
     latex = "\n% Layer Name\n"
-    latex += "\\node at (0," + str(3 * keySpaceVert) + " in) " \
+    latex += "\\node at (0," + str(3 * KEYSPACEVERT) + " in) " \
         "{\\huge\\textsc{" + layer + "}};\n"
     return latex
 
@@ -215,7 +215,15 @@ def readYaml(file):  # Read in YAML file
 def main(file):
     # Generate LaTeX document
     keyLayout = readYaml(file)
-    document = header
+    try:
+        rows = keyLayout['keyboard']['rows']
+        columns = keyLayout['keyboard']['columns']
+        del keyLayout['keyboard']
+    except KeyError:
+        print("ERROR: Must have a top-level YAML entry for 'keyboard',")
+        print("identifying both 'rows' and 'columns' fields")
+        exit(1)
+    document = HEADER
 
     for layer in keyLayout.keys():
         # Put comment in document identifying new layer; add layer header
@@ -223,7 +231,7 @@ def main(file):
         document += "% " + int((68-len(layer))/2 + .5) * " "
         document += layer.upper() + " LAYER " + int((68-len(layer))/2) * " "
         document += "%\n" + "%" * 78 + "\n\n"
-        document += layerHeader
+        document += LAYERHEADER
 
         # Add in code for each row of layer's layout (including combos)
         document += createRow(keyLayout, layer, "top")
@@ -237,9 +245,9 @@ def main(file):
         document += colCombo(keyLayout[layer]["mbcomb"], 2)
 
         document += createTitle(layer)
-        document += layerFooter
+        document += LAYERFOOTER
 
-    document += footer
+    document += FOOTER
 
     # Write document to file in temporary directory
     tempdir = gettempdir()

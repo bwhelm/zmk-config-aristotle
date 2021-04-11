@@ -212,16 +212,16 @@
     };
 // }}}
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
-// | NUMTog|    &  |    *  |    §  |       |     |       |    7  |    8  |    9  |    =  |
-// |  Tab  |    $  |    %  |    ^  |       |     |    :  |    4  |    5  |    6  |    -  |
-// | Shift |    !  |    @  |    #  |    ˚  |     |    0  |    1  |    2  |    3  |    `  |
-//                                 |  ---- |     |  ---- |    \  |
+// | NUMTog|   &   |   *   |   §   |   ~   |     |   "   |   7   |   8   |   9   |   =   |
+// |  Tab  |   $   |   %   |   ^   |   `   |     |   :   |   4   |   5   |   6   |   -   |
+// | Shift |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   `   |
+//                                 |  ---- |     |  ---- |   \   |
 //
     numbers {
       bindings = <
-    &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &none      &none     &kp N7 &kp N8 &kp N9 &kp EQUAL
-    &kp TAB   &kp DLLR &kp PRCNT &kp CARET &none       &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
-    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp GRAVE
+    &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &kp TILDE  &kp DQT   &kp N7 &kp N8 &kp N9 &kp EQUAL
+    &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
+    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &none
                                            &trans      &trans    &kp BSLH
       >;
     };
