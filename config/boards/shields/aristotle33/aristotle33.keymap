@@ -18,7 +18,7 @@
 #define DEF 0
 #define NUM 1
 #define FUN 2
-#define GUI 3
+#define GUIMISC 3
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_LFT &kp LA(LG(LEFT))
@@ -166,7 +166,7 @@
             timeout-ms = <35>;
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUI>;
+            layers = <DEF NUM FUN GUIMISC>;
         };
         combo_zero {
             timeout-ms = <20>;
@@ -177,14 +177,14 @@
         combo_period {
             timeout-ms = <20>;
             key-positions = <27 28>;
-            bindings = <&kp E>;
+            bindings = <&kp DOT>;
             layers = <NUM>;
         };
         combo_BTclr {
             timeout-ms = <20>;
             key-positions = <0 10>;
             bindings = <&bt BT_CLR>;
-            layers = <GUI>;
+            layers = <GUIMISC>;
         };
     };
 // }}}
@@ -203,7 +203,7 @@
     &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
     &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S
     LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z
-                               &lt NUM BSPC       &lt FUN SPACE &lt GUI FSLH
+                               &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC FSLH
     >;
 // | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
 // |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
@@ -214,14 +214,14 @@
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
 // | NUMTog|   &   |   *   |   §   |   ~   |     |   "   |   7   |   8   |   9   |   =   |
 // |  Tab  |   $   |   %   |   ^   |   `   |     |   :   |   4   |   5   |   6   |   -   |
-// | Shift |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   `   |
+// | Shift |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   .   |
 //                                 |  ---- |     |  ---- |   \   |
 //
     numbers {
       bindings = <
     &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &kp TILDE  &kp DQT   &kp N7 &kp N8 &kp N9 &kp EQUAL
     &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
-    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &none
+    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
                                            &trans      &trans    &kp BSLH
       >;
     };
@@ -242,16 +242,16 @@
     };
 // }}}
 // --------------------------------------- GUI/MISC -------------------------------------- {{{2
-// |BT<>USB|       |  M Up | Whl Up|  Accl2|     |       | PrvWin| WinBig| NxtWin| BT #1 |
-// |       |  M Lft|  M Dn |  M Rgt|  Accl1|     |       |  Win3L|  WinSm|  Win3R| BT #2 |
-// |  SHFT |  CTRL |       | Whl Dn|  Accl0|     |       | WinLft| WinCen| WinRgt| BT #3 |
+// |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
+// |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
+// |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
 //                                 | LftBtn|     | RgtBtn|  ---- |
 //
   macro {
     bindings = <
-  &bt OUT_TOG &none     &none &none &none         &none WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
-  &none       &none     &none &none &none         &none WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
-  &kp LSFT    &kp LCTRL &none &none &none         &none WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
+  &bt OUT_TOG &none     &none &none &none         &kp F3     WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
+  &none       &none     &none &none &none         &kp LS(F3) WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
+  &kp LSFT    &kp LCTRL &none &none &none         &kp LG(F3) WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
                                     &none         &none &none
     >;
   };
