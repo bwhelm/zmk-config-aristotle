@@ -1,7 +1,7 @@
 # Aristotle-33 Keymap
 #
-# This script will convert a properly formatted .yaml file specifying a keymap
-# into a LaTeX file, which is then run to generate a .pdf of the keymap.
+# This keymap will be converted by the `keymap.py` script into a .pdf file
+# representing the layout of the keyboard.
 #
 # The keymap is presented as a .yaml file that consists of a `keyboard` item
 # that specifies both `rows` and `columns` (as integers), and a series of layer

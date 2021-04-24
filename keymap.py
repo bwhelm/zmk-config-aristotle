@@ -1,39 +1,33 @@
 #!/usr/bin/env python3
 
 """
-
-This script will convert a properly formatted YAML file specifying a keymap
+This script will convert a properly formatted .yaml file specifying a keymap
 into a LaTeX file, which is then run to generate a .pdf of the keymap.
 
-The keymap is presented as a YAML file that consists of a series of layer
+The keymap is presented as a .yaml file that consists of a `keyboard` item
+that specifies both `rows` and `columns` (as integers), and a series of layer
 names. Each layer must have the following items, with corresponding number of
 elements:
-
-- `top`: top row (10 keys)
-- `mid`dle: middle row (10 keys)
-- `bot`tom: bottom row (10 keys)
-- `thumb`: thumb row (10 keys)
-- `tcomb`: combos between horizontally adjacent top-row keys (8 items)
-- `mcomb`: combos between horizontally adjacent middle-row keys (8 items)
-- `bcomb`: combos between horizontally adjacent bottom-row keys (8 items)
-- `tmcomb`: combos between vertically adjacent keys between top and middle rows
-            (10 items)
-- `mbcomb`: combos between vertically adjacent keys between middle and bottom
-            rows (10 items)
-
-Each of these items is a list of LaTeX strings to be printed in the keyboard
+  `keys`:      list of rows, where each row is a list of keys
+  `rowcombos`: list of rows, where each row is a list of combos between keys
+               on that row. There should be 2 fewer items in a row than the
+               number of columns.
+  `colcombos`: list of rows, where each row is a list of combos between keys
+               on vertically adjacent columns. There should be 1 fewer row in
+               this list than the number of rows on the keyboard overall.
+Each of these keys and combos is LaTeX string to be printed in the keyboard
 layout. Locations where a key should not be printed are identified as `None`.
 
 Optionally, each layer *may* include the following lists of [row_number,
 column_number], both 0-based:
-
-- `lines`: keys to receive a horizontal line dividing them in half
-- `shading`: keys to be shaded
+  `lines`:   keys to receive a horizontal line dividing them in half
+  `shading`: keys to be shaded
 
 Hint: Certain strings in YAML files must be escaped or quoted. Using single
 quotes is best where possible, and a single quote character can be
 represented within single quotes by doubling it: `''''` in a field will
-produce `'`.
+produce `'`. (If using double quotes, `\` must itself be escaped, and so will
+need to be doubled up; hence `\\\\\\` will produce `\\\`.)
 
 """
 
@@ -256,13 +250,6 @@ def main(file):
         document += createLayer(layer, rows, columns, keyLayout)
         document += createRowCombos(layer, rows, columns, keyLayout)
         document += createColCombos(layer, rows, columns, keyLayout)
-        # document += rowCombo(keyLayout[layer]["tcomb"], 3)
-        # document += rowCombo(keyLayout[layer]["mcomb"], 2)
-        # document += rowCombo(keyLayout[layer]["bcomb"], 1)
-        # document += colCombo(keyLayout[layer]["tmcomb"], 3)
-        # document += colCombo(keyLayout[layer]["mbcomb"], 2)
-
-        # document += createTitle(layer)
         document += LAYERFOOTER
 
     document += FOOTER
