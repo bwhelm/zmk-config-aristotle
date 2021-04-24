@@ -77,7 +77,15 @@ HEADER = '''\\documentclass[]{article}
   \\rule{.4pt}{.3ex}\\kern.1em}%
 }
 
+\\usepackage{fancyhdr}
+\\pagestyle{fancy}
+\\lhead{NAME}
+\\rhead{\\today}
+\\cfoot{}
+
 \\begin{document}
+
+\\thispagestyle{fancy}
 '''
 
 LAYERHEADER = '''\\begin{centering}
@@ -231,12 +239,17 @@ def main(file):
     try:
         rows = keyLayout['keyboard']['rows']
         columns = keyLayout['keyboard']['columns']
-        del keyLayout['keyboard']
     except KeyError:
         print("ERROR: Must have a top-level YAML entry for 'keyboard',")
         print("identifying both 'rows' and 'columns' fields")
         exit(1)
-    document = HEADER
+    try:
+        name = keyLayout['keyboard']['name']
+        del keyLayout['keyboard']
+    except KeyError:
+        name = 'TESTING'
+
+    document = HEADER.replace("NAME", name)
 
     for layer in keyLayout.keys():
         # Add in code for each row of layer's layout (including combos)
@@ -271,6 +284,8 @@ def main(file):
         subprocess.call("open " + path.join(tempdir, root + ".log"),
                         shell=True)
         exit(1)
+
+    print(path.join(tempdir, root + ".tex"))
 
     # Copy result and open in Skim
     copy(path.join(tempdir, root + ".pdf"), "./" + root + ".pdf")

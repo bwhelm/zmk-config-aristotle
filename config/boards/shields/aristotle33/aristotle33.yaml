@@ -1,8 +1,8 @@
 # Aristotle-33 Keymap
-
+#
 # This script will convert a properly formatted .yaml file specifying a keymap
 # into a LaTeX file, which is then run to generate a .pdf of the keymap.
-
+#
 # The keymap is presented as a .yaml file that consists of a `keyboard` item
 # that specifies both `rows` and `columns` (as integers), and a series of layer
 # names. Each layer must have the following items, with corresponding number of
@@ -16,20 +16,20 @@
 #                this list than the number of rows on the keyboard overall.
 # Each of these keys and combos is LaTeX string to be printed in the keyboard
 # layout. Locations where a key should not be printed are identified as `None`.
-
+#
 # Optionally, each layer *may* include the following lists of [row_number,
 # column_number], both 0-based:
 #   `lines`:   keys to receive a horizontal line dividing them in half
 #   `shading`: keys to be shaded
-
+#
 # Hint: Certain strings in YAML files must be escaped or quoted. Using single
 # quotes is best where possible, and a single quote character can be
 # represented within single quotes by doubling it: `''''` in a field will
 # produce `'`. (If using double quotes, `\` must itself be escaped, and so will
 # need to be doubled up; hence `\\\\\\` will produce `\\\`.)
 
-
 keyboard:
+    name: Aristotle 33 (2021)
     rows: 4
     columns: 10
 
