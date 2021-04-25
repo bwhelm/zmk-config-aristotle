@@ -73,8 +73,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <80>;
             flavor = "tap-preferred";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
@@ -91,19 +91,19 @@
             layers = <DEF>;
         };
         combo_esc {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
             layers = <DEF NUM FUN>;
         };
         combo_lbracket {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <2 3>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM>;
         };
         combo_rbracket {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <6 7>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
@@ -115,73 +115,73 @@
             layers = <DEF NUM>;
         };
         combo_dquote {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <1 11>;
             bindings = <&kp DOUBLE_QUOTES>;
             layers = <DEF NUM>;
         };
         combo_exclam {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <2 12>;
             bindings = <&kp EXCLAMATION>;
             layers = <DEF NUM>;
         };
         combo_grave {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <3 13>;
             bindings = <&kp GRAVE>;
             layers = <DEF>;
         };
         combo_minus {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <6 16>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM>;
         };
         combo_equal {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <7 17>;
             bindings = <&kp EQUAL>;
             layers = <DEF NUM>;
         };
-        combo_dquote2 {
-            timeout-ms = <35>;
-            key-positions = <10 11>;
-            bindings = <&kp DOUBLE_QUOTES>;
-            layers = <DEF NUM>;
-        };
+        /* combo_dquote2 { */
+        /*     timeout-ms = <35>; */
+        /*     key-positions = <10 11>; */
+        /*     bindings = <&kp DOUBLE_QUOTES>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
         combo_question {
-            timeout-ms = <15>;
+            timeout-ms = <20>;
             key-positions = <11 12>;
             bindings = <&kp QUESTION>;
             layers = <DEF>;
         };
         combo_lparen {
-            timeout-ms = <15>;
+            timeout-ms = <20>;
             key-positions = <12 13>;
             bindings = <&kp LPAR>;
             layers = <DEF NUM>;
         };
         combo_rparen {
-            timeout-ms = <15>;
+            timeout-ms = <20>;
             key-positions = <16 17>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM>;
         };
         combo_return {
-            timeout-ms = <35>;
+            timeout-ms = <20>;
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM FUN GUIMISC>;
         };
         combo_zero {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <26 27>;
             bindings = <&kp N0>;
             layers = <NUM>;
         };
         combo_period {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <27 28>;
             bindings = <&kp DOT>;
             layers = <NUM>;
