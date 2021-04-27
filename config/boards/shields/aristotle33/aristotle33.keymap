@@ -81,119 +81,119 @@
         };
     };
 // }}}
-// ========================= COMBOS ========================= {{{1
-    combos {
-        compatible = "zmk,combos";
-        combo_tab {
-            timeout-ms = <35>;
-            key-positions = <0 1>;
-            bindings = <&kp TAB>;
-            layers = <DEF>;
-        };
-        combo_esc {
-            timeout-ms = <30>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-            layers = <DEF NUM FUN>;
-        };
-        combo_lbracket {
-            timeout-ms = <30>;
-            key-positions = <2 3>;
-            bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF NUM>;
-        };
-        combo_rbracket {
-            timeout-ms = <30>;
-            key-positions = <6 7>;
-            bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF NUM>;
-        };
-        /* combo_bs { */
-        /*     timeout-ms = <35>; */
-        /*     key-positions = <8 9>; */
-        /*     bindings = <&kp BACKSPACE>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
-        combo_dquote {
-            timeout-ms = <30>;
-            key-positions = <1 11>;
-            bindings = <&kp DOUBLE_QUOTES>;
-            layers = <DEF NUM>;
-        };
-        combo_exclam {
-            timeout-ms = <30>;
-            key-positions = <2 12>;
-            bindings = <&kp EXCLAMATION>;
-            layers = <DEF NUM>;
-        };
-        combo_grave {
-            timeout-ms = <30>;
-            key-positions = <3 13>;
-            bindings = <&kp GRAVE>;
-            layers = <DEF>;
-        };
-        combo_minus {
-            timeout-ms = <30>;
-            key-positions = <6 16>;
-            bindings = <&kp MINUS>;
-            layers = <DEF NUM>;
-        };
-        combo_equal {
-            timeout-ms = <30>;
-            key-positions = <7 17>;
-            bindings = <&kp EQUAL>;
-            layers = <DEF NUM>;
-        };
-        /* combo_dquote2 { */
-        /*     timeout-ms = <35>; */
-        /*     key-positions = <10 11>; */
-        /*     bindings = <&kp DOUBLE_QUOTES>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
-        combo_question {
-            timeout-ms = <20>;
-            key-positions = <11 12>;
-            bindings = <&kp QUESTION>;
-            layers = <DEF>;
-        };
-        combo_lparen {
-            timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp LPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_rparen {
-            timeout-ms = <20>;
-            key-positions = <16 17>;
-            bindings = <&kp RPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_return {
-            timeout-ms = <20>;
-            key-positions = <17 18>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
-        };
-        combo_zero {
-            timeout-ms = <30>;
-            key-positions = <26 27>;
-            bindings = <&kp N0>;
-            layers = <NUM>;
-        };
-        combo_period {
-            timeout-ms = <30>;
-            key-positions = <27 28>;
-            bindings = <&kp DOT>;
-            layers = <NUM>;
-        };
-        combo_BTclr {
-            timeout-ms = <20>;
-            key-positions = <0 10>;
-            bindings = <&bt BT_CLR>;
-            layers = <GUIMISC>;
-        };
-    };
-// }}}
+/* // ========================= COMBOS ========================= {{{1 */
+/*     combos { */
+/*         compatible = "zmk,combos"; */
+/*         combo_tab { */
+/*             timeout-ms = <35>; */
+/*             key-positions = <0 1>; */
+/*             bindings = <&kp TAB>; */
+/*             layers = <DEF>; */
+/*         }; */
+/*         combo_esc { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <1 2>; */
+/*             bindings = <&kp ESC>; */
+/*             layers = <DEF NUM FUN>; */
+/*         }; */
+/*         combo_lbracket { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <2 3>; */
+/*             bindings = <&kp LEFT_BRACKET>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_rbracket { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <6 7>; */
+/*             bindings = <&kp RIGHT_BRACKET>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         /1* combo_bs { *1/ */
+/*         /1*     timeout-ms = <35>; *1/ */
+/*         /1*     key-positions = <8 9>; *1/ */
+/*         /1*     bindings = <&kp BACKSPACE>; *1/ */
+/*         /1*     layers = <DEF NUM>; *1/ */
+/*         /1* }; *1/ */
+/*         combo_dquote { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <1 11>; */
+/*             bindings = <&kp DOUBLE_QUOTES>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_exclam { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <2 12>; */
+/*             bindings = <&kp EXCLAMATION>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_grave { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <3 13>; */
+/*             bindings = <&kp GRAVE>; */
+/*             layers = <DEF>; */
+/*         }; */
+/*         combo_minus { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <6 16>; */
+/*             bindings = <&kp MINUS>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_equal { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <7 17>; */
+/*             bindings = <&kp EQUAL>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         /1* combo_dquote2 { *1/ */
+/*         /1*     timeout-ms = <35>; *1/ */
+/*         /1*     key-positions = <10 11>; *1/ */
+/*         /1*     bindings = <&kp DOUBLE_QUOTES>; *1/ */
+/*         /1*     layers = <DEF NUM>; *1/ */
+/*         /1* }; *1/ */
+/*         combo_question { */
+/*             timeout-ms = <20>; */
+/*             key-positions = <11 12>; */
+/*             bindings = <&kp QUESTION>; */
+/*             layers = <DEF>; */
+/*         }; */
+/*         combo_lparen { */
+/*             timeout-ms = <20>; */
+/*             key-positions = <12 13>; */
+/*             bindings = <&kp LPAR>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_rparen { */
+/*             timeout-ms = <20>; */
+/*             key-positions = <16 17>; */
+/*             bindings = <&kp RPAR>; */
+/*             layers = <DEF NUM>; */
+/*         }; */
+/*         combo_return { */
+/*             timeout-ms = <20>; */
+/*             key-positions = <17 18>; */
+/*             bindings = <&kp ENTER>; */
+/*             layers = <DEF NUM FUN GUIMISC>; */
+/*         }; */
+/*         combo_zero { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <26 27>; */
+/*             bindings = <&kp N0>; */
+/*             layers = <NUM>; */
+/*         }; */
+/*         combo_period { */
+/*             timeout-ms = <30>; */
+/*             key-positions = <27 28>; */
+/*             bindings = <&kp DOT>; */
+/*             layers = <NUM>; */
+/*         }; */
+/*         combo_BTclr { */
+/*             timeout-ms = <20>; */
+/*             key-positions = <0 10>; */
+/*             bindings = <&bt BT_CLR>; */
+/*             layers = <GUIMISC>; */
+/*         }; */
+/*     }; */
+/* // }}} */
 // ======================== KEYMAPS ========================= {{{1
     keymap {
         compatible = "zmk,keymap";
