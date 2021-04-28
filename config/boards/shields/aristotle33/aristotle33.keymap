@@ -41,15 +41,15 @@
 #define RCTL_V  &hm RIGHT_CONTROL V
 #define RSFT_Z  &hm RIGHT_SHIFT Z
 
-/* // Home Row Mods */
-/* #define LSFT_A  &hm LSHFT A */
-/* #define LCTL_O  &hm LCTRL O */
-/* #define LALT_E  &hm LALT E */
-/* #define LGUI_U  &hm LGUI U */
-/* #define RGUI_H  &hm RGUI H */
-/* #define RALT_T  &hm RALT T */
-/* #define RCTL_N  &hm RCTRL N */
-/* #define RSFT_S  &hm RSHFT S */
+// Home Row Mods
+#define LSFT_A  &hm LEFT_SHIFT A
+#define LCTL_O  &hm LEFT_CONTROL O
+#define LALT_E  &hm LEFT_ALT E
+#define LGUI_U  &hm LEFT_GUI U
+#define RGUI_H  &hm RIGHT_GUI H
+#define RALT_T  &hm RIGHT_ALT T
+#define RCTL_N  &hm RIGHT_CONTROL N
+#define RSFT_S  &hm RIGHT_SHIFT S
 
 // Other
 #define BTLDR &bootloader
@@ -194,21 +194,21 @@
 
 // --------------------------------------- DVORAK ---------------------------------------- {{{2
 // |   '   |   ,   |   .   |   P   |   Y   |     |   F   |   G   |   C   |   R   |   L   |
-// |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
-// | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
+// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
+// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
 //                                 | NUM/BS|     | FUN/SP| GUI/ /|
 //
     default {
     bindings = <
     &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
-    &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S
-    LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z
+    LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S
+    &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z
                                &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC FSLH
     >;
-// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
-// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
-    /* LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S */
-    /* &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z */
+// |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
+// | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
+    /* &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S */
+    /* LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z */
     };
 // }}}
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
