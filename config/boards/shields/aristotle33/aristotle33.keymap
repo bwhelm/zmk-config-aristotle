@@ -32,24 +32,32 @@
 #define WIN_CNT &kp LC(LG(LA(I)))
 
 // Bottom Row Mods
-#define LSFT_SC &hm LSHFT SEMI
-#define LCTL_Q  &hm LCTRL Q
-#define LALT_J  &hm LALT J
-#define LGUI_K  &hm LGUI K
-#define RGUI_M  &hm RGUI M
-#define RALT_W  &hm RALT W
-#define RCTL_V  &hm RCTRL V
-#define RSFT_Z  &hm RSHFT Z
+#define LSFT_SC &hm LEFT_SHIFT SEMI
+#define LCTL_Q  &hm LEFT_CONTROL Q
+#define LALT_J  &hm LEFT_ALT J
+#define LGUI_K  &hm LEFT_GUI K
+#define RGUI_M  &hm RIGHT_GUI M
+#define RALT_W  &hm RIGHT_ALT W
+#define RCTL_V  &hm RIGHT_CONTROL V
+#define RSFT_Z  &hm RIGHT_SHIFT Z
 
-/* // Home Row Mods */
-/* #define LSFT_A  &hm LSHFT A */
-/* #define LCTL_O  &hm LCTRL O */
-/* #define LALT_E  &hm LALT E */
-/* #define LGUI_U  &hm LGUI U */
-/* #define RGUI_H  &hm RGUI H */
-/* #define RALT_T  &hm RALT T */
-/* #define RCTL_N  &hm RCTRL N */
-/* #define RSFT_S  &hm RSHFT S */
+// Home Row Mods
+#define LSFT_A      &hm LEFT_SHIFT A
+#define LCTL_O      &hm LEFT_CONTROL O
+#define LALT_E      &hm LEFT_ALT E
+#define LGUI_U      &hm LEFT_GUI U
+#define RGUI_H      &hm RIGHT_GUI H
+#define RALT_T      &hm RIGHT_ALT T
+#define RCTL_N      &hm RIGHT_CONTROL N
+#define RSFT_S      &hm RIGHT_SHIFT S
+#define LSFT_TAB    &hm LEFT_SHIFT TAB
+#define LCTL_DLLR   &hm LEFT_CONTROL DLLR
+#define LALT_PRCNT  &hm LEFT_ALT PRCNT
+#define LGUI_CARET  &hm LEFT_GUI CARET
+#define RGUI_N4     &hm RIGHT_GUI N4
+#define RALT_N5     &hm RIGHT_ALT N5
+#define RCTL_N6     &hm RIGHT_CONTROL N6
+#define RSFT_MINUS  &hm RIGHT_SHIFT MINUS
 
 // Other
 #define BTLDR &bootloader
@@ -73,148 +81,142 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <80>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
         };
     };
 // }}}
-/* // ========================= COMBOS ========================= {{{1 */
-/*     combos { */
-/*         compatible = "zmk,combos"; */
-/*         combo_tab { */
-/*             timeout-ms = <35>; */
-/*             key-positions = <0 1>; */
-/*             bindings = <&kp TAB>; */
-/*             layers = <DEF>; */
-/*         }; */
-/*         combo_esc { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <1 2>; */
-/*             bindings = <&kp ESC>; */
-/*             layers = <DEF NUM FUN>; */
-/*         }; */
-/*         combo_lbracket { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <2 3>; */
-/*             bindings = <&kp LEFT_BRACKET>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_rbracket { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <6 7>; */
-/*             bindings = <&kp RIGHT_BRACKET>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         /1* combo_bs { *1/ */
-/*         /1*     timeout-ms = <35>; *1/ */
-/*         /1*     key-positions = <8 9>; *1/ */
-/*         /1*     bindings = <&kp BACKSPACE>; *1/ */
-/*         /1*     layers = <DEF NUM>; *1/ */
-/*         /1* }; *1/ */
-/*         combo_dquote { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <1 11>; */
-/*             bindings = <&kp DOUBLE_QUOTES>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_exclam { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <2 12>; */
-/*             bindings = <&kp EXCLAMATION>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_grave { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <3 13>; */
-/*             bindings = <&kp GRAVE>; */
-/*             layers = <DEF>; */
-/*         }; */
-/*         combo_minus { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <6 16>; */
-/*             bindings = <&kp MINUS>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_equal { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <7 17>; */
-/*             bindings = <&kp EQUAL>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         /1* combo_dquote2 { *1/ */
-/*         /1*     timeout-ms = <35>; *1/ */
-/*         /1*     key-positions = <10 11>; *1/ */
-/*         /1*     bindings = <&kp DOUBLE_QUOTES>; *1/ */
-/*         /1*     layers = <DEF NUM>; *1/ */
-/*         /1* }; *1/ */
-/*         combo_question { */
-/*             timeout-ms = <20>; */
-/*             key-positions = <11 12>; */
-/*             bindings = <&kp QUESTION>; */
-/*             layers = <DEF>; */
-/*         }; */
-/*         combo_lparen { */
-/*             timeout-ms = <20>; */
-/*             key-positions = <12 13>; */
-/*             bindings = <&kp LPAR>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_rparen { */
-/*             timeout-ms = <20>; */
-/*             key-positions = <16 17>; */
-/*             bindings = <&kp RPAR>; */
-/*             layers = <DEF NUM>; */
-/*         }; */
-/*         combo_return { */
-/*             timeout-ms = <20>; */
-/*             key-positions = <17 18>; */
-/*             bindings = <&kp ENTER>; */
-/*             layers = <DEF NUM FUN GUIMISC>; */
-/*         }; */
-/*         combo_zero { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <26 27>; */
-/*             bindings = <&kp N0>; */
-/*             layers = <NUM>; */
-/*         }; */
-/*         combo_period { */
-/*             timeout-ms = <30>; */
-/*             key-positions = <27 28>; */
-/*             bindings = <&kp DOT>; */
-/*             layers = <NUM>; */
-/*         }; */
-/*         combo_BTclr { */
-/*             timeout-ms = <20>; */
-/*             key-positions = <0 10>; */
-/*             bindings = <&bt BT_CLR>; */
-/*             layers = <GUIMISC>; */
-/*         }; */
-/*     }; */
-/* // }}} */
+// ========================= COMBOS ========================= {{{1
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <35>;
+            key-positions = <0 1>;
+            bindings = <&kp TAB>;
+            layers = <DEF>;
+        };
+        combo_esc {
+            timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            layers = <DEF NUM FUN>;
+        };
+        combo_lbracket {
+            timeout-ms = <30>;
+            key-positions = <2 3>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <DEF NUM>;
+        };
+        combo_rbracket {
+            timeout-ms = <30>;
+            key-positions = <6 7>;
+            bindings = <&kp RIGHT_BRACKET>;
+            layers = <DEF NUM>;
+        };
+        combo_bs {
+            timeout-ms = <35>;
+            key-positions = <8 9>;
+            bindings = <&kp BACKSPACE>;
+            layers = <DEF NUM>;
+        };
+        combo_dquote {
+            timeout-ms = <30>;
+            key-positions = <1 11>;
+            bindings = <&kp DOUBLE_QUOTES>;
+            layers = <DEF NUM>;
+        };
+        combo_exclam {
+            timeout-ms = <30>;
+            key-positions = <2 12>;
+            bindings = <&kp EXCLAMATION>;
+            layers = <DEF NUM>;
+        };
+        combo_grave {
+            timeout-ms = <30>;
+            key-positions = <3 13>;
+            bindings = <&kp GRAVE>;
+            layers = <DEF>;
+        };
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <6 16>;
+            bindings = <&kp MINUS>;
+            layers = <DEF NUM>;
+        };
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <7 17>;
+            bindings = <&kp EQUAL>;
+            layers = <DEF NUM>;
+        };
+        combo_question {
+            timeout-ms = <20>;
+            key-positions = <11 12>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF>;
+        };
+        combo_lparen {
+            timeout-ms = <20>;
+            key-positions = <12 13>;
+            bindings = <&kp LPAR>;
+            layers = <DEF NUM>;
+        };
+        combo_rparen {
+            timeout-ms = <20>;
+            key-positions = <16 17>;
+            bindings = <&kp RPAR>;
+            layers = <DEF NUM>;
+        };
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <17 18>;
+            bindings = <&kp ENTER>;
+            layers = <DEF NUM FUN GUIMISC>;
+        };
+        combo_zero {
+            timeout-ms = <30>;
+            key-positions = <26 27>;
+            bindings = <&kp N0>;
+            layers = <NUM>;
+        };
+        combo_period {
+            timeout-ms = <30>;
+            key-positions = <27 28>;
+            bindings = <&kp DOT>;
+            layers = <NUM>;
+        };
+        combo_BTclr {
+            timeout-ms = <20>;
+            key-positions = <0 10>;
+            bindings = <&bt BT_CLR>;
+            layers = <GUIMISC>;
+        };
+    };
+// }}}
 // ======================== KEYMAPS ========================= {{{1
     keymap {
         compatible = "zmk,keymap";
 
 // --------------------------------------- DVORAK ---------------------------------------- {{{2
 // |   '   |   ,   |   .   |   P   |   Y   |     |   F   |   G   |   C   |   R   |   L   |
-// |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
-// | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
+// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
+// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
 //                                 | NUM/BS|     | FUN/SP| GUI/ /|
 //
     default {
     bindings = <
     &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
-    &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S
-    LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z
+    LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S
+    &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z
                                &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC FSLH
     >;
-// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
-// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
-    /* LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S */
-    /* &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z */
+// |   A   |   O   |   E   |   U   |   I   |     |   D   |   H   |   T   |   N   |   S   |
+// | ;/SHFT| Q/CTL | J/OPT | K/CMD |   X   |     |   B   | M/CMD | W/OPT | V/CTL | Z/SHFT|
+    /* &kp A    &kp O     &kp E   &kp U  &kp I       &kp D    &kp H   &kp T   &kp N   &kp S */
+    /* LSFT_SC  LCTL_Q    LALT_J  LGUI_K &kp X       &kp B    RGUI_M  RALT_W  RCTL_V  RSFT_Z */
     };
 // }}}
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
@@ -225,12 +227,13 @@
 //
     numbers {
       bindings = <
-    &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &kp TILDE  &kp DQT   &kp N7 &kp N8 &kp N9 &kp EQUAL
-    &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
-    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
-                                           &trans      &trans    &kp BSLH
+    &tog NUM  &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE  &kp DQT   &kp N7  &kp N8  &kp N9  &kp EQUAL
+    LSFT_TAB  LCTL_DLLR LALT_PRCNT LGUI_CARET &kp GRAVE  &kp COLON RGUI_N4 RALT_N5 RCTL_N6 RSFT_MINUS
+    &kp LSHFT &kp EXCL  &kp AT     &kp HASH   &kp LA(V)  &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
+                                              &trans     &trans    &kp BSLH
       >;
     };
+    /* &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS */
 // }}}
 // -------------------------------------- FUNCTIONS -------------------------------------- {{{2
 // | FUNTog|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
