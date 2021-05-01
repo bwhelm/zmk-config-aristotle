@@ -237,16 +237,16 @@
 // }}}
 // -------------------------------------- FUNCTIONS -------------------------------------- {{{2
 // | FUNTog|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
-// |BTLOADR|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |Bright-|
-// |  SHFT | F1/CTL| F2/OPT| F3/CMD|   F11 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
+// |  SHFT | F4/CTL| F5/OPT| F6/CMD|   F11 |     |  Vol- |Lft/CMD|Dwn/OPT|Rgt/CTL|Br-/SFT|
+// |       |   F1  |   F2  |   F3  |   F10 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
 //                                 |  ---- |     |  ---- |  ---- |
 //
     functions {
     bindings = <
-    &tog FUN &kp F7  &kp F8 &kp F9 &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
-    BTLDR    &kp F4  &kp F5 &kp F6 &kp F11     &kp C_VOL_DN &kp LEFT &kp DOWN &kp RIGHT &kp C_BRI_DN
-    &kp LSFT &hm LCTRL F1 &hm LALT F2 &hm LGUI F3 &kp F10   &kp C_MUTE &kp END &none &kp PG_DN &kp CAPS
-                                &trans         &trans &trans
+    &tog FUN &kp F7       &kp F8      &kp F9      &kp F12   &kp C_VOL_UP &kp HOME      &kp UP        &kp PG_UP       &kp C_BRI_UP
+    &kp LSFT &hm LCTRL F4 &hm LALT F5 &hm LGUI F6 &kp F11   &kp C_VOL_DN &hm RGUI LEFT &hm RALT DOWN &hm RCTRL RIGHT &hm RSFT C_BRI_DN
+    &none    &kp F1       &kp F2      &kp F3      &kp F10   &kp C_MUTE   &kp END       &none         &kp PG_DN       &kp CAPS
+                                                  &trans    &trans       &trans
     >;
     };
 // }}}
