@@ -42,14 +42,22 @@
 #define RSFT_Z  &hm RIGHT_SHIFT Z
 
 // Home Row Mods
-#define LSFT_A  &hm LEFT_SHIFT A
-#define LCTL_O  &hm LEFT_CONTROL O
-#define LALT_E  &hm LEFT_ALT E
-#define LGUI_U  &hm LEFT_GUI U
-#define RGUI_H  &hm RIGHT_GUI H
-#define RALT_T  &hm RIGHT_ALT T
-#define RCTL_N  &hm RIGHT_CONTROL N
-#define RSFT_S  &hm RIGHT_SHIFT S
+#define LSFT_A      &hm LEFT_SHIFT A
+#define LCTL_O      &hm LEFT_CONTROL O
+#define LALT_E      &hm LEFT_ALT E
+#define LGUI_U      &hm LEFT_GUI U
+#define RGUI_H      &hm RIGHT_GUI H
+#define RALT_T      &hm RIGHT_ALT T
+#define RCTL_N      &hm RIGHT_CONTROL N
+#define RSFT_S      &hm RIGHT_SHIFT S
+#define LSFT_TAB    &hm LEFT_SHIFT TAB
+#define LCTL_DLLR   &hm LEFT_CONTROL DLLR
+#define LALT_PRCNT  &hm LEFT_ALT PRCNT
+#define LGUI_CARET  &hm LEFT_GUI CARET
+#define RGUI_N4     &hm RIGHT_GUI N4
+#define RALT_N5     &hm RIGHT_ALT N5
+#define RCTL_N6     &hm RIGHT_CONTROL N6
+#define RSFT_MINUS  &hm RIGHT_SHIFT MINUS
 
 // Other
 #define BTLDR &bootloader
@@ -219,25 +227,26 @@
 //
     numbers {
       bindings = <
-    &tog NUM  &kp AMPS &kp ASTRK &kp LA(N6) &kp TILDE  &kp DQT   &kp N7 &kp N8 &kp N9 &kp EQUAL
-    &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS
-    &kp LSHFT &kp EXCL &kp AT    &kp HASH  &kp LA(V)   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
-                                           &trans      &trans    &kp BSLH
+    &tog NUM  &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE  &kp DQT   &kp N7  &kp N8  &kp N9  &kp EQUAL
+    LSFT_TAB  LCTL_DLLR LALT_PRCNT LGUI_CARET &kp GRAVE  &kp COLON RGUI_N4 RALT_N5 RCTL_N6 RSFT_MINUS
+    &kp LSHFT &kp EXCL  &kp AT     &kp HASH   &kp LA(V)  &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
+                                              &trans     &trans    &kp BSLH
       >;
     };
+    /* &kp TAB   &kp DLLR &kp PRCNT &kp CARET &kp GRAVE   &kp COLON &kp N4 &kp N5 &kp N6 &kp MINUS */
 // }}}
 // -------------------------------------- FUNCTIONS -------------------------------------- {{{2
 // | FUNTog|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
-// |BTLOADR|   F4  |   F5  |   F6  |   F11 |     |  Vol- |  Left |  Down |  Rght |Bright-|
-// |  SHFT | F1/CTL| F2/OPT| F3/CMD|   F11 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
+// |  SHFT | F4/CTL| F5/OPT| F6/CMD|   F11 |     |  Vol- |Lft/CMD|Dwn/OPT|Rgt/CTL|Br-/SFT|
+// |       |   F1  |   F2  |   F3  |   F10 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
 //                                 |  ---- |     |  ---- |  ---- |
 //
     functions {
     bindings = <
-    &tog FUN &kp F7  &kp F8 &kp F9 &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
-    BTLDR    &kp F4  &kp F5 &kp F6 &kp F11     &kp C_VOL_DN &kp LEFT &kp DOWN &kp RIGHT &kp C_BRI_DN
-    &kp LSFT &hm LCTRL F1 &hm LALT F2 &hm LGUI F3 &kp F10   &kp C_MUTE &kp END &none &kp PG_DN &kp CAPS
-                                &trans         &trans &trans
+    &tog FUN &kp F7       &kp F8      &kp F9      &kp F12   &kp C_VOL_UP &kp HOME      &kp UP        &kp PG_UP       &kp C_BRI_UP
+    &kp LSFT &hm LCTRL F4 &hm LALT F5 &hm LGUI F6 &kp F11   &kp C_VOL_DN &hm RGUI LEFT &hm RALT DOWN &hm RCTRL RIGHT &hm RSFT C_BRI_DN
+    &none    &kp F1       &kp F2      &kp F3      &kp F10   &kp C_MUTE   &kp END       &none         &kp PG_DN       &kp CAPS
+                                                  &trans    &trans       &trans
     >;
     };
 // }}}
