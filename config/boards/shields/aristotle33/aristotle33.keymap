@@ -67,10 +67,12 @@
 // Set options for mod-tap behavior
 &mt {
     tapping-term-ms = <180>;
+    quick-tap-ms = <250>;
 };
 // Set options for layer-tap behavior
 &lt {
     tapping-term-ms = <250>;
+    quick-tap-ms = <250>;
 };
 
 // }}}
@@ -82,7 +84,7 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
@@ -92,7 +94,7 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <210>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-preferred";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
