@@ -33,30 +33,30 @@
 
 // Bottom Row Mods
 #define LSFT_SC &hm LEFT_SHIFT SEMI
-#define LCTL_Q  &hm LEFT_CONTROL Q
-#define LALT_J  &hm LEFT_ALT J
-#define LGUI_K  &hm LEFT_GUI K
-#define RGUI_M  &hm RIGHT_GUI M
-#define RALT_W  &hm RIGHT_ALT W
-#define RCTL_V  &hm RIGHT_CONTROL V
+#define LCTL_Q  &hs LEFT_CONTROL Q
+#define LALT_J  &hs LEFT_ALT J
+#define LGUI_K  &hs LEFT_GUI K
+#define RGUI_M  &hs RIGHT_GUI M
+#define RALT_W  &hs RIGHT_ALT W
+#define RCTL_V  &hs RIGHT_CONTROL V
 #define RSFT_Z  &hm RIGHT_SHIFT Z
 
 // Home Row Mods
 #define LSFT_A      &hm LEFT_SHIFT A
-#define LCTL_O      &hm LEFT_CONTROL O
-#define LALT_E      &hm LEFT_ALT E
-#define LGUI_U      &hm LEFT_GUI U
-#define RGUI_H      &hm RIGHT_GUI H
-#define RALT_T      &hm RIGHT_ALT T
-#define RCTL_N      &hm RIGHT_CONTROL N
+#define LCTL_O      &hs LEFT_CONTROL O
+#define LALT_E      &hs LEFT_ALT E
+#define LGUI_U      &hs LEFT_GUI U
+#define RGUI_H      &hs RIGHT_GUI H
+#define RALT_T      &hs RIGHT_ALT T
+#define RCTL_N      &hs RIGHT_CONTROL N
 #define RSFT_S      &hm RIGHT_SHIFT S
 #define LSFT_TAB    &hm LEFT_SHIFT TAB
-#define LCTL_DLLR   &hm LEFT_CONTROL DLLR
-#define LALT_PRCNT  &hm LEFT_ALT PRCNT
-#define LGUI_CARET  &hm LEFT_GUI CARET
-#define RGUI_N4     &hm RIGHT_GUI N4
-#define RALT_N5     &hm RIGHT_ALT N5
-#define RCTL_N6     &hm RIGHT_CONTROL N6
+#define LCTL_DLLR   &hs LEFT_CONTROL DLLR
+#define LALT_PRCNT  &hs LEFT_ALT PRCNT
+#define LGUI_CARET  &hs LEFT_GUI CARET
+#define RGUI_N4     &hs RIGHT_GUI N4
+#define RALT_N5     &hs RIGHT_ALT N5
+#define RCTL_N6     &hs RIGHT_CONTROL N6
 #define RSFT_MINUS  &hm RIGHT_SHIFT MINUS
 
 // Other
@@ -82,6 +82,16 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            /* retro-tap; */
+            bindings = <&kp>, <&kp>;
+        };
+        hs: homerow_mods_slow {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <210>;
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
             /* retro-tap; */
