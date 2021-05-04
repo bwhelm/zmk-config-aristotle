@@ -110,11 +110,11 @@
             bindings = <&kp TAB>;
             layers = <DEF>;
         };
-        combo_esc {
+        combo_question {
             timeout-ms = <30>;
             key-positions = <1 2>;
-            bindings = <&kp ESC>;
-            layers = <DEF NUM FUN>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF>;
         };
         combo_lbracket {
             timeout-ms = <30>;
@@ -164,11 +164,11 @@
             bindings = <&kp EQUAL>;
             layers = <DEF NUM>;
         };
-        combo_question {
+        combo_esc {
             timeout-ms = <20>;
             key-positions = <11 12>;
-            bindings = <&kp QUESTION>;
-            layers = <DEF>;
+            bindings = <&kp ESC>;
+            layers = <DEF NUM FUN>;
         };
         combo_lparen {
             timeout-ms = <20>;
