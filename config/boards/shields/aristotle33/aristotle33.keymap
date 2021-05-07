@@ -104,18 +104,18 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
-        combo_tab {
-            timeout-ms = <35>;
-            key-positions = <0 1>;
-            bindings = <&kp TAB>;
-            layers = <DEF>;
-        };
-        combo_question {
-            timeout-ms = <30>;
-            key-positions = <1 2>;
-            bindings = <&kp QUESTION>;
-            layers = <DEF>;
-        };
+        /* combo_tab { */
+        /*     timeout-ms = <35>; */
+        /*     key-positions = <0 1>; */
+        /*     bindings = <&kp TAB>; */
+        /*     layers = <DEF>; */
+        /* }; */
+        /* combo_question { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <1 2>; */
+        /*     bindings = <&kp QUESTION>; */
+        /*     layers = <DEF>; */
+        /* }; */
         combo_lbracket {
             timeout-ms = <30>;
             key-positions = <2 3>;
@@ -128,18 +128,18 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
         };
-        combo_bs {
-            timeout-ms = <35>;
-            key-positions = <8 9>;
-            bindings = <&kp BACKSPACE>;
-            layers = <DEF NUM>;
-        };
-        combo_dquote {
-            timeout-ms = <30>;
-            key-positions = <1 11>;
-            bindings = <&kp DOUBLE_QUOTES>;
-            layers = <DEF NUM>;
-        };
+        /* combo_bs { */
+        /*     timeout-ms = <35>; */
+        /*     key-positions = <8 9>; */
+        /*     bindings = <&kp BACKSPACE>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
+        /* combo_dquote { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <1 11>; */
+        /*     bindings = <&kp DOUBLE_QUOTES>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
         combo_exclam {
             timeout-ms = <30>;
             key-positions = <2 12>;
