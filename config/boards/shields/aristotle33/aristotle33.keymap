@@ -29,7 +29,7 @@
 #define WIN_PRV &kp LS(LG(GRAVE))
 #define WIN3LFT &kp LC(LA(LEFT))
 #define WIN3RGT &kp LC(LA(RIGHT))
-#define WIN_CNT &kp LC(LG(LA(I)))
+#define WIN_CNT &kp LC(LG(LA(C)))
 
 // Bottom Row Mods
 #define LSFT_SC &hm LEFT_SHIFT SEMI
