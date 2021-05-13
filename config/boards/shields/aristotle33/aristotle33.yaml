@@ -106,7 +106,7 @@ function:
 
 gui:
     keys: [
-        ['', '', Mouse\\\arrowkeyup, Wheel\\\arrowkeyup, Accel\\2,
+        ['\faUsb/\faBluetoothB\\toggle', '', Mouse\\\arrowkeyup, Wheel\\\arrowkeyup, Accel\\2,
          Show\\Wins, Prev\\Win, Win\\Big, Next\\Win, \faBluetoothB~1],
         ['', Mouse\\\arrowkeyleft, Mouse\\\arrowkeydown, Mouse\\\arrowkeyright, Accel\\1,
          Show\\App, Win\\1/3 L, Win\\Small, Win\\1/3 R, \faBluetoothB~2],
