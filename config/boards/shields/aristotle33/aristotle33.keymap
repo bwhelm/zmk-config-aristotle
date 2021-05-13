@@ -81,8 +81,8 @@
 };
 // Set options for layer-tap behavior
 &lt {
-    tapping-term-ms = <250>;
-    quick-tap-ms = <250>;
+    tapping-term-ms = <200>; // was 250
+    quick-tap-ms = <200>;
 };
 
 // }}}
