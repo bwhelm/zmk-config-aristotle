@@ -42,6 +42,7 @@
 #define RSFT_Z  &hm RIGHT_SHIFT Z
 
 // Home Row Mods
+// Dvorak
 #define LSFT_A      &hm LEFT_SHIFT A
 #define LCTL_O      &hs LEFT_CONTROL O
 #define LALT_E      &hs LEFT_ALT E
@@ -50,6 +51,7 @@
 #define RALT_T      &hs RIGHT_ALT T
 #define RCTL_N      &hs RIGHT_CONTROL N
 #define RSFT_S      &hm RIGHT_SHIFT S
+// Number
 #define LSFT_TAB    &hm LEFT_SHIFT TAB
 #define LCTL_DLLR   &hs LEFT_CONTROL DLLR
 #define LALT_PRCNT  &hs LEFT_ALT PRCNT
@@ -58,6 +60,14 @@
 #define RALT_N5     &hs RIGHT_ALT N5
 #define RCTL_N6     &hs RIGHT_CONTROL N6
 #define RSFT_MINUS  &hm RIGHT_SHIFT MINUS
+// Function
+#define LCTRL_F4    &hm LCTRL F4
+#define LALT_F5     &hm LALT F5
+#define LGUI_F5     &hm LGUI F6
+#define RGUI_LFT    &hm RGUI LEFT
+#define RALT_DWN    &hm RALT DOWN
+#define RCTRL_RGT   &hm RCTRL RIGHT
+#define RSFT_BRD    &hm RSFT C_BRI_DN
 
 // Other
 #define BTLDR &bootloader
@@ -255,10 +265,10 @@
 //
     functions {
     bindings = <
-    &tog FUN &kp F7       &kp F8      &kp F9      &kp F12   &kp C_VOL_UP &kp HOME      &kp UP        &kp PG_UP       &kp C_BRI_UP
-    &kp LSFT &hm LCTRL F4 &hm LALT F5 &hm LGUI F6 &kp F11   &kp C_VOL_DN &hm RGUI LEFT &hm RALT DOWN &hm RCTRL RIGHT &hm RSFT C_BRI_DN
-    &none    &kp F1       &kp F2      &kp F3      &kp F10   &kp C_MUTE   &kp END       &none         &kp PG_DN       &kp CAPS
-                                                  &trans    &trans       &trans
+    &tog FUN &kp F7   &kp F8  &kp F9  &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
+    &kp LSFT LCTRL_F4 LALT_F5 LGUI_F5 &kp F11     &kp C_VOL_DN RGUI_LFT RALT_DWN RCTRL_RGT RSFT_BRD
+    &none    &kp F1   &kp F2  &kp F3  &kp F10     &kp C_MUTE   &kp END  &none    &kp PG_DN &kp CAPS
+                              &trans  &trans      &trans
     >;
     };
 // }}}
