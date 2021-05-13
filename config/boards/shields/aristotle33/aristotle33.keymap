@@ -32,25 +32,25 @@
 #define WIN_CNT &kp LC(LG(LA(C)))
 
 /* // Bottom Row Mods */
-/* #define LSFT_SC &hm LEFT_SHIFT SEMI */
+/* #define LSFT_SC &hf LEFT_SHIFT SEMI */
 /* #define LCTL_Q  &hs LEFT_CONTROL Q */
 /* #define LALT_J  &hs LEFT_ALT J */
 /* #define LGUI_K  &hs LEFT_GUI K */
 /* #define RGUI_M  &hs RIGHT_GUI M */
 /* #define RALT_W  &hs RIGHT_ALT W */
 /* #define RCTL_V  &hs RIGHT_CONTROL V */
-/* #define RSFT_Z  &hm RIGHT_SHIFT Z */
+/* #define RSFT_Z  &hf RIGHT_SHIFT Z */
 
 // Home Row Mods
 // Dvorak
-#define LSFT_A      &mt LEFT_SHIFT A
+#define LSFT_A      &hf LEFT_SHIFT A
 #define LCTL_O      &hs LEFT_CONTROL O
 #define LALT_E      &hs LEFT_ALT E
 #define LGUI_U      &hs LEFT_GUI U
 #define RGUI_H      &hs RIGHT_GUI H
 #define RALT_T      &hs RIGHT_ALT T
 #define RCTL_N      &hs RIGHT_CONTROL N
-#define RSFT_S      &mt RIGHT_SHIFT S
+#define RSFT_S      &hf RIGHT_SHIFT S
 // Number
 #define LSFT_TAB    &hs LEFT_SHIFT TAB
 #define LCTL_DLLR   &hs LEFT_CONTROL DLLR
@@ -76,9 +76,8 @@
 // ==================== OTHER SETTINGS ====================== {{{1
 /* // Set options for mod-tap behavior */
 &mt {
-    tapping-term-ms = <150>;
-    flavor = "balanced";
-    quick-tap-ms = <150>;
+    tapping-term-ms = <180>;
+    quick-tap-ms = <180>;
 };
 // Set options for layer-tap behavior
 &lt {
@@ -90,22 +89,22 @@
 / {
 // ======================= BEHAVIORS ======================== {{{1
     behaviors {
-        hm: homerow_mods {
+        hf: homerow_mods_fast {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <150>;
             /* quick-tap-ms = <250>; */
-            flavor = "tap-preferred";
+            flavor = "balanced";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
         };
         hs: homerow_mods_slow {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_SLOW";
             #binding-cells = <2>;
             tapping-term-ms = <210>;
-            quick-tap-ms = <250>;
+            quick-tap-ms = <210>;
             flavor = "tap-preferred";
             /* retro-tap; */
             bindings = <&kp>, <&kp>;
@@ -238,7 +237,7 @@
   default {
   bindings = <
   &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
-  &mt LEFT_SHIFT A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S
+  LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S
   &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z
                              &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC FSLH
   >;
