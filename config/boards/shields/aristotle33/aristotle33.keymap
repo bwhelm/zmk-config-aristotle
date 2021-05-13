@@ -280,7 +280,7 @@
 //
   macro {
   bindings = <
-  &none    &none     &none &none &none         &kp F3     WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
+  &out OUT_TOG &none &none &none &none         &kp F3     WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
   &none    &none     &none &none &none         &kp LS(F3) WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
   &kp LSFT &kp LCTRL &none &none &none         &kp LG(F3) WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
                                  &none         &none      &trans
