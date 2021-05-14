@@ -150,30 +150,30 @@
         /*     bindings = <&kp DOUBLE_QUOTES>; */
         /*     layers = <DEF NUM>; */
         /* }; */
-        combo_exclam {
-            timeout-ms = <30>;
-            key-positions = <2 12>;
-            bindings = <&kp EXCLAMATION>;
-            layers = <DEF NUM>;
-        };
-        combo_grave {
-            timeout-ms = <30>;
-            key-positions = <3 13>;
-            bindings = <&kp GRAVE>;
-            layers = <DEF>;
-        };
-        combo_minus {
-            timeout-ms = <30>;
-            key-positions = <6 16>;
-            bindings = <&kp MINUS>;
-            layers = <DEF NUM>;
-        };
-        combo_equal {
-            timeout-ms = <30>;
-            key-positions = <7 17>;
-            bindings = <&kp EQUAL>;
-            layers = <DEF NUM>;
-        };
+        /* combo_exclam { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <2 12>; */
+        /*     bindings = <&kp EXCLAMATION>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
+        /* combo_grave { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <3 13>; */
+        /*     bindings = <&kp GRAVE>; */
+        /*     layers = <DEF>; */
+        /* }; */
+        /* combo_minus { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <6 16>; */
+        /*     bindings = <&kp MINUS>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
+        /* combo_equal { */
+        /*     timeout-ms = <30>; */
+        /*     key-positions = <7 17>; */
+        /*     bindings = <&kp EQUAL>; */
+        /*     layers = <DEF NUM>; */
+        /* }; */
         combo_capslock {
             timeout-ms = <30>;
             key-positions = <10 19>;
@@ -246,15 +246,15 @@
 // --------------------------------------- NUMBERS --------------------------------------- {{{2
 // | NUMTog|   &   |   *   |   §   |   ~   |     |   "   |   7   |   8   |   9   |   =   |
 // |  Tab  |   $   |   %   |   ^   |   `   |     |   :   |   4   |   5   |   6   |   -   |
-// | Shift |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   .   |
+// |       |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   .   |
 //                                 |  ---- |     |  ---- |   \   |
 //
   numbers {
   bindings = <
-  &tog NUM  &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE  &kp DQT   &kp N7  &kp N8  &kp N9  &kp EQUAL
-  LSFT_TAB  LCTL_DLLR LALT_PRCNT LGUI_CARET &kp GRAVE  &kp COLON RGUI_N4 RALT_N5 RCTL_N6 RSFT_MINUS
-  &kp LSHFT &kp EXCL  &kp AT     &kp HASH   &kp LA(V)  &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
-                                            &trans     &trans    &kp BSLH
+  &tog NUM &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE   &kp DQT   &kp N7  &kp N8  &kp N9  &kp EQUAL
+  LSFT_TAB LCTL_DLLR LALT_PRCNT LGUI_CARET &kp GRAVE   &kp COLON RGUI_N4 RALT_N5 RCTL_N6 RSFT_MINUS
+  &none    &kp EXCL  &kp AT     &kp HASH   &kp LA(K)   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
+                                           &trans      &trans    &kp BSLH
     >;
   };
 // }}}
