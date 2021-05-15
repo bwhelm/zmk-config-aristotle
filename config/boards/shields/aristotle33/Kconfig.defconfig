@@ -4,6 +4,6 @@
 if SHIELD_ARISTOTLE33
 
 config ZMK_KEYBOARD_NAME
-    default "Aristotle 33'21*"
+    default "Aristotle 33'21a"
 
 endif
