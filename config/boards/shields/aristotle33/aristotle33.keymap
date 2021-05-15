@@ -253,14 +253,14 @@
 // |       |   F1  |   F2  |   F3  |   F10 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
 //                                 |  ---- |     |  ---- |  ---- |
 //
-    functions {
-    bindings = <
-    &tog FUN &kp F7       &kp F8      &kp F9      &kp F12   &kp C_VOL_UP &kp HOME      &kp UP        &kp PG_UP       &kp C_BRI_UP
-    &kp LSFT &hm LCTRL F4 &hm LALT F5 &hm LGUI F6 &kp F11   &kp C_VOL_DN &hm RGUI LEFT &hm RALT DOWN &hm RCTRL RIGHT &hm RSFT C_BRI_DN
-    &none    &kp F1       &kp F2      &kp F3      &kp F10   &kp C_MUTE   &kp END       &none         &kp PG_DN       &kp CAPS
-                                                  &trans    &trans       &trans
-    >;
-    };
+  functions {
+  bindings = <
+  &tog FUN &kp F7   &kp F8  &kp F9  &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
+  &kp LSFT LCTRL_F4 LALT_F5 LGUI_F5 &kp F11     &kp C_VOL_DN RGUI_LFT RALT_DWN RCTRL_RGT RSFT_BRD
+  &none    &kp F1   &kp F2  &kp F3  &kp F10     &kp C_MUTE   &kp END  &none    &kp PG_DN &kp CAPS
+                                    &trans      &trans       &trans
+  >;
+  };
 // }}}
 // --------------------------------------- GUI/MISC -------------------------------------- {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
