@@ -228,52 +228,52 @@
     keymap {
         compatible = "zmk,keymap";
 
-// --------------------------------------- DVORAK ---------------------------------------- {{{2
-// |   '   |   ,   |   .   |   P   |   Y   |     |   F   |   G   |   C   |   R   |   L   |
-// | A/SHFT| O/CTL | E/OPT | U/CMD |   I   |     |   D   | H/CMD | T/OPT | N/CTL | S/SHFT|
-// |   ;   |   Q   |   J   |   K   |   X   |     |   B   |   M   |   W   |   V   |   Z   |
-//                                 | NUM/BS|     | FUN/SP| GUI/ /|
-//
+// ----------------------------------------------------- DVORAK ------------------------------------------------- {{{2
   default {
   bindings = <
-  &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y       &kp F    &kp G   &kp C   &kp R   &kp L
-  LSFT_A   LCTL_O    LALT_E  LGUI_U &kp I       &kp D    RGUI_H  RALT_T  RCTL_N  RSFT_S
-  &kp SEMI &kp Q     &kp J   &kp K  &kp X       &kp B    &kp M   &kp W   &kp V   &kp Z
-                             &lt NUM BSPC       &lt FUN SPACE &lt GUIMISC FSLH
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I          &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp SEMI   &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M      &kp W      &kp V      &kp Z
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                               &lt NUM BSPC   &lt FUN SPACE &lt GUIMISC FSLH
+//                                             ╰──────────╯   ╰──────────┴──────────╯
   >;
   };
 // }}}
-// --------------------------------------- NUMBERS --------------------------------------- {{{2
-// | NUMTog|   &   |   *   |   §   |   ~   |     |   "   |   7   |   8   |   9   |   =   |
-// |  Tab  |   $   |   %   |   ^   |   `   |     |   :   |   4   |   5   |   6   |   -   |
-// |       |   !   |   @   |   #   |   ˚   |     |   0   |   1   |   2   |   3   |   .   |
-//                                 |  ---- |     |  ---- |   \   |
-//
+// ---------------------------------------------------- NUMBERS ------------------------------------------------- {{{2
   numbers {
   bindings = <
-  &tog NUM &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE   &kp DQT   &kp N7  &kp N8  &kp N9  &kp EQUAL
-  LSFT_TAB LCTL_DLLR LALT_PRCNT LGUI_CARET &kp GRAVE   &kp COLON RGUI_N4 RALT_N5 RCTL_N6 RSFT_MINUS
-  &none    &kp EXCL  &kp AT     &kp HASH   &kp LA(K)   &kp N0    &kp N1 &kp N2 &kp N3 &kp DOT
-                                           &trans      &trans    &kp BSLH
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &tog NUM   &kp AMPS   &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT    &kp N7     &kp N8     &kp N9     &kp EQUAL
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    LSFT_TAB   LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE      &kp COLON  RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &none      &kp EXCL   &kp AT     &kp HASH   &kp LA(K)      &kp N0     &kp N1     &kp N2     &kp N3     &kp DOT
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                                &trans         &trans     &kp BSLH
+//                                             ╰──────────╯   ╰──────────┴──────────╯
     >;
   };
 // }}}
-// -------------------------------------- FUNCTIONS -------------------------------------- {{{2
-// | FUNTog|   F7  |   F8  |   F9  |   F12 |     |  Vol+ |  Home |   Up  |  PgUp |Bright+|
-// |  SHFT | F4/CTL| F5/OPT| F6/CMD|   F11 |     |  Vol- |Lft/CMD|Dwn/OPT|Rgt/CTL|Br-/SFT|
-// |       |   F1  |   F2  |   F3  |   F10 |     |  Mute |   End |  ---- |  PgDn | CAPLCK|
-//                                 |  ---- |     |  ---- |  ---- |
-//
+// --------------------------------------------------- FUNCTIONS ------------------------------------------------ {{{2
   functions {
   bindings = <
-  &tog FUN &kp F7   &kp F8  &kp F9  &kp F12     &kp C_VOL_UP &kp HOME &kp UP   &kp PG_UP &kp C_BRI_UP
-  &kp LSFT LCTRL_F4 LALT_F5 LGUI_F5 &kp F11     &kp C_VOL_DN RGUI_LFT RALT_DWN RCTRL_RGT RSFT_BRD
-  &none    &kp F1   &kp F2  &kp F3  &kp F10     &kp C_MUTE   &kp END  &none    &kp PG_DN &kp CAPS
-                                    &trans      &trans       &trans
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &tog FUN   &kp F7     &kp F8     &kp F9     &kp F12        &kp C_VOL_UP &kp HOME &kp UP     &kp PG_UP  &kp C_BRI_UP
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LSFT   LCTRL_F4   LALT_F5    LGUI_F5    &kp F11        &kp C_VOL_DN RGUI_LFT RALT_DWN   RCTRL_RGT  RSFT_BRD
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &none      &kp F1     &kp F2     &kp F3     &kp F10        &kp C_MUTE &kp END    &none      &kp PG_DN  &kp CAPS
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                                &trans         &trans     &trans
+//                                             ╰──────────╯   ╰──────────┴──────────╯
   >;
   };
 // }}}
-// --------------------------------------- GUI/MISC -------------------------------------- {{{2
+// ---------------------------------------------------- GUI/MISC ------------------------------------------------ {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
 // |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
 // |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
@@ -281,10 +281,15 @@
 //
   gui_misc {
   bindings = <
-  &out OUT_TOG &none &none &none &none         &kp F3     WIN_PRV WIN_BIG WIN_NXT &bt BT_SEL 0
-  &none    &none     &none &none &none         &kp LS(F3) WIN3LFT WIN_SML WIN3RGT &bt BT_SEL 1
-  &kp LSFT &kp LCTRL &none &none &none         &kp LG(F3) WIN_LFT WIN_CNT WIN_RGT &bt BT_SEL 2
-                                 &none         &none      &trans
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &out OUT_TOG &none    &none      &none      &none          &kp F3     WIN_PRV    WIN_BIG    WIN_NXT    &bt BT_SEL 0
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &none      &none      &none      &none      &none          &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT    &bt BT_SEL 1
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LSFT   &kp LCTRL  &none      &none      &none          &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT    &bt BT_SEL 2
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                                &none          &none      &trans
+//                                             ╰──────────╯   ╰──────────┴──────────╯
     >;
   };
 // }}}
