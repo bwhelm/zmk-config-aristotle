@@ -31,16 +31,6 @@
 #define WIN3RGT &kp LC(LA(RIGHT))
 #define WIN_CNT &kp LC(LG(LA(C)))
 
-/* // Bottom Row Mods */
-/* #define LSFT_SC &hf LEFT_SHIFT SEMI */
-/* #define LCTL_Q  &hs LEFT_CONTROL Q */
-/* #define LALT_J  &hs LEFT_ALT J */
-/* #define LGUI_K  &hs LEFT_GUI K */
-/* #define RGUI_M  &hs RIGHT_GUI M */
-/* #define RALT_W  &hs RIGHT_ALT W */
-/* #define RCTL_V  &hs RIGHT_CONTROL V */
-/* #define RSFT_Z  &hf RIGHT_SHIFT Z */
-
 // Home Row Mods
 // Dvorak
 #define LSFT_A      &hf LEFT_SHIFT A
@@ -114,18 +104,6 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
-        /* combo_tab { */
-        /*     timeout-ms = <35>; */
-        /*     key-positions = <0 1>; */
-        /*     bindings = <&kp TAB>; */
-        /*     layers = <DEF>; */
-        /* }; */
-        /* combo_question { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <1 2>; */
-        /*     bindings = <&kp QUESTION>; */
-        /*     layers = <DEF>; */
-        /* }; */
         combo_lbracket {
             timeout-ms = <30>;
             key-positions = <2 3>;
@@ -138,36 +116,6 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
         };
-        /* combo_bs { */
-        /*     timeout-ms = <35>; */
-        /*     key-positions = <8 9>; */
-        /*     bindings = <&kp BACKSPACE>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
-        /* combo_dquote { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <1 11>; */
-        /*     bindings = <&kp DOUBLE_QUOTES>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
-        /* combo_exclam { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <2 12>; */
-        /*     bindings = <&kp EXCLAMATION>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
-        /* combo_grave { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <3 13>; */
-        /*     bindings = <&kp GRAVE>; */
-        /*     layers = <DEF>; */
-        /* }; */
-        /* combo_minus { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <6 16>; */
-        /*     bindings = <&kp MINUS>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
         /* combo_equal { */
         /*     timeout-ms = <30>; */
         /*     key-positions = <7 17>; */
