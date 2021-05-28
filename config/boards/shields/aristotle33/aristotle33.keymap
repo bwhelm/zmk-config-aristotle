@@ -104,17 +104,41 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            layers = <DEF NUM FUN>;
+        };
+        combo_lparen {
+            timeout-ms = <20>;
+            key-positions = <2 3>;
+            bindings = <&kp LPAR>;
+            layers = <DEF NUM>;
+        };
         combo_lbracket {
             timeout-ms = <30>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM>;
         };
         combo_rbracket {
             timeout-ms = <30>;
-            key-positions = <6 7>;
+            key-positions = <5 6>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
+        };
+        combo_rparen {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp RPAR>;
+            layers = <DEF NUM>;
+        };
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <7 8>;
+            bindings = <&kp ENTER>;
+            layers = <DEF NUM FUN GUIMISC>;
         };
         /* combo_equal { */
         /*     timeout-ms = <30>; */
@@ -127,30 +151,6 @@
             key-positions = <10 19>;
             bindings = <&kp CAPS>;
             layers = <DEF NUM FUN>;
-        };
-        combo_esc {
-            timeout-ms = <20>;
-            key-positions = <11 12>;
-            bindings = <&kp ESC>;
-            layers = <DEF NUM FUN>;
-        };
-        combo_lparen {
-            timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp LPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_rparen {
-            timeout-ms = <20>;
-            key-positions = <16 17>;
-            bindings = <&kp RPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_return {
-            timeout-ms = <20>;
-            key-positions = <17 18>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
         };
         combo_zero {
             timeout-ms = <30>;
