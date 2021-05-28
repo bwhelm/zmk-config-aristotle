@@ -165,13 +165,14 @@ def createLayer(layer, rows, columns, keyLayout):
 
 
 def createRowCombos(layer, rows, columns, keyLayout):
+    # Generate LaTeX code for combos between keys in a given row
     latex = ""
     for row in range(rows):
         latex += "\n% Row Combos: Row #" + str(rows - row - 1) + "\n"
         thisRow = keyLayout[layer]["rowcombos"][row]
         for column in range(columns - 2):
             if str(thisRow[column]) != "":
-                if column < columns / 2:  # Calculate horiz spacing for columns
+                if column < columns / 2 - 1:  # Calculate horiz spacing for columns
                     horiz = -SEPARATION - KEYSPACEHORIZ * (columns / 2 - column
                                                            - 1.5)
                 else:
