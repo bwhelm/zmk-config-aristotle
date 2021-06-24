@@ -4,30 +4,30 @@
 This script will convert a properly formatted .yaml file specifying a keymap
 into a LaTeX file, which is then run to generate a .pdf of the keymap.
 
-The keymap is presented as a .yaml file that consists of a `keyboard` item
-that specifies both `rows` and `columns` (as integers), and a series of layer
+The keymap is presented as a .yaml file that consists of a "keyboard" item
+that specifies both "rows" and "columns" (as integers), and a series of layer
 names. Each layer must have the following items, with corresponding number of
 elements:
-  `keys`:      list of rows, where each row is a list of keys
-  `rowcombos`: list of rows, where each row is a list of combos between keys
+  "keys":      list of rows, where each row is a list of keys
+  "rowcombos": list of rows, where each row is a list of combos between keys
                on that row. There should be 2 fewer items in a row than the
                number of columns.
-  `colcombos`: list of rows, where each row is a list of combos between keys
+  "colcombos": list of rows, where each row is a list of combos between keys
                on vertically adjacent columns. There should be 1 fewer row in
                this list than the number of rows on the keyboard overall.
 Each of these keys and combos is LaTeX string to be printed in the keyboard
-layout. Locations where a key should not be printed are identified as `None`.
+layout. Locations where a key should not be printed are identified as "None".
 
 Optionally, each layer *may* include the following lists of [row_number,
 column_number], both 0-based:
-  `lines`:   keys to receive a horizontal line dividing them in half
-  `shading`: keys to be shaded
+  "lines":   keys to receive a horizontal line dividing them in half
+  "shading": keys to be shaded
 
 Hint: Certain strings in YAML files must be escaped or quoted. Using single
 quotes is best where possible, and a single quote character can be
-represented within single quotes by doubling it: `''''` in a field will
-produce `'`. (If using double quotes, `\` must itself be escaped, and so will
-need to be doubled up; hence `\\\\\\` will produce `\\\`.)
+represented within single quotes by doubling it: "''''" in a field will
+produce "'". (If using double quotes, "\" must itself be escaped, and so will
+need to be doubled up; hence "\\\\\\" will produce "\\\".)
 
 """
 
@@ -146,7 +146,7 @@ def createLayer(layer, rows, columns, keyLayout):
         latex += "\n% Row #" + str(rows - row - 1) + "\n"
         for column in range(columns):
             if str(thisRow[column]) != "None":  # Don't print a key if `None`
-                if column < columns / 2:  # Calculate horiz spacing for columns
+                if column < columns / 2:  # horiz spacing for columns
                     horiz = -SEPARATION - KEYSPACEHORIZ * (columns / 2 - 1
                                                            - column)
                 else:
@@ -172,7 +172,7 @@ def createRowCombos(layer, rows, columns, keyLayout):
         thisRow = keyLayout[layer]["rowcombos"][row]
         for column in range(columns - 2):
             if str(thisRow[column]) != "":
-                if column < columns / 2 - 1:  # Calculate horiz spacing for columns
+                if column < columns / 2 - 1:  # horiz spacing for columns
                     horiz = -SEPARATION - KEYSPACEHORIZ * (columns / 2 - column
                                                            - 1.5)
                 else:
@@ -273,12 +273,12 @@ def main(file):
                         shell=True)
         exit(1)
 
-    print(path.join(tempdir, root + ".tex"))
-
     # Copy result and open in Skim
-    copy(path.join(tempdir, root + ".pdf"), "./" + root + ".pdf")
-    subprocess.call("open -ga /Applications/Skim.app ./" + root + ".pdf",
-                    shell=True)
+    scriptDir = path.dirname(__file__)
+    copy(path.join(tempdir, root + ".pdf"),
+         path.join(scriptDir, root + ".pdf"))
+    # subprocess.call("open -ga /Applications/Skim.app ./" + root + ".pdf",
+    #                 shell=True)
 
 
 if __name__ == "__main__":
