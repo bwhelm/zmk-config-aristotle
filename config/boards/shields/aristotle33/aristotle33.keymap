@@ -191,38 +191,36 @@
                                                &lt NUM BSPC  &lt FUN SPACE &lt GUIMISC FSLH
 //                                             ╰──────────╯  ╰────────────┴────────────────╯
             >;
-  };
-// }}}
+      };  // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
         numbers {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &tog NLK   &kp AMPS   &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT    &kp N7     &kp N8     &kp N9     &kp EQUAL
+     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     LSFT_TAB  LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE      &kp COLON  RGUI_N4    RALT_N5    RCTL_N6   RSFT_MINUS
+     LSFT_TAB  LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp COLON   RGUI_N4    RALT_N5    RCTL_N6   RSFT_MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &none      &kp EXCL   &kp AT     &kp HASH   &kp LA(K)      &kp N0     &kp N1     &kp N2     &kp N3     &kp DOT
+      &none     &kp EXCL    &kp AT    &kp HASH  &kp LA(K)       &kp N0     &kp N1     &kp N2     &kp N3    &kp DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans        &trans    &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
-  };
-// }}}
+      };  // }}}
 //  ------------------------------------------------- NUMBERS LOCK ---------------------------------------------- {{{2
+// NOTE: This is exactly the same as NUMBERS
         numbers_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &tog NLK   &kp AMPS   &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT    &kp N7     &kp N8     &kp N9     &kp EQUAL
+     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     LSFT_TAB  LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE      &kp COLON  RGUI_N4    RALT_N5    RCTL_N6   RSFT_MINUS
+     LSFT_TAB  LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp COLON   RGUI_N4    RALT_N5    RCTL_N6   RSFT_MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &none      &kp EXCL   &kp AT     &kp HASH   &kp LA(K)      &kp N0     &kp N1     &kp N2     &kp N3     &kp DOT
+      &none     &kp EXCL    &kp AT    &kp HASH  &kp LA(K)       &kp N0     &kp N1     &kp N2     &kp N3    &kp DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans        &trans    &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
-  };
-// }}}
+      };  // }}}
 // ---------------------------------------------------- FUNCTIONS ----------------------------------------------- {{{2
         functions {
             bindings = <
@@ -236,9 +234,9 @@
                                                  &trans        &trans     &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
-  };
-// }}}
+      };  // }}}
 // ------------------------------------------------- FUNCTIONS LOCK --------------------------------------------- {{{2
+// NOTE: This is exactly the same as FUNCTIONS
         functions_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -251,8 +249,7 @@
                                                  &trans        &trans     &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
-  };
-// }}}
+      };  // }}}
 // ---------------------------------------------------- GUI/MISC ------------------------------------------------ {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
 // |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
@@ -271,14 +268,14 @@
                                                   &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
              >;
-  };
-// }}}
+      };  // }}}
 // ------------------------------------------------- GUI/MISC LOCK ---------------------------------------------- {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
 // |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
 // |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
 //                                 | LftBtn|     | RgtBtn|  ---- |
 //
+// NOTE: This is exactly the same as GUI/MISC
         gui_misc_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -291,10 +288,8 @@
                                                   &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
              >;
-  };
-// }}}
-  };  // keymap
-// }}}
+      }; // }}}
+  };  // keymap }}}
 };
 
 // vim: set fdm=marker ft=c
