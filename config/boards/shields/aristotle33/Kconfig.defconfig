@@ -1,9 +1,23 @@
-# Copyright (c) 2021 The ZMK Contributors
+# Copyright (c) 2021 Bennett Helm
 # SPDX-License-Identifier: MIT
 
 if SHIELD_ARISTOTLE33
 
 config ZMK_KEYBOARD_NAME
-    default "Aristotle 33 '21"
+    default "Aristotle 33'21"
+
+endif
+
+if SHIELD_ARISTOTLE33_A
+
+config ZMK_KEYBOARD_NAME
+    default "Aristotle 33'21a"
+
+endif
+
+if SHIELD_ARISTOTLE33_B
+
+config ZMK_KEYBOARD_NAME
+    default "Aristotle 33'21b"
 
 endif

@@ -1,0 +1,17 @@
+/*
+* Copyright (c) 2021 Bennett Helm
+* SPDX-License-Identifier: MIT
+*/
+
+#include "aristotle33.dtsi"
+
+// This is for nice!nano board (version "b") with GPIO that's broken
+
+&kscan0 {
+    row-gpios
+        = <&pro_micro_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro_d  9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro_a  3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+};

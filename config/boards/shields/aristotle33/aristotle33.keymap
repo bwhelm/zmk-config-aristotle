@@ -1,6 +1,5 @@
 // ================ COPYRIGHT AND INCLUDES ================== {{{1
-// Copyright (c) 2021 The ZMK Contributors
-//
+// Copyright (c) 2021 Bennett Helm
 // SPDX-License-Identifier: MIT
 //
 
@@ -86,7 +85,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;  // 150 too fast
+            tapping-term-ms = <180>;  // 160 is too fast
             // quick-tap-ms = <250>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -96,7 +95,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <225>;  // 210 too fast
+            tapping-term-ms = <225>;  // 210 is too fast
             quick-tap-ms = <225>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -107,17 +106,41 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            layers = <DEF NUM FUN>;
+        };
+        combo_lparen {
+            timeout-ms = <20>;
+            key-positions = <2 3>;
+            bindings = <&kp LPAR>;
+            layers = <DEF NUM>;
+        };
         combo_lbracket {
             timeout-ms = <30>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM>;
         };
         combo_rbracket {
             timeout-ms = <30>;
-            key-positions = <6 7>;
+            key-positions = <5 6>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
+        };
+        combo_rparen {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp RPAR>;
+            layers = <DEF NUM>;
+        };
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <7 8>;
+            bindings = <&kp ENTER>;
+            layers = <DEF NUM FUN GUIMISC>;
         };
         /* combo_equal { */
         /*     timeout-ms = <30>; */
@@ -130,30 +153,6 @@
             key-positions = <10 19>;
             bindings = <&kp CAPS>;
             layers = <DEF NUM FUN>;
-        };
-        combo_esc {
-            timeout-ms = <20>;
-            key-positions = <11 12>;
-            bindings = <&kp ESC>;
-            layers = <DEF NUM FUN>;
-        };
-        combo_lparen {
-            timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp LPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_rparen {
-            timeout-ms = <20>;
-            key-positions = <16 17>;
-            bindings = <&kp RPAR>;
-            layers = <DEF NUM>;
-        };
-        combo_return {
-            timeout-ms = <20>;
-            key-positions = <17 18>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
         };
         combo_zero {
             timeout-ms = <30>;
@@ -179,19 +178,19 @@
     keymap {
         compatible = "zmk,keymap";
 
-// ------------------------------------------------------ DVORAK ------------------------------------------------ {{{2
+// ----------------------------------------------------- DVORAK ------------------------------------------------- {{{2
         default {
             bindings = <
-// ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-      &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
-// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-      LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I          &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
-// ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-      &kp SEMI   &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M      &kp W      &kp V      &kp Z
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤   ├──────────┴─┬────────┴───────┬──┴──────────┴──────────╯
-                                               &lt NUM BSPC   &lt FUN SPACE &lt GUIMISC FSLH
-//                                             ╰──────────╯   ╰────────────┴────────────────╯
-  >;
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+      &kp SQT   &kp COMMA   &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+      LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+     &kp SEMI     &kp Q      &kp J     &kp K      &kp X         &kp B      &kp M      &kp W      &kp V      &kp Z
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴───────┬──┴──────────┴──────────╯
+                                               &lt NUM BSPC  &lt FUN SPACE &lt GUIMISC FSLH
+//                                             ╰──────────╯  ╰────────────┴────────────────╯
+            >;
   };
 // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
