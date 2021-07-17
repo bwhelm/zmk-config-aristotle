@@ -96,7 +96,7 @@
             label = "HOMEROW_MODS_SLOW";
             #binding-cells = <2>;
             tapping-term-ms = <225>;  // 210 is too fast
-            quick-tap-ms = <225>;
+            // quick-tap-ms = <225>;
             flavor = "tap-preferred";
             // retro-tap;
             bindings = <&kp>, <&kp>;
