@@ -39,9 +39,9 @@ keyboard:
 dvorak:
     keys: [
         ['"\\''', '<\\,', '>\\.', P, Y, F, G, C, R, L],
-        [A\\\shift, O\\\ctrl, E\\\Alt, U\\\cmd, I,
-        D, H\\\cmd, T\\\Alt, N\\\ctrl, S\\\shift],
-        [:\\;, Q, J, K, X, B, M, W, V, Z],
+        [A, O, E, U, I, D, H, T, N, S,
+        [:~~;\\\shift, Q\\\ctrl, J\\\Alt, K\\\cmd, X,
+        B, M\\\cmd, W\\\Alt, V\\\ctrl, Z\\\shift],
         [None, None, None, None, '\backdel\\\textsc{num}',
             '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
@@ -63,9 +63,9 @@ dvorak:
 number:
     keys: [
         ['\textsc{num}\\\textsc{lock}', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\='],
-        [\tab\\\shift, \$\\\ctrl, \%\\\Alt, \textasciicircum\\\cmd, \textasciigrave,
-        :, 4\\\cmd, 5\\\Alt, 6\\\ctrl, -~~\_\\\shift],
-        ['', '!', '@', \#, '$^{\circ}$', 0, 1, 2, 3, '>\\.'],
+        [\tab, \$, \%, \textasciicircum, \textasciigrave, :, 4, 5, 6, -~~\_,
+        [\shift, '!\\\ctrl', '@\\\Alt', \#\\\cmd, '$^{\circ}$',
+        0, 1\\\cmd, 2\\\Alt, 3\\\ctrl, '>~~.\\\shift'],
         [None, None, None, None, '\textsc{trns}',
             '\textsc{trns}', '|\\\textbackslash', None, None, None],
         ]
@@ -87,9 +87,9 @@ function:
     keys: [
         ['\textsc{func}\\\textsc{lock}', F7, F8, F9, F12,
           \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
-        [\shift, F4\\\ctrl, F5\\\Alt, F6\\\cmd, F11,
-          \faVolumeDown, \arrowkeyleft\\\cmd, \arrowkeydown\\\Alt, \arrowkeyright\\\ctrl, \faCircleThin\\\shift],
-        ['', F1, F2, F3, F10, \faVolumeOff, End, '', PgDn, \capslock],
+        [\tab, F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin],
+        [\shift, F1\\\ctrl, F2\\\Alt, F3\\\cmd, F10,
+        \faVolumeOff, End\\\cmd, \alt, PgDn\\\ctrl, \capslock\\\shift],
         [None, None, None, None, '\textsc{trns}',
             '\textsc{trns}', '\textsc{trns}', None, None, None],
         ]
