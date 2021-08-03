@@ -104,8 +104,8 @@
     tapping-term-ms = <200>; // was 250
     quick-tap-ms = <200>;
 };
-
 // }}}
+
 / {
 // ======================= BEHAVIORS ======================== {{{1
     behaviors {
@@ -131,51 +131,58 @@
         };
     };
 // }}}
+
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
+        combo_lbrace {
+            timeout-ms = <30>;
+            key-positions = <3 4>;
+            bindings = <&kp LEFT_BRACE>;
+            layers = <DEF NUM FUN>;
+        };
+        combo_rbrace {
+            timeout-ms = <30>;
+            key-positions = <5 6>;
+            bindings = <&kp RIGHT_BRACE>;
+            layers = <DEF NUM FUN>;
+        };
         combo_esc {
             timeout-ms = <20>;
-            key-positions = <1 2>;
+            key-positions = <11 12>;
             bindings = <&kp ESC>;
             layers = <DEF NUM FUN>;
         };
         combo_lparen {
             timeout-ms = <20>;
-            key-positions = <2 3>;
+            key-positions = <12 13>;
             bindings = <&kp LPAR>;
             layers = <DEF NUM>;
         };
         combo_lbracket {
             timeout-ms = <30>;
-            key-positions = <3 4>;
+            key-positions = <13 14>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM>;
         };
         combo_rbracket {
             timeout-ms = <30>;
-            key-positions = <5 6>;
+            key-positions = <15 16>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM>;
         };
         combo_rparen {
             timeout-ms = <20>;
-            key-positions = <6 7>;
+            key-positions = <16 17>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM>;
         };
         combo_return {
             timeout-ms = <20>;
-            key-positions = <7 8>;
+            key-positions = <17 18>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM FUN GUIMISC>;
         };
-        /* combo_equal { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <7 17>; */
-        /*     bindings = <&kp EQUAL>; */
-        /*     layers = <DEF NUM>; */
-        /* }; */
         combo_capslock {
             timeout-ms = <30>;
             key-positions = <10 19>;

@@ -47,8 +47,8 @@ dvorak:
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
     rowcombos: [
+        ['', '', '', '{', '}', '', '', ''],
         ['', \esc, '(', '\{\\{[}', '\}\\{]}', ')', \return, ''],
-        ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ]
@@ -70,10 +70,10 @@ number:
             '\textsc{trns}', '|\\\textbackslash', None, None, None],
         ]
     rowcombos: [
+        ['', '', '', '{', '}', '', '', ''],
         ['', \esc, '(', '\{\\{[}', '\}\\{]}', ')', \return, ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '0', '.', ''],
-        ['', '', '', '', '', '', '', ''],
         ]
     colcombos: [
         ['', '', '', '', '', '', '', '', '', ''],
@@ -86,7 +86,7 @@ number:
 function:
     keys: [
         ['\textsc{func}\\\textsc{lock}', F7, F8, F9, F12,
-          \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
+        \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
         [\tab, F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin],
         [\shift, F1\\\ctrl, F2\\\Alt, F3\\\cmd, F10,
         \faVolumeOff, End\\\cmd, \alt, PgDn\\\ctrl, \capslock\\\shift],
@@ -94,8 +94,8 @@ function:
             '\textsc{trns}', '\textsc{trns}', None, None, None],
         ]
     rowcombos: [
-        ['', \esc, '', '', '', '', \return, ''],
         ['', '', '', '', '', '', '', ''],
+        ['', \esc, '', '', '', '', \return, ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ]
@@ -118,8 +118,8 @@ gui:
         [None, None, None, None, Left\\But, Right\\But, '\textsc{trns}', None, None, None],
         ]
     rowcombos: [
-        ['', '', '', '', '', '', \return, ''],
         ['', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', \return, ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ]
