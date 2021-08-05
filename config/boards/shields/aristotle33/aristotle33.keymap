@@ -73,13 +73,13 @@
 #define RSFT_Z      &hf RIGHT_SHIFT Z
 // Number
 // #define LSFT_TAB    &hs LEFT_SHIFT TAB
-#define LCTL_EXCL   &hs LEFT_CONTROL DLLR
-#define LALT_AT     &hs LEFT_ALT PRCNT
-#define LGUI_HASH   &hs LEFT_GUI CARET
+#define LCTL_EXCL   &hs LEFT_CONTROL EXCLAMATION
+#define LALT_AT     &hs LEFT_ALT AT_SIGN
+#define LGUI_HASH   &hs LEFT_GUI HASH
 #define RGUI_N1     &hs RIGHT_GUI N1
 #define RALT_N2     &hs RIGHT_ALT N2
 #define RCTL_N3     &hs RIGHT_CONTROL N3
-#define RSFT_DOT    &hs RIGHT_SHIFT MINUS
+#define RSFT_DOT    &hs RIGHT_SHIFT DOT
 // Function
 #define LCTRL_F1    &hs LCTRL F1
 #define LALT_F2     &hs LALT F2
@@ -262,7 +262,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
      &tog FLK   &kp F7     &kp F8     &kp F9     &kp F12     &kp C_VOL_UP &kp HOME   &kp UP    &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp F4     &kp F5     &kp F5     &kp F11     &kp C_VOL_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp C_BRI_DN
+     &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11     &kp C_VOL_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp C_BRI_DN
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      &kp LSFT   LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE  RGUI_END   &kp RALT   RCTL_PDN  RSFT_CAPS
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
