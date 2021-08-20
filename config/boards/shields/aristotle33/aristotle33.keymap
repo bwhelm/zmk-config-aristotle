@@ -19,7 +19,7 @@
 #define NLK 2
 #define FUN 3
 #define FLK 4
-#define GUIMISC 5
+#define GMC 5
 #define GLK 6
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
@@ -35,59 +35,59 @@
 
 // // Home Row Mods
 // // Dvorak
-// #define LSFT_A      &hf LEFT_SHIFT A
-// #define LCTL_O      &hs LEFT_CONTROL O
-// #define LALT_E      &hs LEFT_ALT E
-// #define LGUI_U      &hs LEFT_GUI U
-// #define RGUI_H      &hs RIGHT_GUI H
-// #define RALT_T      &hs RIGHT_ALT T
-// #define RCTL_N      &hs RIGHT_CONTROL N
-// #define RSFT_S      &hf RIGHT_SHIFT S
+// #define LSFT_A      &mf LEFT_SHIFT A
+// #define LCTL_O      &ms LEFT_CONTROL O
+// #define LALT_E      &ms LEFT_ALT E
+// #define LGUI_U      &ms LEFT_GUI U
+// #define RGUI_H      &ms RIGHT_GUI H
+// #define RALT_T      &ms RIGHT_ALT T
+// #define RCTL_N      &ms RIGHT_CONTROL N
+// #define RSFT_S      &mf RIGHT_SHIFT S
 // // Number
-// #define LSFT_TAB    &hs LEFT_SHIFT TAB
-// #define LCTL_DLLR   &hs LEFT_CONTROL DLLR
-// #define LALT_PRCNT  &hs LEFT_ALT PRCNT
-// #define LGUI_CARET  &hs LEFT_GUI CARET
-// #define RGUI_N4     &hs RIGHT_GUI N4
-// #define RALT_N5     &hs RIGHT_ALT N5
-// #define RCTL_N6     &hs RIGHT_CONTROL N6
-// #define RSFT_MINUS  &hs RIGHT_SHIFT MINUS
+// #define LSFT_TAB    &ms LEFT_SHIFT TAB
+// #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
+// #define LALT_PRCNT  &ms LEFT_ALT PRCNT
+// #define LGUI_CARET  &ms LEFT_GUI CARET
+// #define RGUI_N4     &ms RIGHT_GUI N4
+// #define RALT_N5     &ms RIGHT_ALT N5
+// #define RCTL_N6     &ms RIGHT_CONTROL N6
+// #define RSFT_MINUS  &ms RIGHT_SHIFT MINUS
 // // Function
-// #define LCTRL_F4    &hs LCTRL F4
-// #define LALT_F5     &hs LALT F5
-// #define LGUI_F6     &hs LGUI F6
-// #define RGUI_LFT    &hs RGUI LEFT
-// #define RALT_DWN    &hs RALT DOWN
-// #define RCTRL_RGT   &hs RCTRL RIGHT
-// #define RSFT_BRD    &hs RSFT C_BRI_DN
+// #define LCTRL_F4    &ms LCTRL F4
+// #define LALT_F5     &ms LALT F5
+// #define LGUI_F6     &ms LGUI F6
+// #define RGUI_LFT    &ms RGUI LEFT
+// #define RALT_DWN    &ms RALT DOWN
+// #define RCTRL_RGT   &ms RCTRL RIGHT
+// #define RSFT_BRD    &ms RSFT C_BRI_DN
 
 // Bottom Row Mods
 // Dvorak
-#define LSFT_SC     &hf LEFT_SHIFT SEMICOLON
-#define LCTL_Q      &hs LEFT_CONTROL Q
-#define LALT_J      &hs LEFT_ALT J
-#define LGUI_K      &hs LEFT_GUI K
-#define RGUI_M      &hs RIGHT_GUI M
-#define RALT_W      &hs RIGHT_ALT W
-#define RCTL_V      &hs RIGHT_CONTROL V
-#define RSFT_Z      &hf RIGHT_SHIFT Z
+#define LSFT_SC     &mf LEFT_SHIFT SEMICOLON
+#define LCTL_Q      &ms LEFT_CONTROL Q
+#define LALT_J      &ms LEFT_ALT J
+#define LGUI_K      &ms LEFT_GUI K
+#define RGUI_M      &ms RIGHT_GUI M
+#define RALT_W      &ms RIGHT_ALT W
+#define RCTL_V      &ms RIGHT_CONTROL V
+#define RSFT_Z      &mf RIGHT_SHIFT Z
 // Number
-// #define LSFT_TAB    &hs LEFT_SHIFT TAB
-#define LCTL_EXCL   &hs LEFT_CONTROL EXCLAMATION
-#define LALT_AT     &hs LEFT_ALT AT_SIGN
-#define LGUI_HASH   &hs LEFT_GUI HASH
-#define RGUI_N1     &hs RIGHT_GUI N1
-#define RALT_N2     &hs RIGHT_ALT N2
-#define RCTL_N3     &hs RIGHT_CONTROL N3
-#define RSFT_DOT    &hs RIGHT_SHIFT DOT
+// #define LSFT_TAB    &ms LEFT_SHIFT TAB
+#define LCTL_EXCL   &ms LEFT_CONTROL EXCLAMATION
+#define LALT_AT     &ms LEFT_ALT AT_SIGN
+#define LGUI_HASH   &ms LEFT_GUI HASH
+#define RGUI_N1     &ms RIGHT_GUI N1
+#define RALT_N2     &ms RIGHT_ALT N2
+#define RCTL_N3     &ms RIGHT_CONTROL N3
+#define RSFT_DOT    &ms RIGHT_SHIFT DOT
 // Function
-#define LCTRL_F1    &hs LCTRL F1
-#define LALT_F2     &hs LALT F2
-#define LGUI_F3     &hs LGUI F3
-#define RGUI_END    &hs RGUI END
-// #define RALT_DWN    &hs RALT DOWN
-#define RCTL_PDN   &hs RCTRL PG_DN
-#define RSFT_CAPS   &hs RSFT CAPS
+#define LCTRL_F1    &ms LCTRL F1
+#define LALT_F2     &ms LALT F2
+#define LGUI_F3     &ms LGUI F3
+#define RGUI_END    &ms RGUI END
+// #define RALT_DWN    &ms RALT DOWN
+#define RCTL_PDN    &ms RCTRL PG_DN
+#define RSFT_CAPS   &ms RSFT CAPS
 
 // Other
 #define BTLDR &bootloader
@@ -109,9 +109,9 @@
 / {
 // ======================= BEHAVIORS ======================== {{{1
     behaviors {
-        hf: homerow_mods_fast {
+        mf: modtap_fast {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_FAST";
+            label = "MODTAP_FAST";
             #binding-cells = <2>;
             tapping-term-ms = <180>;  // 160 is too fast
             // quick-tap-ms = <250>;
@@ -119,9 +119,9 @@
             // retro-tap;
             bindings = <&kp>, <&kp>;
         };
-        hs: homerow_mods_slow {
+        ms: modtap_slow {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SLOW";
+            label = "MODTAP_SLOW";
             #binding-cells = <2>;
             tapping-term-ms = <225>;  // 210 is too fast
             // quick-tap-ms = <225>;
@@ -139,73 +139,73 @@
             timeout-ms = <30>;
             key-positions = <3 4>;
             bindings = <&kp LEFT_BRACE>;
-            layers = <DEF NUM FUN>;
+            layers = <DEF NUM NLK FUN FLK>;
         };
         combo_rbrace {
             timeout-ms = <30>;
             key-positions = <5 6>;
             bindings = <&kp RIGHT_BRACE>;
-            layers = <DEF NUM FUN>;
+            layers = <DEF NUM NLK FUN FLK>;
         };
         combo_esc {
             timeout-ms = <20>;
             key-positions = <11 12>;
             bindings = <&kp ESC>;
-            layers = <DEF NUM FUN>;
+            layers = <DEF NUM NLK FUN FLK>;
         };
         combo_lparen {
             timeout-ms = <20>;
             key-positions = <12 13>;
             bindings = <&kp LPAR>;
-            layers = <DEF NUM>;
+            layers = <DEF NUM NLK>;
         };
         combo_lbracket {
             timeout-ms = <30>;
             key-positions = <13 14>;
             bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF NUM>;
+            layers = <DEF NUM NLK>;
         };
         combo_rbracket {
             timeout-ms = <30>;
             key-positions = <15 16>;
             bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF NUM>;
+            layers = <DEF NUM NLK>;
         };
         combo_rparen {
             timeout-ms = <20>;
             key-positions = <16 17>;
             bindings = <&kp RPAR>;
-            layers = <DEF NUM>;
+            layers = <DEF NUM NLK>;
         };
         combo_return {
             timeout-ms = <20>;
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM FUN GUIMISC>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_capslock {
             timeout-ms = <30>;
             key-positions = <10 19>;
             bindings = <&kp CAPS>;
-            layers = <DEF NUM FUN>;
+            layers = <DEF NUM NLK FUN FLK>;
         };
         combo_zero {
             timeout-ms = <30>;
             key-positions = <26 27>;
             bindings = <&kp N0>;
-            layers = <NUM>;
+            layers = <NUM NLK>;
         };
         combo_period {
             timeout-ms = <30>;
             key-positions = <27 28>;
             bindings = <&kp DOT>;
-            layers = <NUM>;
+            layers = <NUM NLK>;
         };
         combo_BTclr {
             timeout-ms = <20>;
             key-positions = <0 10>;
             bindings = <&bt BT_CLR>;
-            layers = <GUIMISC>;
+            layers = <GMC GLK>;
         };
     };
 // }}}
@@ -217,25 +217,25 @@
         default {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-      &kp SQT   &kp COMMA   &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
+     &kp SQT   &kp COMMA   &kp DOT     &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
       &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴───────┬──┴──────────┴──────────╯
-                                               &lt NUM BSPC  &lt FUN SPACE &lt GUIMISC FSLH
-//                                             ╰──────────╯  ╰────────────┴────────────────╯
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
+                                               &lt NUM BSPC  &lt FUN SPACE &lt GMC FSLH
+//                                             ╰──────────╯  ╰────────────┴─────────────╯
             >;
       };  // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
         numbers {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9    &kp EQUAL
+     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6    &kp MINUS
+     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6   &kp MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1     RALT_N2    RCTL_N3   RSFT_DOT
+    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1    RALT_N2     RCTL_N3   RSFT_DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans        &trans    &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
@@ -248,9 +248,9 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
      &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6    &kp MINUS
+     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6   &kp MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1     RALT_N2    RCTL_N3   RSFT_DOT
+    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1    RALT_N2    RCTL_N3    RSFT_DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans        &trans    &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
@@ -264,7 +264,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11     &kp C_VOL_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp C_BRI_DN
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &kp LSHIFT   LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE  RGUI_END   &kp RALT   RCTL_PDN  RSFT_CAPS
+    &kp LSHIFT  LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE  RGUI_END   &kp RALT   RCTL_PDN  RSFT_CAPS
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                  &trans        &trans     &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
@@ -298,7 +298,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
    &out OUT_TOG  &none      &none      &none      &none       &kp LS(F3)  WIN3LFT    WIN_SML    WIN3RGT  &bt BT_SEL 1
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &kp LSHIFT   &kp LCTRL   &none      &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
+   &kp LSHIFT  &kp LCTRL    &none      &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
@@ -318,7 +318,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
    &out OUT_TOG  &none      &none      &none      &none       &kp LS(F3)  WIN3LFT    WIN_SML    WIN3RGT  &bt BT_SEL 1
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &kp LSHIFT   &kp LCTRL   &none      &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
+   &kp LSHIFT  &kp LCTRL    &none      &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
