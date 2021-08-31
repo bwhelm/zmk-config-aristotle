@@ -84,7 +84,7 @@ HEADER = '''\\documentclass[]{article}
 
 LAYERHEADER = '''\\begin{centering}
 
-\\resizebox{6.33in}{!}{%  Make `\\textwidth` for portrait; `9in` for landscape.
+\\resizebox{6.3in}{!}{%  Make `\\textwidth` for portrait; `9in` for landscape.
 
 \\begin{tikzpicture}[
     rectStyle/.style={inner sep=0pt,minimum size=''' + str(KEYSIZEVERT) + ''' in,draw,font=\\Large,align=center},

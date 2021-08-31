@@ -1,7 +1,6 @@
 // ================ COPYRIGHT AND INCLUDES ================== {{{1
 // Copyright (c) 2021 Bennett Helm
 // SPDX-License-Identifier: MIT
-//
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -327,4 +326,4 @@
   };  // keymap }}}
 };
 
-// vim: set fdm=marker ft=c
+// vim: fdm=marker ft=c
