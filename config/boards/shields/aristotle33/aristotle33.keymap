@@ -184,7 +184,7 @@
         };
         combo_capslock {
             timeout-ms = <30>;
-            key-positions = <10 19>;
+            key-positions = <20 29>;
             bindings = <&kp CAPS>;
             layers = <DEF NUM NLK FUN FLK>;
         };
