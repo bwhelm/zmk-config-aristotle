@@ -104,8 +104,8 @@
     quick-tap-ms = <200>;
 };
 /* &kscan0 { */
-/*     debounce-press-ms = <6>;    // default is 5 */
-/*     debounce-release-ms = <6>;  // default is 5 */
+/*     debounce-press-ms = <0>;    // default is 5 */
+/*     debounce-release-ms = <3>;  // default is 5 */
 /* }; */
 // }}}
 
@@ -181,7 +181,7 @@
             layers = <DEF NUM NLK>;
         };
         combo_return {
-            timeout-ms = <30>;
+            timeout-ms = <20>;  // Getting errant returns at 30
             key-positions = <17 18>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
