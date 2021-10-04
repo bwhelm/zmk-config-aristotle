@@ -101,7 +101,8 @@
 };
 // Set options for layer-tap behavior
 &lt {
-    tapping-term-ms = <250>; // was 200 -- too fast (without tap-preferred)
+    tapping-term-ms = <150>; // was 200 -- too fast (without tap-preferred)
+    // 250 was pretty wonky: getting too many taps when trying to hold
     quick-tap-ms = <200>;
     flavor = "tap-preferred";
 };
