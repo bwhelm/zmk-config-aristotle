@@ -60,25 +60,9 @@ This is what I should put into the RC(x, y) settings in the .overlay file.
 
 # Things to Implement
 
-1. DEFAULT layer:
-    1. Need to update `&mt` keys ... setting tapping term and other things.
-        - I think I can define different types of behaviors, each with its own tapping term. So while I can't get per-key tapping terms, I can get something pretty close.
-    2. Need to fix `&lt` for `MAC`. Perhaps this is done, but I need to test...
-
-2. NUMBER layer
-
-3. FUNCTION layer
-    - I think this is all working properly.
-
-4. MACRO layer.
+1. MACRO layer.
     - I can't get mouse keys just yet, so that's not working.
     - Otherwise, I think things should work.
-
-5. GENERALLY:
-    1. Need to test `COMBO`s.
-    2. Look into changing the BT power level by including this or something similar in .conf file:
-
-        CONFIG_BT_CTLR_TX_PWR_MINUS_20=y
 
 # Questions
 
