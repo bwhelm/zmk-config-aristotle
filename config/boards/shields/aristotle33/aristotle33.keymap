@@ -109,7 +109,7 @@
 };
 /* &kscan0 { */
 /*     debounce-press-ms = <0>;    // default is 5 */
-/*     debounce-release-ms = <3>;  // default is 5 */
+/*     debounce-release-ms = <4>;  // default is 5 */
 /* }; */
 // }}}
 
