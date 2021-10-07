@@ -95,14 +95,15 @@
 // ==================== OTHER SETTINGS ====================== {{{1
 /* // Set options for mod-tap behavior */
 &mt {
-    tapping-term-ms = <180>;
-    quick-tap-ms = <180>;
+    tapping-term-ms = <170>;
+    quick-tap-ms = <170>;
     flavor = "tap-preferred";
 };
 // Set options for layer-tap behavior
 &lt {
-    tapping-term-ms = <175>; // was 200 -- too fast (without tap-preferred)
+    tapping-term-ms = <200>; // was 200 -- too fast (without tap-preferred)
     // 150 was too quick: failed to get <spaces> when desired
+    // 175: getting some missed taps, as well as some arrow keys instead of space-char
     // 250 was pretty wonky: getting too many taps when trying to hold
     quick-tap-ms = <200>;
     flavor = "tap-preferred";
@@ -120,7 +121,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;  // 160 is too fast
+            tapping-term-ms = <170>;  // 160 is too fast
+            // 180 might be too slow
             // quick-tap-ms = <250>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -130,7 +132,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <225>;  // 210 is too fast
+            tapping-term-ms = <215>;  // 210 is too fast
+            // 225 seems pretty good, though I want to push it down somewhat
             // quick-tap-ms = <225>;
             flavor = "tap-preferred";
             // retro-tap;
