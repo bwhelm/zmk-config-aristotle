@@ -102,10 +102,11 @@
 // Set options for layer-tap behavior
 &lt {
     tapping-term-ms = <200>; // was 200 -- too fast (without tap-preferred)
+    // 200: getting some <spaces> *after* subsequently hit keys.
     // 150 was too quick: failed to get <spaces> when desired
     // 175: getting some missed taps, as well as some arrow keys instead of space-char
     // 250 was pretty wonky: getting too many taps when trying to hold
-    quick-tap-ms = <200>;
+    /* quick-tap-ms = <200>; */
     flavor = "tap-preferred";
 };
 /* &kscan0 { */
@@ -135,6 +136,16 @@
             tapping-term-ms = <215>;  // 210 is too fast
             // 225 seems pretty good, though I want to push it down somewhat
             // quick-tap-ms = <225>;
+            flavor = "tap-preferred";
+            // retro-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        ml: modtap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MODTAP_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            // quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
             bindings = <&kp>, <&kp>;
@@ -233,7 +244,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
-                                               &lt NUM BSPC  &lt FUN SPACE &lt GMC FSLH
+                                               &ml NUM BSPC  &ml FUN SPACE &ml GMC FSLH
 //                                             ╰──────────╯  ╰────────────┴─────────────╯
             >;
       };  // }}}
