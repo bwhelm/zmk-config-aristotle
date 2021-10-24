@@ -147,52 +147,82 @@
     combos {
         compatible = "zmk,combos";
         combo_lbrace {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
+            timeout-ms = <40>;
+            key-positions = <1 11>;
             bindings = <&kp LEFT_BRACE>;
-            layers = <DEF NUM NLK FUN FLK>;
-        };
-        combo_rbrace {
-            timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&kp RIGHT_BRACE>;
-            layers = <DEF NUM NLK FUN FLK>;
+            layers = <DEF NUM NLK>;
         };
         combo_esc {
-            timeout-ms = <30>;
-            key-positions = <11 12>;
+            timeout-ms = <40>;
+            key-positions = <2 12>;
             bindings = <&kp ESC>;
             layers = <DEF NUM NLK FUN FLK>;
         };
         combo_lparen {
-            timeout-ms = <30>;
-            key-positions = <12 13>;
+            timeout-ms = <40>;
+            key-positions = <3 13>;
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_lbracket {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF NUM NLK>;
-        };
-        combo_rbracket {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp RIGHT_BRACKET>;
+        combo_tab {
+            timeout-ms = <40>;
+            key-positions = <4 14>;
+            bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
         combo_rparen {
-            timeout-ms = <30>;
-            key-positions = <16 17>;
+            timeout-ms = <40>;
+            key-positions = <6 16>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
         combo_return {
-            timeout-ms = <20>;  // Getting errant returns at 30
-            key-positions = <17 18>;
+            timeout-ms = <40>;
+            key-positions = <7 17>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
+        };
+        combo_rbrace {
+            timeout-ms = <40>;
+            key-positions = <8 18>;
+            bindings = <&kp RIGHT_BRACE>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_lbracket {
+            timeout-ms = <40>;
+            key-positions = <11 21>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_colon {
+            timeout-ms = <40>;
+            key-positions = <12 22>;
+            bindings = <&kp COLON>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_asterisk {
+            timeout-ms = <40>;
+            key-positions = <13 23>;
+            bindings = <&kp ASTRK>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_doublequote {
+            timeout-ms = <40>;
+            key-positions = <16 26>;
+            bindings = <&kp DQT>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_tab2 {
+            timeout-ms = <40>;
+            key-positions = <17 27>;
+            bindings = <&kp TAB>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_rbracket {
+            timeout-ms = <40>;
+            key-positions = <18 28>;
+            bindings = <&kp RIGHT_BRACKET>;
+            layers = <DEF NUM NLK>;
         };
         combo_capslock {
             timeout-ms = <50>;
@@ -219,17 +249,17 @@
             layers = <GMC GLK>;
         };
         combo_FUNlayer {
-            timeout-ms = <30>;
+            timeout-ms = <80>;
             key-positions = <31 32>;
             bindings = <&mo FUN>;
             layers = <DEF NUM NLK>;
         };
     };
 // }}}
+
 // ======================== KEYMAPS ========================= {{{1
     keymap {
         compatible = "zmk,keymap";
-
 // ----------------------------------------------------- DVORAK ------------------------------------------------- {{{2
         default {
             bindings = <
