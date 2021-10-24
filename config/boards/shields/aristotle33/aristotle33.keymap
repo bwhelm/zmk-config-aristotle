@@ -158,22 +158,16 @@
             bindings = <&kp ESC>;
             layers = <DEF NUM NLK FUN FLK>;
         };
-        combo_lparen {
+        combo_asterisk {
             timeout-ms = <40>;
             key-positions = <3 13>;
-            bindings = <&kp LPAR>;
+            bindings = <&kp ASTRK>;
             layers = <DEF NUM NLK>;
         };
-        combo_tab {
-            timeout-ms = <40>;
-            key-positions = <4 14>;
-            bindings = <&kp TAB>;
-            layers = <DEF NUM NLK>;
-        };
-        combo_rparen {
+        combo_doublequote {
             timeout-ms = <40>;
             key-positions = <6 16>;
-            bindings = <&kp RPAR>;
+            bindings = <&kp DQT>;
             layers = <DEF NUM NLK>;
         };
         combo_return {
@@ -194,28 +188,28 @@
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
-        combo_colon {
+        combo_tab {
             timeout-ms = <40>;
             key-positions = <12 22>;
-            bindings = <&kp COLON>;
+            bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
-        combo_asterisk {
+        combo_lparen {
             timeout-ms = <40>;
             key-positions = <13 23>;
-            bindings = <&kp ASTRK>;
+            bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_doublequote {
+        combo_rparen {
             timeout-ms = <40>;
             key-positions = <16 26>;
-            bindings = <&kp DQT>;
+            bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_tab2 {
+        combo_colon {
             timeout-ms = <40>;
             key-positions = <17 27>;
-            bindings = <&kp TAB>;
+            bindings = <&kp COLON>;
             layers = <DEF NUM NLK>;
         };
         combo_rbracket {

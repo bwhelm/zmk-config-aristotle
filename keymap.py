@@ -51,7 +51,7 @@ KEYSPACEVERT = KEYSIZEVERT + KEYSEPVERT
 SHADING = "fill=black!7,"
 
 HEADER = '''\\documentclass[]{article}
-\\usepackage[oldstyle,sups]{fbb}% to use free Bembo font (old style numbers)
+\\usepackage[oldstyle,sups]{ETbb}% to use free Bembo font (old style numbers)
 \\usepackage[margin=.75in]{geometry}
 \\pagestyle{empty}
 \\usepackage[T1]{fontenc}
