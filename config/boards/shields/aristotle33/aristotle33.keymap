@@ -218,6 +218,12 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
+        combo_minus {
+            timeout-ms = <40>;
+            key-positions = <19 29>;
+            bindings = <&kp MINUS>;
+            layers = <DEF NUM NLK>;
+        };
         combo_capslock {
             timeout-ms = <50>;
             key-positions = <20 29>;
