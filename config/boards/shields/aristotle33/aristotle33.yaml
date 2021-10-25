@@ -38,7 +38,7 @@ keyboard:
 
 dvorak:  # {{{
     keys: [
-        ['''\\"', '<\\,', '>\\.', P, Y, F, G, C, R, L],
+        ['"\\''', '<\\,', '>\\.', P, Y, F, G, C, R, L],
         [A, O, E, U, I, D, H, T, N, S],
         [';\phantom{X}:\\\shift', Q\\\ctrl, J\\\Alt, K\\\cmd, X,
         B, M\\\cmd, W\\\Alt, V\\\ctrl, Z\\\shift],
