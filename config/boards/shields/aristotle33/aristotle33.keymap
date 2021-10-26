@@ -101,7 +101,7 @@
 };
 // Set options for layer-tap behavior
 &lt {
-    tapping-term-ms = <200>; // was 200 -- too fast (without tap-preferred)
+    tapping-term-ms = <220>; // was 200 -- too fast (without tap-preferred)
     // 200: getting some <spaces> *after* subsequently hit keys.
     // 150 was too quick: failed to get <spaces> when desired
     // 175: getting some missed taps, as well as some arrow keys instead of space-char
@@ -270,7 +270,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
-                                               &lt NUM BSPC     &kp SPACE  &lt GMC FSLH
+                                               &lt NUM BSPC     &lt FUN SPACE  &lt GMC FSLH
 //                                             ╰──────────╯  ╰────────────┴─────────────╯
             >;
       };  // }}}
