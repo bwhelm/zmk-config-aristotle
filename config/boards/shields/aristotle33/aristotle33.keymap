@@ -109,10 +109,6 @@
     /* quick-tap-ms = <200>; */
     flavor = "tap-preferred";
 };
-/* &kscan0 { */
-/*     debounce-press-ms = <0>;    // default is 5 */
-/*     debounce-release-ms = <4>;  // default is 5 */
-/* }; */
 // }}}
 
 / {
@@ -248,12 +244,12 @@
             bindings = <&bt BT_CLR>;
             layers = <GMC GLK>;
         };
-        combo_FUNlayer {
-            timeout-ms = <80>;
-            key-positions = <31 32>;
-            bindings = <&mo FUN>;
-            layers = <DEF NUM NLK>;
-        };
+        /* combo_FUNlayer { */
+        /*     timeout-ms = <80>; */
+        /*     key-positions = <31 32>; */
+        /*     bindings = <&mo FUN>; */
+        /*     layers = <DEF NUM NLK>; */
+        /* }; */
     };
 // }}}
 
@@ -270,7 +266,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
-                                               &lt NUM BSPC     &lt FUN SPACE  &lt GMC FSLH
+                                               &lt NUM BSPC  &lt FUN SPACE  &lt GMC FSLH
 //                                             ╰──────────╯  ╰────────────┴─────────────╯
             >;
       };  // }}}
