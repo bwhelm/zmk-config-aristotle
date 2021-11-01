@@ -62,23 +62,23 @@
 
 // Bottom Row Mods
 // Dvorak
-#define LSFT_SC     &mf LEFT_SHIFT SEMICOLON
-#define LCTL_Q      &ms LEFT_CONTROL Q
-#define LALT_J      &ms LEFT_ALT J
-#define LGUI_K      &ms LEFT_GUI K
-#define RGUI_M      &ms RIGHT_GUI M
-#define RALT_W      &ms RIGHT_ALT W
-#define RCTL_V      &ms RIGHT_CONTROL V
-#define RSFT_Z      &mf RIGHT_SHIFT Z
+#define LSFT_SC     &lht LEFT_SHIFT SEMICOLON
+#define LCTL_Q      &ms  LEFT_CONTROL Q
+#define LALT_J      &ms  LEFT_ALT J
+#define LGUI_K      &ms  LEFT_GUI K
+#define RGUI_M      &ms  RIGHT_GUI M
+#define RALT_W      &ms  RIGHT_ALT W
+#define RCTL_V      &ms  RIGHT_CONTROL V
+#define RSFT_Z      &rht RIGHT_SHIFT Z
 // Number
 // #define LSFT_TAB    &ms LEFT_SHIFT TAB
-#define LCTL_EXCL   &ms LEFT_CONTROL EXCLAMATION
-#define LALT_AT     &ms LEFT_ALT AT_SIGN
-#define LGUI_HASH   &ms LEFT_GUI HASH
-#define RGUI_N1     &ms RIGHT_GUI N1
-#define RALT_N2     &ms RIGHT_ALT N2
-#define RCTL_N3     &ms RIGHT_CONTROL N3
-#define RSFT_DOT    &ms RIGHT_SHIFT DOT
+#define LCTL_EXCL   &ms  LEFT_CONTROL EXCLAMATION
+#define LALT_AT     &ms  LEFT_ALT AT_SIGN
+#define LGUI_HASH   &ms  LEFT_GUI HASH
+#define RGUI_N1     &ms  RIGHT_GUI N1
+#define RALT_N2     &ms  RIGHT_ALT N2
+#define RCTL_N3     &ms  RIGHT_CONTROL N3
+#define RSFT_DOT    &rht RIGHT_SHIFT DOT
 // Function
 #define LCTRL_F1    &ms LCTRL F1
 #define LALT_F2     &ms LALT F2
@@ -86,7 +86,7 @@
 #define RGUI_END    &ms RGUI END
 // #define RALT_DWN    &ms RALT DOWN
 #define RCTL_PDN    &ms RCTRL PG_DN
-#define RSFT_CAPS   &ms RSFT CAPS
+#define RSFT_CAPS   &rht RSFT CAPS
 
 // Other
 #define BTLDR &bootloader
@@ -135,6 +135,26 @@
             flavor = "tap-preferred";
             // retro-tap;
             bindings = <&kp>, <&kp>;
+        };
+        lht: positional_hold_tap {  // hold left hand key, only apply mod to keys on right
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <170>;
+            quick-tap-ms = <170>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5>, <6>, <7>, <8>, <9>, <15>, <16>, <17>, <18>, <19>, <25>, <26>, <27>, <28>, <29>, <31>, <32>;
+        };
+        rht: positional_hold_tap {  // hold right hand key, only apply mod to keys on left
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <170>;
+            quick-tap-ms = <170>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0>, <1>, <2>, <3>, <4>, <10>, <11>, <12>, <13>, <14>, <20>, <21>, <22>, <23>, <24>, <30>;
         };
     };
 // }}}
