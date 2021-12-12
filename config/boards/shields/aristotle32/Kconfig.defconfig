@@ -1,0 +1,23 @@
+# Copyright (c) 2022 Bennett Helm
+# SPDX-License-Identifier: MIT
+
+if SHIELD_ARISTOTLE32
+
+config ZMK_KEYBOARD_NAME
+    default "Aristotle 32'22"
+
+endif
+
+if SHIELD_ARISTOTLE32_A
+
+config ZMK_KEYBOARD_NAME
+    default "Aristotle 32'22a"
+
+endif
+
+if SHIELD_ARISTOTLE32_B
+
+config ZMK_KEYBOARD_NAME
+    default "Aristotle 32'22b"
+
+endif

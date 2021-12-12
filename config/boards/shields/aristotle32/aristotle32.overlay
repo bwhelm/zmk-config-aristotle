@@ -1,0 +1,8 @@
+/*
+* Copyright (c) 2022 Bennett Helm
+* SPDX-License-Identifier: MIT
+*/
+
+// This is for nice!nano board with no broken GPIOs
+
+#include "aristotle32.dtsi"

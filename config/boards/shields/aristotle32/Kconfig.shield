@@ -1,0 +1,14 @@
+# Copyright (c) 2022 Bennett Helm
+# SPDX-License-Identifier: MIT
+
+config SHIELD_ARISTOTLE32
+    def_bool $(shields_list_contains,aristotle32)
+
+config SHIELD_ARISTOTLE32_A
+    def_bool $(shields_list_contains,aristotle32_a)
+
+config SHIELD_ARISTOTLE32_B
+    def_bool $(shields_list_contains,aristotle32_b)
+
+config ZMK_SPLIT
+    default n

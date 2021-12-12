@@ -36,37 +36,33 @@ Here's the matrix of the keyboard:
 | **R0** | K01    | K02    | K03    | K04    | K09    | K08    | K07    | K06    | K05    |
 | **R1** | K11    | K12    | K13    | K14    | K19    | K18    | K17    | K16    | K15    |
 | **R2** | K21    | K22    | K23    | K24    | K29    | K28    | K27    | K26    | K25    |
-| **R3** | K10    | K00    | K20    | K34    | K39    | K38    | --     | --     | --     |
+| **R3** | K10    | K33    | K20    | K34    | K39    | K38    | --     | --     | --     |
 
 These keys correspond to a physical layout that looks like this:
 
 | **C0** | **C1** | **C2** | **C3** | **C4** |  | **C5** | **C6** | **C7** | **C8** | **C9** |
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
-| K00    | K01    | K02    | K03    | K04    |  | K09    | K08    | K07    | K06    | K05    |
-| K10    | K11    | K12    | K13    | K14    |  | K19    | K18    | K17    | K16    | K15    |
-| K20    | K21    | K22    | K23    | K24    |  | K29    | K28    | K27    | K26    | K25    |
-|        |        |        |        | K34    |  | K39    | K38    |        |        |        |
+|        | K01    | K02    | K03    | K04    |  | K05    | K06    | K07    | K08    |        |
+| K10    | K11    | K12    | K13    | K14    |  | K15    | K16    | K17    | K18    | K19    |
+| K20    | K21    | K22    | K23    | K24    |  | K25    | K26    | K27    | K28    | K29    |
+|        |        |        | K33    | K34    |  | K35    | K36    |        |        |        |
 
 That means, the corresponding transform will look like this (where first digit is the row number and second digit is the column number from the matrix of the keys as physically laid out):
 
 | **C0** | **C1** | **C2** | **C3** | **C4** |  | **C5** | **C6** | **C7** | **C8** | **C9** |
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
-| 31     | 00     | 01     | 02     | 03     |  | 04     | 05     | 06     | 07     | 08     |
+|        | 00     | 01     | 02     | 03     |  | 04     | 05     | 06     | 07     |        |
 | 30     | 10     | 11     | 12     | 13     |  | 14     | 15     | 16     | 17     | 18     |
 | 32     | 20     | 21     | 22     | 23     |  | 24     | 25     | 26     | 27     | 28     |
-|        |        |        |        | 33     |  | 34     | 35     |        |        |        |
+|        |        |        | 31     | 33     |  | 34     | 35     |        |        |        |
 
 This is what I should put into the RC(x, y) settings in the .overlay file.
 
 # Things to Implement
 
-1. MACRO layer.
-    - I can't get mouse keys just yet, so that's not working.
-    - Otherwise, I think things should work.
+1. MOUSE layer. Create a new one, using left left thumb, and putting all controls on right hand.
 
 # Questions
 
 1. Is there a way to set the board from power up to run `&out OUT_BLE`? <https://zmkfirmware.dev/docs/behaviors/outputs/>
     - One thing I need to check is whether when the MCU is plugged into a charger it thinks it's a real USB device and sends keystrokes to it rather than over Bluetooth.
-
-2. Is there a way to print out (as if one were typing) the current battery level? (In QMK, there are various hooks that allow a fair bit of customizability in what one can do with particular keystrokes. I'm not seeing that in the ZMK docs.)
