@@ -14,12 +14,13 @@
 
 // Layer Names: Default, Numbers, Functions, GUI/Misc
 #define DEF 0
-#define NUM 1
-#define NLK 2
-#define FUN 3
-#define FLK 4
-#define GMC 5
-#define GLK 6
+#define M32 1
+#define NUM 2
+#define NLK 3
+#define FUN 4
+#define FLK 5
+#define GMC 6
+#define GLK 7
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_LFT &kp LA(LG(LEFT))
@@ -70,6 +71,9 @@
 #define RALT_W      &ms  RIGHT_ALT W
 #define RCTL_V      &ms  RIGHT_CONTROL V
 #define RSFT_Z      &mf RIGHT_SHIFT Z
+// For Mock-32 layer
+#define LSFT_SQT    &mf LEFT_SHIFT SQT
+#define RSFT_L      &mf RIGHT_SHIFT L
 // Number
 // #define LSFT_TAB    &ms LEFT_SHIFT TAB
 #define LCTL_EXCL   &ms  LEFT_CONTROL EXCLAMATION
@@ -166,73 +170,73 @@
             timeout-ms = <40>;
             key-positions = <1 11>;
             bindings = <&kp LEFT_BRACE>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_esc {
             timeout-ms = <40>;
             key-positions = <2 12>;
             bindings = <&kp ESC>;
-            layers = <DEF NUM NLK FUN FLK>;
+            layers = <DEF M32 NUM NLK FUN FLK>;
         };
         combo_asterisk {
             timeout-ms = <40>;
             key-positions = <3 13>;
             bindings = <&kp ASTRK>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_doublequote {
             timeout-ms = <40>;
             key-positions = <6 16>;
             bindings = <&kp DQT>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_return {
             timeout-ms = <40>;
             key-positions = <7 17>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
+            layers = <DEF M32 NUM NLK FUN FLK GMC GLK>;
         };
         combo_rbrace {
             timeout-ms = <40>;
             key-positions = <8 18>;
             bindings = <&kp RIGHT_BRACE>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_lbracket {
             timeout-ms = <40>;
             key-positions = <11 21>;
             bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_tab {
             timeout-ms = <40>;
             key-positions = <12 22>;
             bindings = <&kp TAB>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_lparen {
             timeout-ms = <40>;
             key-positions = <13 23>;
             bindings = <&kp LPAR>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_rparen {
             timeout-ms = <40>;
             key-positions = <16 26>;
             bindings = <&kp RPAR>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_colon {
             timeout-ms = <40>;
             key-positions = <17 27>;
             bindings = <&kp COLON>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_rbracket {
             timeout-ms = <40>;
             key-positions = <18 28>;
             bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF M32 NUM NLK>;
         };
         combo_minus {
             timeout-ms = <40>;
@@ -244,7 +248,7 @@
             timeout-ms = <50>;
             key-positions = <20 29>;
             bindings = <&kp CAPS>;
-            layers = <DEF NUM NLK FUN FLK>;
+            layers = <DEF M32 NUM NLK FUN FLK>;
         };
         combo_zero {
             timeout-ms = <50>;
@@ -263,6 +267,24 @@
             key-positions = <0 10>;
             bindings = <&bt BT_CLR>;
             layers = <GMC GLK>;
+        };
+        combo_toggleM32 {
+            timeout-ms = <40>;
+            key-positions = <30 31 32>;
+            bindings = <&tog M32>;
+            layers = <DEF M32>;
+        };
+        combo_semicolon {
+            timeout-ms = <40>;
+            key-positions = <10 20>;
+            bindings = <&kp SEMICOLON>;
+            layers = <M32>;
+        };
+        combo_Z {
+            timeout-ms = <40>;
+            key-positions = <19 29>;
+            bindings = <&kp Z>;
+            layers = <M32>;
         };
         /* combo_FUNlayer { */
         /*     timeout-ms = <80>; */
@@ -285,6 +307,20 @@
       &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
      LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
+                                               &lt NUM BSPC  &lt FUN SPACE  &lt GMC FSLH
+//                                             ╰──────────╯  ╰────────────┴─────────────╯
+            >;
+      };  // }}}
+//  ---------------------------------------------------- MOCK 32 ------------------------------------------------ {{{2
+        mock32 {
+            bindings = <
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+      &none    &kp COMMA   &kp DOT     &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &none
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+      &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+     LSFT_SQT    LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_L
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
                                                &lt NUM BSPC  &lt FUN SPACE  &lt GMC FSLH
 //                                             ╰──────────╯  ╰────────────┴─────────────╯
