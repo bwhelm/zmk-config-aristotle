@@ -302,41 +302,41 @@
         default {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &kp SQT   &kp COMMA   &kp DOT     &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
+    &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-      &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+    &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     LSFT_SC     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
-                                               &lt NUM BSPC  &lt FUN SPACE  &lt GMC FSLH
-//                                             ╰──────────╯  ╰────────────┴─────────────╯
+    LSFT_SC    LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
+// ╰──────────┴──────────┴──────────┴────────┼────────────┤  ├──────────┴──┬────────┴───┬──────┴──────────┴──────────╯
+                                              &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+//                                           ╰────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 //  ---------------------------------------------------- MOCK 32 ------------------------------------------------ {{{2
         mock32 {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-      &none    &kp COMMA   &kp DOT     &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &none
+    &none      &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-      &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+    &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     LSFT_SQT    LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_L
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┴─┬────────┴────┬─────┴──────────┴──────────╯
-                                               &lt NUM BSPC  &lt FUN SPACE  &lt GMC FSLH
-//                                             ╰──────────╯  ╰────────────┴─────────────╯
+    LSFT_SQT   LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_L
+// ╰──────────┴──────────┴──────────┴────────┼────────────┤  ├──────────┴──┬────────┴───┬─────┴──────────┴──────────╯
+                                              &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+//                                           ╰────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
         numbers {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
+    &tog NLK   &kp AMPS   &kp ASTRK  &kp LA(N6) &kp TILDE     &kp DQT    &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6   &kp MINUS
+    &kp TAB    &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp COLON  &kp N4     &kp N5     &kp N6     &kp MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1    RALT_N2     RCTL_N3   RSFT_DOT
+    &kp LSHIFT LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3    RSFT_DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans        &trans    &kp BSLH
+                                                &trans        &trans     &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
@@ -345,13 +345,13 @@
         numbers_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog NLK   &kp AMPS  &kp ASTRK  &kp LA(N6) &kp TILDE      &kp DQT     &kp N7     &kp N8     &kp N9   &kp EQUAL
+    &tog NLK   &kp AMPS   &kp ASTRK  &kp LA(N6) &kp TILDE     &kp DQT    &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp DLLR  &kp PRCNT   &kp CARET &kp GRAVE     &kp COLON    &kp N4     &kp N5     &kp N6   &kp MINUS
+    &kp TAB    &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp COLON  &kp N4     &kp N5     &kp N6     &kp MINUS
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT LCTL_EXCL   LALT_AT   LGUI_HASH  &kp LA(K)       &kp N0    RGUI_N1    RALT_N2    RCTL_N3    RSFT_DOT
+    &kp LSHIFT LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3    RSFT_DOT
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans        &trans    &kp BSLH
+                                                &trans        &trans     &kp BSLH
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
@@ -359,13 +359,13 @@
         functions {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog FLK   &kp F7     &kp F8     &kp F9     &kp F12     &kp C_VOL_UP &kp HOME   &kp UP    &kp PG_UP &kp C_BRI_UP
+    &tog FLK   &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11     &kp C_VOL_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp C_BRI_DN
+    &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT  LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE  RGUI_END   &kp RALT   RCTL_PDN  RSFT_CAPS
+    &kp LSHIFT LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN   RSFT_CAPS
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                 &trans        &trans     &trans
+                                                &trans        &trans     &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
@@ -374,13 +374,13 @@
         functions_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog FLK   &kp F7     &kp F8     &kp F9     &kp F12     &kp C_VOL_UP &kp HOME   &kp UP    &kp PG_UP &kp C_BRI_UP
+    &tog FLK   &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-     &kp TAB    &kp F4     &kp F5     &kp F5     &kp F11     &kp C_VOL_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp C_BRI_DN
+    &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &kp LSHIFT   LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE  RGUI_END   &kp RALT   RCTL_PDN  RSFT_CAPS
+    &kp LSHIFT LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN   RSFT_CAPS
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                 &trans        &trans     &trans
+                                                &trans        &trans     &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
@@ -393,13 +393,13 @@
         gui_misc {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog GLK    &none      &none      &none      &none         &kp F3    WIN_PRV    WIN_BIG    WIN_NXT  &bt BT_SEL 0
+    &tog GLK   &none      &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &out OUT_TOG  &none      &none      &none      &none       &kp LS(F3)  WIN3LFT    WIN_SML    WIN3RGT  &bt BT_SEL 1
+   &out OUT_TOG &none     &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT  &kp LCTRL  &kp LALT    &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
+    &kp LSHIFT &kp LCTRL  &kp LALT   &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT   &bt BT_SEL 2
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &none         &none      &trans
+                                                &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
              >;
       };  // }}}
@@ -413,13 +413,13 @@
         gui_misc_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-     &tog GLK    &none      &none      &none      &none         &kp F3    WIN_PRV    WIN_BIG    WIN_NXT  &bt BT_SEL 0
+    &tog GLK   &none      &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-   &out OUT_TOG  &none      &none      &none      &none       &kp LS(F3)  WIN3LFT    WIN_SML    WIN3RGT  &bt BT_SEL 1
+   &out OUT_TOG &none     &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT  &kp LCTRL  &kp LALT    &none      &none       &kp LG(F3)  WIN_LFT    WIN_CNT    WIN_RGT  &bt BT_SEL 2
+    &kp LSHIFT &kp LCTRL  &kp LALT   &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT   &bt BT_SEL 2
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &none         &none      &trans
+                                                &none         &none      &trans
 //                                             ╰──────────╯  ╰──────────┴──────────╯
              >;
       }; // }}}

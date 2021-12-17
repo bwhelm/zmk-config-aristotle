@@ -33,19 +33,19 @@ Here's the matrix of the keyboard:
 
 |        | **C0** | **C1** | **C2** | **C3** | **C4** | **C5** | **C6** | **C7** | **C8** |
 |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| **R0** | K01    | K02    | K03    | K04    | K09    | K08    | K07    | K06    | K05    |
-| **R1** | K11    | K12    | K13    | K14    | K19    | K18    | K17    | K16    | K15    |
-| **R2** | K21    | K22    | K23    | K24    | K29    | K28    | K27    | K26    | K25    |
-| **R3** | K10    | K33    | K20    | K34    | K39    | K38    | --     | --     | --     |
+| **R0** | K00    | K01    | K02    | K03    | K04    | K05    | K06    | K07    | --     |
+| **R1** | K09    | K10    | K11    | K12    | K13    | K14    | K15    | K16    | K17    |
+| **R2** | K19    | K20    | K21    | K22    | K23    | K24    | K25    | K26    | K27    |
+| **R3** | K08    | K28    | K18    | K29    | K30    | K31    | --     | --     | --     |
 
 These keys correspond to a physical layout that looks like this:
 
 | **C0** | **C1** | **C2** | **C3** | **C4** |  | **C5** | **C6** | **C7** | **C8** | **C9** |
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
-|        | K01    | K02    | K03    | K04    |  | K05    | K06    | K07    | K08    |        |
-| K10    | K11    | K12    | K13    | K14    |  | K15    | K16    | K17    | K18    | K19    |
-| K20    | K21    | K22    | K23    | K24    |  | K25    | K26    | K27    | K28    | K29    |
-|        |        |        | K33    | K34    |  | K35    | K36    |        |        |        |
+|        | K00    | K01    | K02    | K03    |  | K04    | K05    | K06    | K07    |        |
+| K08    | K09    | K10    | K11    | K12    |  | K13    | K14    | K15    | K16    | K17    |
+| K18    | K19    | K20    | K21    | K22    |  | K23    | K24    | K25    | K26    | K27    |
+|        |        |        | K28    | K29    |  | K30    | K31    |        |        |        |
 
 That means, the corresponding transform will look like this (where first digit is the row number and second digit is the column number from the matrix of the keys as physically laid out):
 

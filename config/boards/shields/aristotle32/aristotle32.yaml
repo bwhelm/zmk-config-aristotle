@@ -39,10 +39,10 @@ keyboard:
 dvorak:  # {{{
     keys: [
         [None, '<\\,', '>\\.', P, Y, F, G, C, R, None],
-        [A, O, E, U, I, D, H, T, N, S],
-        [';\phantom{X}:\\\shift', Q\\\ctrl, J\\\Alt, K\\\cmd, X,
-        B, M\\\cmd, W\\\Alt, V\\\ctrl, L\\\shift],
-        [None, None, None, ':', '\backdel\\\textsc{num}',
+        ['"\\''', O, E, U, I, D, H, T, N, L],
+        ['A\\\shift', Q\\\ctrl, J\\\Alt, K\\\cmd, X,
+        B, M\\\cmd, W\\\Alt, V\\\ctrl, S\\\shift],
+        [None, None, None, ':\\\textsc{sym}', '\backdel\\\textsc{num}',
             '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
@@ -54,17 +54,17 @@ dvorak:  # {{{
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
-        ['''~~"', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', 'Z'],
+        [';~~:', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', 'Z'],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     lines: [[1,0], [1,1], [1,2], [1,3], [1,6], [1,7], [1,8], [1,9],
-            [0,4], [0,5], [0,6]]
+            [0,3], [0,4], [0,5], [0,6]]
 # }}}
 
 number:  # {{{
     keys: [
         [None, \&, '*', §, \textasciitilde, '"', 7, 8, 9, None],
-        [\tab, \$, \%, \textasciicircum, \textasciigrave, :, 4, 5, 6, '+\\='],
+        [\tab, \$, \%, \textasciicircum, \textasciigrave, '>\\.', 4, 5, 6, '+\\='],
         ['\phantom{X}\\\shift', '!\\\ctrl', '@\\\Alt', \#\\\cmd, '$^{\circ}$',
         0, 1\\\cmd, 2\\\Alt, 3\\\ctrl, \_~~-\\\shift],
         [None, None, None, '\textsc{trns}', '\textsc{trns}',
@@ -78,7 +78,7 @@ number:  # {{{
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
-        ['\textsc{num lk}', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', '.\phantom{X}>'],
+        ['\textsc{num lk}', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,4]]
@@ -103,7 +103,7 @@ function:  # {{{
         ]
     colcombos: [
         ['', '', '', '', '', '', '\return', '', '', ''],
-        ['\textsc{func lk}', '', '', '\esc', '', '', '', '', '', ''],
+        ['\textsc{fun lk}', '', '', '\esc', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,5]]
@@ -133,6 +133,29 @@ gui:  # {{{
         ]
     shading: [[0,6]]
     lines: [[1,0], [1,1], [1,2]]
+# }}}
+
+symbols:  # {{{
+    keys: [
+        [None, '', '', '*', '', '', '"', '', '', None],
+        ['<', '\{', '[', '(', '', '$^{\circ}$', ')', ']', '\}', '>'],
+        [':\\;', '', '', '', '', '', '', ':', '', '§'],
+        [None, None, None, '\textsc{trns}', '\textsc{trns}', '\textsc{trns}', '\textsc{trns}', None, None, None],
+        ]
+    rowcombos: [
+        ['', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', ''],
+        ]
+    colcombos: [
+        ['', '', '\esc', '', '', '', '', '\return', '', ''],
+        ['', '', '\tab', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', '', ''],
+        ]
+    shading: [[0,3]]
+    lines: []
 # }}}
 
 # vim: fdm=marker ft=M
