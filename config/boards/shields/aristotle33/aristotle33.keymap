@@ -274,6 +274,12 @@
             bindings = <&tog M32>;
             layers = <DEF M32>;
         };
+        combo_toDEFLayer {
+            timeout-ms = <40>;
+            key-positions = <31 32>;
+            bindings = <&to DEF>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK M32>;
+        };
         combo_semicolon {
             timeout-ms = <40>;
             key-positions = <10 20>;

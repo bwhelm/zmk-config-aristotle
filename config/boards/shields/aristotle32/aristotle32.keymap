@@ -21,6 +21,7 @@
 #define GMC 5
 #define GLK 6
 #define SYM 7
+#define SLK 8
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_LFT &kp LA(LG(LEFT))
@@ -173,7 +174,7 @@
             timeout-ms = <40>;
             key-positions = <1 10>;
             bindings = <&kp ESC>;
-            layers = <DEF NUM NLK FUN FLK SYM>;
+            layers = <DEF NUM NLK FUN FLK SYM SLK>;
         };
         combo_asterisk {
             timeout-ms = <40>;
@@ -191,7 +192,7 @@
             timeout-ms = <40>;
             key-positions = <6 15>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK SYM>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK SYM SLK>;
         };
         combo_rbrace {
             timeout-ms = <40>;
@@ -215,7 +216,7 @@
             timeout-ms = <40>;
             key-positions = <10 20>;
             bindings = <&kp TAB>;
-            layers = <DEF NUM NLK SYM>;
+            layers = <DEF NUM NLK SYM SLK>;
         };
         combo_lparen {
             timeout-ms = <40>;
@@ -259,6 +260,12 @@
             bindings = <&kp SQT>;
             layers = <DEF>;
         };
+        combo_toDEFLayer {
+            timeout-ms = <40>;
+            key-positions = <30 31>;
+            bindings = <&to DEF>;
+            layers = <DEF NUM NLK FUN FLK GUI GLK SYM SLK>;
+        };
         combo_numLock {
             timeout-ms = <40>;
             key-positions = <8 18>;
@@ -301,13 +308,19 @@
             bindings = <&bt BT_SEL 2>;
             layers = <GMC GLK>;
         };
+        combo_SYMLock {
+            timeout-ms = <30>;
+            key-positions = <17 27>;
+            bindings = <&tog SLK>;
+            layers = <SYM SLK>;
+        };
     };
 // }}}
 
 // ======================== KEYMAPS ========================= {{{1
     keymap {
         compatible = "zmk,keymap";
-// ----------------------------------------------------- DVORAK ------------------------------------------------- {{{2
+// ---------------------------------------------------- DVORAK -------------------------------------------------- {{{2
         default {
             bindings = <
 //            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
@@ -350,7 +363,7 @@
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
-// ---------------------------------------------------- FUNCTIONS ----------------------------------------------- {{{2
+// --------------------------------------------------- FUNCTIONS ------------------------------------------------ {{{2
         functions {
             bindings = <
 //            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
@@ -364,7 +377,7 @@
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
-// ------------------------------------------------- FUNCTIONS LOCK --------------------------------------------- {{{2
+// ------------------------------------------------ FUNCTIONS LOCK ---------------------------------------------- {{{2
 // NOTE: This is exactly the same as FUNCTIONS
         functions_lock {
             bindings = <
@@ -379,7 +392,7 @@
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
-// ---------------------------------------------------- GUI/MISC ------------------------------------------------ {{{2
+// --------------------------------------------------- GUI/MISC ------------------------------------------------- {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
 // |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
 // |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
@@ -398,7 +411,7 @@
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
              >;
       };  // }}}
-// ------------------------------------------------- GUI/MISC LOCK ---------------------------------------------- {{{2
+// ------------------------------------------------ GUI/MISC LOCK ----------------------------------------------- {{{2
 // |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
 // |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
 // |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
@@ -420,6 +433,20 @@
       }; // }}}
 // ---------------------------------------------------- SYMBOLS ------------------------------------------------- {{{2
         symbols {
+            bindings = <
+//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
+               &none      &none      &kp ASTRK  &none         &none      &kp DQT    &none      &none
+// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
+    &kp LT     &kp LBRC   &kp LBKT   &kp LPAR   &none         &kp LA(K)  &kp RPAR   &kp RBKT   &kp RBRC   &kp GT
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp SEMI   &none      &none      &none      &none         &none      &none      &kp COLON  &none      &kp LA(N6)
+// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                     &trans     &trans        &trans     &trans
+//                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
+             >;
+      }; // }}}
+// ------------------------------------------------- SYMBOLS LOCK ---------------------------------------------- {{{2
+        symbols_lock {
             bindings = <
 //            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
                &none      &none      &kp ASTRK  &none         &none      &kp DQT    &none      &none
