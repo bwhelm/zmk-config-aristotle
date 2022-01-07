@@ -36,24 +36,24 @@
 // Bottom Row Mods
 // Dvorak
 #define LSFT_SC     &mf LEFT_SHIFT SEMICOLON
-#define LCTL_Q      &ms  LEFT_CONTROL Q
-#define LALT_J      &ms  LEFT_ALT J
-#define LGUI_K      &ms  LEFT_GUI K
-#define RGUI_M      &ms  RIGHT_GUI M
-#define RALT_W      &ms  RIGHT_ALT W
-#define RCTL_V      &ms  RIGHT_CONTROL V
+#define LCTL_Q      &ms LEFT_CONTROL Q
+#define LALT_J      &ms LEFT_ALT J
+#define LGUI_K      &ms LEFT_GUI K
+#define RGUI_M      &ms RIGHT_GUI M
+#define RALT_W      &ms RIGHT_ALT W
+#define RCTL_V      &ms RIGHT_CONTROL V
 #define RSFT_Z      &mf RIGHT_SHIFT Z
 // For Mock-32 layer
-#define LSFT_SQT    &mf LEFT_SHIFT SQT
-#define RSFT_L      &mf RIGHT_SHIFT L
+#define LSFT_A      &mf LEFT_SHIFT A
+#define RSFT_S      &mf RIGHT_SHIFT S
 // Number
 // #define LSFT_TAB    &ms LEFT_SHIFT TAB
-#define LCTL_EXCL   &ms  LEFT_CONTROL EXCLAMATION
-#define LALT_AT     &ms  LEFT_ALT AT_SIGN
-#define LGUI_HASH   &ms  LEFT_GUI HASH
-#define RGUI_N1     &ms  RIGHT_GUI N1
-#define RALT_N2     &ms  RIGHT_ALT N2
-#define RCTL_N3     &ms  RIGHT_CONTROL N3
+#define LCTL_EXCL   &ms LEFT_CONTROL EXCLAMATION
+#define LALT_AT     &ms LEFT_ALT AT_SIGN
+#define LGUI_HASH   &ms LEFT_GUI HASH
+#define RGUI_N1     &ms RIGHT_GUI N1
+#define RALT_N2     &ms RIGHT_ALT N2
+#define RCTL_N3     &ms RIGHT_CONTROL N3
 #define RSFT_DOT    &mf RIGHT_SHIFT DOT
 // Function
 #define LCTRL_F1    &ms LCTRL F1
@@ -250,7 +250,7 @@
             timeout-ms = <40>;
             key-positions = <31 32>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK M32>;
+            layers = <DEF M32 NUM NLK FUN FLK GMC GLK>;
         };
         combo_semicolon {
             timeout-ms = <40>;
@@ -264,19 +264,13 @@
             bindings = <&kp Z>;
             layers = <M32>;
         };
-        /* combo_FUNlayer { */
-        /*     timeout-ms = <80>; */
-        /*     key-positions = <31 32>; */
-        /*     bindings = <&mo FUN>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
     };
 // }}}
 
 // ======================== KEYMAPS ========================= {{{1
     keymap {
         compatible = "zmk,keymap";
-// ----------------------------------------------------- DVORAK ------------------------------------------------- {{{2
+// ---------------------------------------------------- DVORAK -------------------------------------------------- {{{2
         default {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -285,7 +279,7 @@
     &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_SC    LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_Z
-// ╰──────────┴──────────┴──────────┴────────┼────────────┤  ├──────────┴──┬────────┴───┬──────┴──────────┴──────────╯
+// ╰──────────┴──────────┴──────────┴────────┼────────────┤  ├──────────┴──┬───────┴────┬─────┴──────────┴──────────╯
                                               &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
 //                                           ╰────────────╯  ╰─────────────┴────────────╯
             >;
@@ -296,9 +290,9 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &none      &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+    &kp SQT    &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_SQT   LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_L
+    LSFT_A     LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     RSFT_S
 // ╰──────────┴──────────┴──────────┴────────┼────────────┤  ├──────────┴──┬────────┴───┬─────┴──────────┴──────────╯
                                               &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
 //                                           ╰────────────╯  ╰─────────────┴────────────╯
