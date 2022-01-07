@@ -33,34 +33,6 @@
 #define WIN3RGT &kp LC(LA(RIGHT))
 #define WIN_CNT &kp LC(LG(LA(C)))
 
-// // Home Row Mods
-// // Dvorak
-// #define LSFT_A      &mf LEFT_SHIFT A
-// #define LCTL_O      &ms LEFT_CONTROL O
-// #define LALT_E      &ms LEFT_ALT E
-// #define LGUI_U      &ms LEFT_GUI U
-// #define RGUI_H      &ms RIGHT_GUI H
-// #define RALT_T      &ms RIGHT_ALT T
-// #define RCTL_N      &ms RIGHT_CONTROL N
-// #define RSFT_S      &mf RIGHT_SHIFT S
-// // Number
-// #define LSFT_TAB    &ms LEFT_SHIFT TAB
-// #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
-// #define LALT_PRCNT  &ms LEFT_ALT PRCNT
-// #define LGUI_CARET  &ms LEFT_GUI CARET
-// #define RGUI_N4     &ms RIGHT_GUI N4
-// #define RALT_N5     &ms RIGHT_ALT N5
-// #define RCTL_N6     &ms RIGHT_CONTROL N6
-// #define RSFT_MINUS  &ms RIGHT_SHIFT MINUS
-// // Function
-// #define LCTRL_F4    &ms LCTRL F4
-// #define LALT_F5     &ms LALT F5
-// #define LGUI_F6     &ms LGUI F6
-// #define RGUI_LFT    &ms RGUI LEFT
-// #define RALT_DWN    &ms RALT DOWN
-// #define RCTRL_RGT   &ms RCTRL RIGHT
-// #define RSFT_BRD    &ms RSFT C_BRI_DN
-
 // Bottom Row Mods
 // Dvorak
 #define LSFT_SC     &mf LEFT_SHIFT SEMICOLON
