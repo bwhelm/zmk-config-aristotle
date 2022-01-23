@@ -36,7 +36,7 @@ Here's the matrix of the keyboard:
 | **R0** | K00    | K01    | K02    | K03    | K04    | K05    | K06    | K07    | --     |
 | **R1** | K09    | K10    | K11    | K12    | K13    | K14    | K15    | K16    | K17    |
 | **R2** | K19    | K20    | K21    | K22    | K23    | K24    | K25    | K26    | K27    |
-| **R3** | K08    | K29    | K18    | K28    | K30    | K31    | --     | --     | --     |
+| **R3** | K08    | K29    | K28    | K18    | K30    | K31    | --     | --     | --     |
 
 These keys correspond to a physical layout that looks like this:
 
@@ -53,8 +53,8 @@ That means, the corresponding transform will look like this (where first digit i
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
 |        | 00     | 01     | 02     | 03     |  | 04     | 05     | 06     | 07     |        |
 | 30     | 10     | 11     | 12     | 13     |  | 14     | 15     | 16     | 17     | 18     |
-| 32     | 20     | 21     | 22     | 23     |  | 24     | 25     | 26     | 27     | 28     |
-|        |        |        | 33     | 31     |  | 34     | 35     |        |        |        |
+| 33     | 20     | 21     | 22     | 23     |  | 24     | 25     | 26     | 27     | 28     |
+|        |        |        | 32     | 31     |  | 34     | 35     |        |        |        |
 
 This is what I should put into the RC(x, y) settings in the .overlay file.
 
