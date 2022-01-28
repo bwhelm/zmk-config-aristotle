@@ -258,10 +258,13 @@ def main(file):
     # Write document to file in temporary directory
     tempdir = gettempdir()
     name = path.basename(file)
-    root, ext = path.splitext(name)
+    root, _ = path.splitext(name)
     outputFile = path.join(tempdir, root + ".tex")
     with open(outputFile, "w") as f:
         f.write(document)
+    print("------------------------------------------------------------")
+    print("Generated .tex file: " + outputFile)
+    print("------------------------------------------------------------\n")
 
     # Process with LaTeX
     command = "latexmk -cd -pdf " + outputFile

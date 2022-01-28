@@ -50,7 +50,7 @@ dvorak:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '', '\textsc{def}', '', '', ''],
+        ['', '', '', '', '\rotatebox{90}{\textsc{def}}', '', '', ''],
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
@@ -63,7 +63,7 @@ dvorak:  # {{{
 
 number:  # {{{
     keys: [
-        ['\textsc{num}\\\textsc{lock}', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\='],
+        ['', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\='],
         [\tab, \$, \%, \textasciicircum, \textasciigrave, :, 4, 5, 6, \_\\-],
         ['\phantom{X}\\\shift', '!\\\ctrl', '@\\\Alt', \#\\\cmd, '$^{\circ}$',
         0, 1\\\cmd, 2\\\Alt, 3\\\ctrl, '.\phantom{X}>\\\shift'],
@@ -74,11 +74,11 @@ number:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '0', '.', ''],
-        ['', '', '', '', '\textsc{def}', '', '', ''],
+        ['', '', '', '', '\rotatebox{90}{\textsc{def}}', '', '', ''],
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
-        ['', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', '-~~\_'],
+        ['\textsc{num lock}', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', '-~~\_'],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,4]]
@@ -87,7 +87,7 @@ number:  # {{{
 
 function:  # {{{
     keys: [
-        ['\textsc{func}\\\textsc{lock}', F7, F8, F9, F12,
+        ['', F7, F8, F9, F12,
         \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
         [\tab, F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin],
         ['\phantom{X}\\\shift', F1\\\ctrl, F2\\\Alt, F3\\\cmd, F10,
@@ -99,11 +99,11 @@ function:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '', '\textsc{def}', '', '', ''],
+        ['', '', '', '', '\rotatebox{90}{\textsc{def}}', '', '', ''],
         ]
     colcombos: [
         ['', '', '', '', '', '', '\return', '', '', ''],
-        ['', '', '', '\esc', '', '', '', '', '', ''],
+        ['\textsc{fun lock}', '', '', '\esc', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,5]]
@@ -112,7 +112,7 @@ function:  # {{{
 
 gui:  # {{{
     keys: [
-        ['\textsc{gui}\\\textsc{lock}', '', Mouse\\\arrowkeyup, Wheel\\\arrowkeyup, Accel\\2,
+        ['', '', Mouse\\\arrowkeyup, Wheel\\\arrowkeyup, Accel\\2,
         Show\\Wins, Prev\\Win, Win\\Big, Next\\Win, \faBluetoothB~1],
         ['\faUsb/\faBluetoothB\\toggle', Mouse\\\arrowkeyleft, Mouse\\\arrowkeydown, Mouse\\\arrowkeyright, Accel\\1,
         Show\\App, Win\\1/3 L, Win\\Small, Win\\1/3 R, \faBluetoothB~2],
@@ -124,11 +124,11 @@ gui:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '', '\textsc{def}', '', '', ''],
+        ['', '', '', '', '\rotatebox{90}{\textsc{def}}', '', '', ''],
         ]
     colcombos: [
-        [\faBluetoothB Clear, '', '', '', '', '', '', '', '', ''],
-        ['', '', '', '', '', '', '\return', '', '', ''],
+        ['', \faBluetoothB Clear, '', '', '', '', '', '', '', ''],
+        ['\textsc{gui lock}', '', '', '', '', '', '\return', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,6]]
