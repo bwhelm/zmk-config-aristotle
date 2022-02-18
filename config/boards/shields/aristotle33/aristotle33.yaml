@@ -64,7 +64,7 @@ dvorak:  # {{{
 number:  # {{{
     keys: [
         ['', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\='],
-        [\tab, \$, \%, \textasciicircum, \textasciigrave, :, 4, 5, 6, \_\\-],
+        [\tab, \$, \%, \textasciicircum, \textasciigrave, ':', 4, 5, 6, \_\\-],
         ['\phantom{X}\\\shift', '!\\\ctrl', '@\\\Alt', \#\\\cmd, '$^{\circ}$',
         0, 1\\\cmd, 2\\\Alt, 3\\\ctrl, '.\phantom{X}>\\\shift'],
         [None, None, None, None, '\textsc{trns}',
@@ -78,7 +78,7 @@ number:  # {{{
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
-        ['\textsc{num lock}', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', '-~~\_'],
+        ['\textsc{num lk}', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', '-~~\_'],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,4]]
@@ -103,7 +103,7 @@ function:  # {{{
         ]
     colcombos: [
         ['', '', '', '', '', '', '\return', '', '', ''],
-        ['\textsc{fun lock}', '', '', '\esc', '', '', '', '', '', ''],
+        ['\textsc{fun lk}', '', '', '\esc', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,5]]
@@ -128,7 +128,7 @@ gui:  # {{{
         ]
     colcombos: [
         ['', \faBluetoothB Clear, '', '', '', '', '', '', '', ''],
-        ['\textsc{gui lock}', '', '', '', '', '', '\return', '', '', ''],
+        ['\textsc{gui lk}', '', '', '', '', '', '\return', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading: [[0,6]]
