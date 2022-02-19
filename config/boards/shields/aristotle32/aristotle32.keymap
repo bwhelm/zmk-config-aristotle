@@ -224,6 +224,12 @@
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
+        combo_minus2 {
+            timeout-ms = <40>;
+            key-positions = <13 14>;
+            bindings = <&kp MINUS>;
+            layers = <DEF>;
+        };
         combo_rparen {
             timeout-ms = <40>;
             key-positions = <14 24>;
@@ -252,6 +258,12 @@
             timeout-ms = <50>;
             key-positions = <18 27>;
             bindings = <&kp CAPS>;
+            layers = <DEF>;
+        };
+        combo_Z2 {
+            timeout-ms = <40>;
+            key-positions = <23 24>;
+            bindings = <&kp Z>;
             layers = <DEF>;
         };
         combo_toDEFLayer {
