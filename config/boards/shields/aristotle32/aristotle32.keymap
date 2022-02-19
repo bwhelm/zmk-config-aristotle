@@ -64,7 +64,7 @@
 
 // Bottom Row Mods
 // Dvorak
-#define LSFT_COLON  &mf LEFT_SHIFT COLON
+#define LSFT_BSPC   &mf LEFT_SHIFT BSPC
 #define LCTL_Q      &ms LEFT_CONTROL Q
 #define LALT_J      &ms LEFT_ALT J
 #define LGUI_K      &ms LEFT_GUI K
@@ -254,12 +254,6 @@
             bindings = <&kp CAPS>;
             layers = <DEF>;
         };
-        combo_singlequote2 {
-            timeout-ms = <50>;
-            key-positions = <28 29>;
-            bindings = <&kp SQT>;
-            layers = <DEF>;
-        };
         combo_toDEFLayer {
             timeout-ms = <40>;
             key-positions = <30 31>;
@@ -330,7 +324,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp A      LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     &kp S
 // ╰──────────┴──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────┴──────────╯
-                                LSFT_COLON    &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+                                &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
