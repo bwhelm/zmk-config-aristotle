@@ -201,9 +201,15 @@
             layers = <DEF NUM NLK>;
         };
         combo_minus {
-            timeout-ms = <40>;
-            key-positions = <8 18>;
+            timeout-ms = <30>;
+            key-positions = <15 16>;
             bindings = <&kp MINUS>;
+            layers = <DEF>;
+        };
+        combo_dollar {
+            timeout-ms = <30>;
+            key-positions = <9 10>;
+            bindings = <&kp DOLLAR>;
             layers = <DEF>;
         };
         combo_lbracket {
@@ -248,23 +254,41 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
-        combo_Z {
-            timeout-ms = <40>;
-            key-positions = <17 27>;
-            bindings = <&kp Z>;
-            layers = <DEF>;
-        };
+        /* combo_Z2 { */
+        /*     timeout-ms = <40>; */
+        /*     key-positions = <17 27>; */
+        /*     bindings = <&kp Z>; */
+        /*     layers = <DEF>; */
+        /* }; */
         combo_capslock {
             timeout-ms = <50>;
             key-positions = <18 27>;
             bindings = <&kp CAPS>;
             layers = <DEF>;
         };
-        combo_Z2 {
-            timeout-ms = <40>;
-            key-positions = <23 24>;
+        combo_Z {
+            timeout-ms = <30>;
+            key-positions = <25 26>;
             bindings = <&kp Z>;
             layers = <DEF>;
+        };
+        combo_exclamation {
+            timeout-ms = <30>;
+            key-positions = <19 20>;
+            bindings = <&kp EXCLAMATION>;
+            layers = <DEF>;
+        };
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <0 1>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_question2 {
+            timeout-ms = <30>;
+            key-positions = <20 21>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
             timeout-ms = <40>;
