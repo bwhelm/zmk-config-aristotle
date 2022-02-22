@@ -216,6 +216,12 @@
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
+        combo_percent {
+            timeout-ms = <20>;
+            key-positions = <10 11>;
+            bindings = <&kp PERCENT>;
+            layers = <DEF>;
+        };
         combo_tab {
             timeout-ms = <40>;
             key-positions = <10 20>;
