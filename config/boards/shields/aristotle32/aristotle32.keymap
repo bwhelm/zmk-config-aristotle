@@ -20,8 +20,6 @@
 #define FLK 4
 #define GMC 5
 #define GLK 6
-#define SYM 7
-#define SLK 8
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_LFT &kp LA(LG(LEFT))
@@ -164,6 +162,12 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <0 1>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF NUM NLK>;
+        };
         combo_lbrace {
             timeout-ms = <40>;
             key-positions = <0 9>;
@@ -174,7 +178,7 @@
             timeout-ms = <40>;
             key-positions = <1 10>;
             bindings = <&kp ESC>;
-            layers = <DEF NUM NLK FUN FLK SYM SLK>;
+            layers = <DEF NUM NLK FUN FLK>;
         };
         combo_asterisk {
             timeout-ms = <40>;
@@ -192,7 +196,7 @@
             timeout-ms = <40>;
             key-positions = <6 15>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK SYM SLK>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_rbrace {
             timeout-ms = <40>;
@@ -200,14 +204,8 @@
             bindings = <&kp RIGHT_BRACE>;
             layers = <DEF NUM NLK>;
         };
-        combo_minus {
-            timeout-ms = <30>;
-            key-positions = <15 16>;
-            bindings = <&kp MINUS>;
-            layers = <DEF>;
-        };
         combo_dollar {
-            timeout-ms = <30>;
+            timeout-ms = <20>;
             key-positions = <9 10>;
             bindings = <&kp DOLLAR>;
             layers = <DEF>;
@@ -222,7 +220,7 @@
             timeout-ms = <40>;
             key-positions = <10 20>;
             bindings = <&kp TAB>;
-            layers = <DEF NUM NLK SYM SLK>;
+            layers = <DEF NUM NLK>;
         };
         combo_lparen {
             timeout-ms = <40>;
@@ -230,17 +228,17 @@
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_minus2 {
-            timeout-ms = <40>;
-            key-positions = <13 14>;
-            bindings = <&kp MINUS>;
-            layers = <DEF>;
-        };
         combo_rparen {
             timeout-ms = <40>;
             key-positions = <14 24>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
+        };
+        combo_minus {
+            timeout-ms = <15>;
+            key-positions = <15 16>;
+            bindings = <&kp MINUS>;
+            layers = <DEF>;
         };
         combo_colon {
             timeout-ms = <40>;
@@ -254,12 +252,6 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
-        /* combo_Z2 { */
-        /*     timeout-ms = <40>; */
-        /*     key-positions = <17 27>; */
-        /*     bindings = <&kp Z>; */
-        /*     layers = <DEF>; */
-        /* }; */
         combo_capslock {
             timeout-ms = <50>;
             key-positions = <18 27>;
@@ -276,25 +268,19 @@
             timeout-ms = <30>;
             key-positions = <19 20>;
             bindings = <&kp EXCLAMATION>;
-            layers = <DEF>;
-        };
-        combo_question {
-            timeout-ms = <30>;
-            key-positions = <0 1>;
-            bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
-        combo_question2 {
+        combo_hash {
             timeout-ms = <30>;
             key-positions = <20 21>;
-            bindings = <&kp QUESTION>;
+            bindings = <&kp HASH>;
             layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
             timeout-ms = <40>;
             key-positions = <30 31>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK GUI GLK SYM SLK>;
+            layers = <DEF NUM NLK FUN FLK GUI GLK>;
         };
         combo_numLock {
             timeout-ms = <40>;
@@ -337,12 +323,6 @@
             key-positions = <17 27>;
             bindings = <&bt BT_SEL 2>;
             layers = <GMC GLK>;
-        };
-        combo_SYMLock {
-            timeout-ms = <30>;
-            key-positions = <17 27>;
-            bindings = <&tog SLK>;
-            layers = <SYM SLK>;
         };
     };
 // }}}
@@ -461,34 +441,6 @@
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
              >;
       }; // }}}
-/* // ---------------------------------------------------- SYMBOLS ------------------------------------------------- {{{2 */
-/*         symbols { */
-/*             bindings = < */
-/* //            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮ */
-/*                &none      &none      &kp ASTRK  &none         &none      &kp DQT    &none      &none */
-/* // ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮ */
-/*     &kp LT     &kp LBRC   &kp LBKT   &kp LPAR   &none         &kp LA(K)  &kp RPAR   &kp RBKT   &kp RBRC   &kp GT */
-/* // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤ */
-/*     &kp SEMI   &none      &none      &none      &none         &none      &none      &kp COLON  &none      &kp LA(N6) */
-/* // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯ */
-/*                                      &trans     &trans        &trans     &trans */
-/* //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯ */
-/*              >; */
-/*       }; // }}} */
-/* // ------------------------------------------------- SYMBOLS LOCK ---------------------------------------------- {{{2 */
-/*         symbols_lock { */
-/*             bindings = < */
-/* //            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮ */
-/*                &none      &none      &kp ASTRK  &none         &none      &kp DQT    &none      &none */
-/* // ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮ */
-/*     &kp LT     &kp LBRC   &kp LBKT   &kp LPAR   &none         &kp LA(K)  &kp RPAR   &kp RBKT   &kp RBRC   &kp GT */
-/* // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤ */
-/*     &kp SEMI   &none      &none      &none      &none         &none      &none      &kp COLON  &none      &kp LA(N6) */
-/* // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯ */
-/*                                      &trans     &trans        &trans     &trans */
-/* //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯ */
-/*              >; */
-/*       }; // }}} */
   };  // keymap }}}
 };
 
