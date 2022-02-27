@@ -25,7 +25,7 @@ draftfooter: true
 
 Once installation is set up, should be able to build firmware with:
 
-    west build -p -b nice_nano -- -DSHIELD=aristotle-33
+    west build -p -b nice_nano -- -DSHIELD=aristotle-32
 
 # Transforms
 
