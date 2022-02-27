@@ -240,12 +240,6 @@
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_minus {
-            timeout-ms = <15>;
-            key-positions = <15 16>;
-            bindings = <&kp MINUS>;
-            layers = <DEF>;
-        };
         combo_colon {
             timeout-ms = <40>;
             key-positions = <15 25>;
@@ -262,6 +256,12 @@
             timeout-ms = <50>;
             key-positions = <18 27>;
             bindings = <&kp CAPS>;
+            layers = <DEF>;
+        };
+        combo_minus {
+            timeout-ms = <15>;
+            key-positions = <24 25>;
+            bindings = <&kp MINUS>;
             layers = <DEF>;
         };
         combo_Z {
