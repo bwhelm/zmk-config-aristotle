@@ -13,5 +13,6 @@
 #
 ---
 
-board: [ "nice_nano", "nice_nano_v2" ]
-shield: [ "aristotle33", "aristotle33_a", "aristotle33_b", "aristotle32", "aristotle32_a", "aristotle32_b" ]
+# board: [ "nice_nano", "nice_nano_v2" ]
+board: [ "nice_nano" ]
+shield: [ "aristotle33", "aristotle33_a", "aristotle33_b" ]
