@@ -162,12 +162,6 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
-        combo_question {
-            timeout-ms = <30>;
-            key-positions = <0 1>;
-            bindings = <&kp QUESTION>;
-            layers = <DEF NUM NLK>;
-        };
         combo_lbrace {
             timeout-ms = <40>;
             key-positions = <0 9>;
@@ -204,23 +198,11 @@
             bindings = <&kp RIGHT_BRACE>;
             layers = <DEF NUM NLK>;
         };
-        combo_dollar {
-            timeout-ms = <20>;
-            key-positions = <9 10>;
-            bindings = <&kp DOLLAR>;
-            layers = <DEF>;
-        };
         combo_lbracket {
             timeout-ms = <40>;
             key-positions = <9 19>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
-        };
-        combo_percent {
-            timeout-ms = <20>;
-            key-positions = <10 11>;
-            bindings = <&kp PERCENT>;
-            layers = <DEF>;
         };
         combo_tab {
             timeout-ms = <40>;
@@ -259,7 +241,7 @@
             layers = <DEF>;
         };
         combo_minus {
-            timeout-ms = <15>;
+            timeout-ms = <30>;
             key-positions = <24 25>;
             bindings = <&kp MINUS>;
             layers = <DEF>;
