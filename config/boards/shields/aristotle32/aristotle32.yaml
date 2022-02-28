@@ -41,12 +41,12 @@ dvorak:  # {{{
         ['"\\\textquotesingle', '<\\,', '>\\.', P, Y, F, G, C, R, L],
         [A, O, E, U, I, D, H, T, N, S],
         [None, Q\\\ctrl, J\\\Alt, K\\\cmd, X, B, M\\\cmd, W\\\Alt, V\\\ctrl, None],
-        [None, None, None, ';\\\textsc{fun}', '\backdel\\\textsc{num}',
-            '\phantom{M}\vtextvisiblespace\phantom{M}\\\shift',
+        [None, None, None, ';\\\textsc{num}', '\backdel\\\shift',
+            '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
     rowcombos: [
-        ['', '?', '|', '', '', '', '', ''],
+        ['', '?', '', '', '', '', '|', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '!', '\#', '', '', '\_\\-', 'Z', ''],
         ['', '', '', '', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
@@ -69,7 +69,7 @@ number:  # {{{
             '\textsc{trns}', '|\\\textbackslash', None, None, None],
         ]
     rowcombos: [
-        ['', '?', '|', '', '', '', '', ''],
+        ['', '?', '', '', '', '', '|', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '0', '.', ''],
         ['', '', '', '', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
@@ -88,7 +88,7 @@ function:  # {{{
         [\tab, F7, F8, F9, F12, \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
         ['\shift', F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin\\\shift],
         [None, F1\\\ctrl, F2\\\Alt, F3\\\cmd, F10, \faVolumeOff, End\\\cmd, '\phantom{X}\\\Alt', PgDn\\\ctrl, None],
-        [None, None, None, '\textsc{trns}', '\textsc{trns}',
+        [None, None, None, '\textsc{trns}', '\shift\backdel',
             '\textsc{trns}', '\textsc{trns}', None, None, None],
         ]
     rowcombos: [

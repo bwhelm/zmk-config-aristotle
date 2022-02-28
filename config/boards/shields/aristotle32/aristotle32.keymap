@@ -62,8 +62,8 @@
 
 // Bottom Row Mods
 // Dvorak
-/* #define LSFT_BSPC   &mf LEFT_SHIFT BSPC */
-#define LSFT_SPACE  &mf LEFT_SHIFT SPACE
+#define LSFT_BSPC   &mf LEFT_SHIFT BSPC
+/* #define LSFT_SPACE  &mf LEFT_SHIFT SPACE */
 #define LCTL_Q      &ms LEFT_CONTROL Q
 #define LALT_J      &ms LEFT_ALT J
 #define LGUI_K      &ms LEFT_GUI K
@@ -169,12 +169,6 @@
             bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
-        combo_pipe {
-            timeout-ms = <30>;
-            key-positions = <1 2>;
-            bindings = <&kp PIPE>;
-            layers = <DEF NUM NLK>;
-        };
         combo_lbrace {
             timeout-ms = <40>;
             key-positions = <0 9>;
@@ -197,6 +191,12 @@
             timeout-ms = <40>;
             key-positions = <5 14>;
             bindings = <&kp DQT>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_pipe {
+            timeout-ms = <30>;
+            key-positions = <6 7>;
+            bindings = <&kp PIPE>;
             layers = <DEF NUM NLK>;
         };
         combo_return {
@@ -341,7 +341,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp A      LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     &kp S
 // ╰──────────┴──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────┴──────────╯
-                                &lt FUN SEMI  &lt NUM BSPC    LSFT_SPACE    &lt GMC FSLH
+                                &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
@@ -384,7 +384,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp LSHIFT LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN  &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                     &trans     &trans        &trans     &trans
+                                     &trans    &kp LS(BSPC)   &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
@@ -399,7 +399,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp LSHIFT LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN  &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                     &trans     &trans        &trans     &trans
+                                     &trans    &kp LS(BSPC)   &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
       };  // }}}
