@@ -62,7 +62,8 @@
 
 // Bottom Row Mods
 // Dvorak
-#define LSFT_BSPC   &mf LEFT_SHIFT BSPC
+/* #define LSFT_BSPC   &mf LEFT_SHIFT BSPC */
+#define LSFT_SPACE  &mf LEFT_SHIFT SPACE
 #define LCTL_Q      &ms LEFT_CONTROL Q
 #define LALT_J      &ms LEFT_ALT J
 #define LGUI_K      &ms LEFT_GUI K
@@ -162,6 +163,18 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <0 1>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_pipe {
+            timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp PIPE>;
+            layers = <DEF NUM NLK>;
+        };
         combo_lbrace {
             timeout-ms = <40>;
             key-positions = <0 9>;
@@ -328,7 +341,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp A      LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     &kp S
 // ╰──────────┴──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────┴──────────╯
-                                &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
+                                &lt FUN SEMI  &lt NUM BSPC    LSFT_SPACE    &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
