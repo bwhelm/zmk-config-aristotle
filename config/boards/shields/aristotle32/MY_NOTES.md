@@ -42,18 +42,18 @@ These keys correspond to a physical layout that looks like this:
 
 | **C0** | **C1** | **C2** | **C3** | **C4** |  | **C5** | **C6** | **C7** | **C8** | **C9** |
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
-|        | K00    | K01    | K02    | K03    |  | K04    | K05    | K06    | K07    |        |
-| K08    | K09    | K10    | K11    | K12    |  | K13    | K14    | K15    | K16    | K17    |
-| K18    | K19    | K20    | K21    | K22    |  | K23    | K24    | K25    | K26    | K27    |
+| K08    | K00    | K01    | K02    | K03    |  | K04    | K05    | K06    | K07    | K17    |
+| K18    | K09    | K10    | K11    | K12    |  | K13    | K14    | K15    | K16    | K27    |
+|        | K19    | K20    | K21    | K22    |  | K23    | K24    | K25    | K26    |        |
 |        |        |        | K28    | K29    |  | K30    | K31    |        |        |        |
 
 That means, the corresponding transform will look like this (where first digit is the row number and second digit is the column number from the matrix of the keys as physically laid out):
 
 | **C0** | **C1** | **C2** | **C3** | **C4** |  | **C5** | **C6** | **C7** | **C8** | **C9** |
 |--------|--------|--------|--------|--------|--|--------|--------|--------|--------|--------|
-|        | 00     | 01     | 02     | 03     |  | 04     | 05     | 06     | 07     |        |
-| 30     | 10     | 11     | 12     | 13     |  | 14     | 15     | 16     | 17     | 18     |
-| 33     | 20     | 21     | 22     | 23     |  | 24     | 25     | 26     | 27     | 28     |
+| 30     | 00     | 01     | 02     | 03     |  | 04     | 05     | 06     | 07     | 18     |
+| 33     | 10     | 11     | 12     | 13     |  | 14     | 15     | 16     | 17     | 28     |
+|        | 20     | 21     | 22     | 23     |  | 24     | 25     | 26     | 27     |        |
 |        |        |        | 32     | 31     |  | 34     | 35     |        |        |        |
 
 This is what I should put into the RC(x, y) settings in the .overlay file.

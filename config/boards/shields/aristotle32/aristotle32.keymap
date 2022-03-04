@@ -168,121 +168,121 @@
         compatible = "zmk,combos";
         /* combo_question { */
         /*     timeout-ms = <30>; */
-        /*     key-positions = <0 1>; */
+        /*     key-positions = <1 2>; */
         /*     bindings = <&kp QUESTION>; */
         /*     layers = <DEF NUM NLK>; */
         /* }; */
         combo_lbrace {
             timeout-ms = <40>;
-            key-positions = <0 9>;
+            key-positions = <1 11>;
             bindings = <&kp LEFT_BRACE>;
             layers = <DEF NUM NLK>;
         };
         combo_esc {
             timeout-ms = <40>;
-            key-positions = <1 10>;
+            key-positions = <2 12>;
             bindings = <&kp ESC>;
             layers = <DEF NUM NLK FUN FLK>;
         };
         combo_asterisk {
             timeout-ms = <40>;
-            key-positions = <2 11>;
+            key-positions = <3 13>;
             bindings = <&kp ASTRK>;
             layers = <DEF NUM NLK>;
         };
         combo_doublequote {
             timeout-ms = <40>;
-            key-positions = <5 14>;
+            key-positions = <6 16>;
             bindings = <&kp DQT>;
             layers = <DEF NUM NLK>;
         };
         combo_pipe {
             timeout-ms = <30>;
-            key-positions = <5 6>;
+            key-positions = <6 7>;
             bindings = <&kp PIPE>;
             layers = <DEF NUM NLK>;
         };
         combo_equal {
             timeout-ms = <30>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             bindings = <&kp EQUAL>;
             layers = <DEF NUM NLK>;
         };
         combo_return {
             timeout-ms = <40>;
-            key-positions = <6 15>;
+            key-positions = <7 17>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_rbrace {
             timeout-ms = <40>;
-            key-positions = <7 16>;
+            key-positions = <8 18>;
             bindings = <&kp RIGHT_BRACE>;
             layers = <DEF NUM NLK>;
         };
         combo_lbracket {
             timeout-ms = <40>;
-            key-positions = <9 19>;
+            key-positions = <11 20>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
         combo_tab {
             timeout-ms = <40>;
-            key-positions = <10 20>;
+            key-positions = <12 21>;
             bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
         combo_lparen {
             timeout-ms = <40>;
-            key-positions = <11 21>;
+            key-positions = <13 22>;
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
         combo_hash {
             timeout-ms = <30>;
-            key-positions = <11 12>;
+            key-positions = <13 14>;
             bindings = <&kp HASH>;
             layers = <DEF NUM NLK>;
         };
         combo_minus {
             timeout-ms = <30>;
-            key-positions = <13 14>;
+            key-positions = <15 16>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM NLK>;
         };
         combo_rparen {
             timeout-ms = <40>;
-            key-positions = <14 24>;
+            key-positions = <16 25>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
         combo_colon {
             timeout-ms = <40>;
-            key-positions = <15 25>;
+            key-positions = <17 26>;
             bindings = <&kp COLON>;
             layers = <DEF NUM NLK>;
         };
         combo_rbracket {
             timeout-ms = <40>;
-            key-positions = <16 26>;
+            key-positions = <18 27>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
         combo_capslock {
             timeout-ms = <50>;
-            key-positions = <18 27>;
+            key-positions = <10 19>;
             bindings = <&kp CAPS>;
             layers = <DEF>;
         };
         combo_Z {
             timeout-ms = <30>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
             bindings = <&kp Z>;
             layers = <DEF>;
         };
         combo_exclamation {
             timeout-ms = <30>;
-            key-positions = <19 20>;
+            key-positions = <20 21>;
             bindings = <&kp EXCLAMATION>;
             layers = <DEF NUM NLK>;
         };
@@ -294,43 +294,43 @@
         };
         combo_numLock {
             timeout-ms = <40>;
-            key-positions = <8 18>;
+            key-positions = <0 10>;
             bindings = <&tog NLK>;
             layers = <NUM NLK>;
         };
         combo_funLock {
             timeout-ms = <40>;
-            key-positions = <8 18>;
+            key-positions = <0 10>;
             bindings = <&tog FLK>;
             layers = <FUN FLK>;
         };
         combo_GMCLock {
             timeout-ms = <40>;
-            key-positions = <8 18>;
+            key-positions = <0 10>;
             bindings = <&tog GLK>;
             layers = <GMC GLK>;
         };
         combo_zero {
             timeout-ms = <50>;
-            key-positions = <24 25>;
+            key-positions = <25 26>;
             bindings = <&kp N0>;
             layers = <NUM NLK>;
         };
         combo_period {
             timeout-ms = <50>;
-            key-positions = <25 26>;
+            key-positions = <26 27>;
             bindings = <&kp DOT>;
             layers = <NUM NLK>;
         };
         combo_BTclr {
             timeout-ms = <30>;
-            key-positions = <0 9>;
+            key-positions = <1 11>;
             bindings = <&bt BT_CLR>;
             layers = <GMC GLK>;
         };
         /* combo_BT3 { */
         /*     timeout-ms = <30>; */
-        /*     key-positions = <17 27>; */
+        /*     key-positions = <9 19>; */
         /*     bindings = <&bt BT_SEL 2>; */
         /*     layers = <GMC GLK>; */
         /* }; */
@@ -343,13 +343,13 @@
 // ---------------------------------------------------- DVORAK -------------------------------------------------- {{{2
         default {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-    &kp SQT    &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp L
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp A      LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V     &kp S
-// ╰──────────┴──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────┴──────────╯
+    &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
@@ -357,13 +357,13 @@
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
         numbers {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-    &kp TAB    &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp EQUAL
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp TILDE  LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3    &kp MINUS
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &kp TILDE  &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp MINUS
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans     &trans        &trans     &kp BSLH
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
@@ -372,13 +372,13 @@
 // NOTE: This is exactly the same as NUMBERS
         numbers_lock {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-    &kp TAB    &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp EQUAL
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp TILDE  LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3    &kp MINUS
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &kp TILDE  &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp MINUS
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans     &trans        &trans     &kp BSLH
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
@@ -386,13 +386,13 @@
 // --------------------------------------------------- FUNCTIONS ------------------------------------------------ {{{2
         functions {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-    &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_UP
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN  &kp C_BRI_DN
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &none      &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans    &kp LS(BSPC)   &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
@@ -401,13 +401,13 @@
 // NOTE: This is exactly the same as FUNCTIONS
         functions_lock {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-    &kp TAB    &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_UP
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN  &kp C_BRI_DN
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &none      &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               LCTRL_F1   LALT_F2    LGUI_F3    &kp F10      &kp C_MUTE   RGUI_END  &kp RALT   RCTL_PDN
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans    &kp LS(BSPC)   &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
             >;
@@ -420,13 +420,13 @@
 //
         gui_misc {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &none      &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-   &out OUT_TOG &none     &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 0
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+   &out OUT_TOG &none     &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT &kp  LCTRL &kp LALT   &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT CL_WIN_RGT &bt BT_SEL 1
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               &kp  LCTRL &kp LALT   &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans     &trans        &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
              >;
@@ -440,13 +440,13 @@
 // NOTE: This is exactly the same as GUI/MISC
         gui_misc_lock {
             bindings = <
-//            ╭──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────╮
-               &none      &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT
-// ╭──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────╮
-   &out OUT_TOG &none     &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 0
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+   &out OUT_TOG &none     &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT &kp  LCTRL &kp LALT   &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT CL_WIN_RGT &bt BT_SEL 1
-// ╰──────────┴──────────┴──────────┴──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
+    &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               &kp  LCTRL &kp LALT   &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
+//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                      &trans     &trans        &trans     &trans
 //                                  ╰──────────┴──────────╯  ╰──────────┴──────────╯
              >;
