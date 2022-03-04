@@ -86,7 +86,7 @@ number:  # {{{
 function:  # {{{
     keys: [
         [\tab, F7, F8, F9, F12, \faVolumeUp, Home, \arrowkeyup, PgUp, \faSunO],
-        ['', F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin],
+        ['@', F4, F5, F6, F11, \faVolumeDown, \arrowkeyleft, \arrowkeydown, \arrowkeyright, \faCircleThin],
         [None, F1\\\ctrl, F2\\\Alt, F3\\\cmd, F10, \faVolumeOff, End\\\cmd, '\phantom{X}\\\Alt', PgDn\\\ctrl, None],
         [None, None, None, '\textsc{trns}', '\shift\backdel',
             '\textsc{trns}', '\textsc{trns}', None, None, None],
