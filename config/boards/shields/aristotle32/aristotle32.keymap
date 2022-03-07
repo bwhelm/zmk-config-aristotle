@@ -352,7 +352,8 @@
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
                /* LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V */
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
+                                &lt NUM SEMI  &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+                                /* &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH */
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
 #define LSFT_A      &mf LEFT_SHIFT A
 #define LCTL_O      &ms LEFT_CONTROL O
