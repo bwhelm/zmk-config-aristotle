@@ -37,14 +37,14 @@
 
 // // Home Row Mods
 // // Dvorak
-// #define LSFT_A      &mf LEFT_SHIFT A
-// #define LCTL_O      &ms LEFT_CONTROL O
-// #define LALT_E      &ms LEFT_ALT E
-// #define LGUI_U      &ms LEFT_GUI U
-// #define RGUI_H      &ms RIGHT_GUI H
-// #define RALT_T      &ms RIGHT_ALT T
-// #define RCTL_N      &ms RIGHT_CONTROL N
-// #define RSFT_S      &mf RIGHT_SHIFT S
+#define LSFT_A      &mf LEFT_SHIFT A
+#define LCTL_O      &ms LEFT_CONTROL O
+#define LALT_E      &ms LEFT_ALT E
+#define LGUI_U      &ms LEFT_GUI U
+#define RGUI_H      &ms RIGHT_GUI H
+#define RALT_T      &ms RIGHT_ALT T
+#define RCTL_N      &ms RIGHT_CONTROL N
+#define RSFT_S      &mf RIGHT_SHIFT S
 // // Number
 // #define LSFT_TAB    &ms LEFT_SHIFT TAB
 // #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
@@ -122,7 +122,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <170>;  // 160 is too fast
+            tapping-term-ms = <180>;  // 160 is too fast
             // 180 might be too slow
             // quick-tap-ms = <250>;
             flavor = "tap-preferred";
@@ -133,7 +133,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <215>;  // 210 is too fast
+            tapping-term-ms = <220>;  // 210 is too fast
             // 225 seems pretty good, though I want to push it down somewhat
             // quick-tap-ms = <225>;
             flavor = "tap-preferred";
@@ -346,12 +346,22 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
+    LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
+    /* &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S */
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
-               LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
+               &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
+               /* LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V */
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+#define LSFT_A      &mf LEFT_SHIFT A
+#define LCTL_O      &ms LEFT_CONTROL O
+#define LALT_E      &ms LEFT_ALT E
+#define LGUI_U      &ms LEFT_GUI U
+#define RGUI_H      &ms RIGHT_GUI H
+#define RALT_T      &ms RIGHT_ALT T
+#define RCTL_N      &ms RIGHT_CONTROL N
+#define RSFT_S      &mf RIGHT_SHIFT S
             >;
       };  // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
