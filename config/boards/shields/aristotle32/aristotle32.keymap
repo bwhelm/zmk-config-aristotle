@@ -293,18 +293,6 @@
             bindings = <&tog GLK>;
             layers = <GMC GLK>;
         };
-        combo_zero {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp N0>;
-            layers = <NUM NLK>;
-        };
-        combo_period {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp DOT>;
-            layers = <NUM NLK>;
-        };
         combo_BTclr {
             timeout-ms = <30>;
             key-positions = <1 11>;
@@ -341,9 +329,9 @@
         numbers {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
+    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp GRAVE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯

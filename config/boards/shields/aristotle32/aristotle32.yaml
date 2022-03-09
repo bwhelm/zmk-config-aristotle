@@ -41,7 +41,7 @@ dvorak:  # {{{
         ['"\\\textquotesingle', '<\\,', '>\\.', P, Y, F, G, C, R, L],
         [A\\\shift, O\\\ctrl, E\\\Alt, U\\\cmd, I, D, H\\\cmd, T\\\Alt, N\\\ctrl, S\\\shift],
         [None, Q, J, K, X, B, M, W, V, None],
-        [None, None, None, ';\\\textsc{num}', '\backdel\\\shift',
+        [None, None, None, ';', '\backdel\\\textsc{num}',
             '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
@@ -62,8 +62,8 @@ dvorak:  # {{{
 
 number:  # {{{
     keys: [
-        [\tab, \&, '*', §, '', \textasciitilde, 7, 8, 9, '+\\='],
-        ['\textasciitilde\\\shift', \$\\\ctrl, \%\\\Alt, \textasciicircum\\\cmd, \textasciigrave, '>\\.', 4\\\cmd, 5\\\Alt, 6\\\ctrl, -~~\_\\\shift],
+        [\tab, \&, '*', §, '', \textasciigrave, 7, 8, 9, '+\\='],
+        ['\textasciitilde\\\shift', \$\\\ctrl, \%\\\Alt, \textasciicircum\\\cmd, '<\\,', '>\\.', 4\\\cmd, 5\\\Alt, 6\\\ctrl, -~~\_\\\shift],
         [None, '!', '@', \#, '$^{\circ}$', 0, 1, 2, 3, None],
         [None, None, None, '\textsc{trns}', '\textsc{trns}',
             '\textsc{trns}', '|\\\textbackslash', None, None, None],
@@ -71,7 +71,7 @@ number:  # {{{
     rowcombos: [
         ['', '', '', '', '', '', '+\\=', ''],
         ['', '', '', '\#', '', '', '', ''],
-        ['', '', '', '', '', '0', '.', ''],
+        ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
         ]
     colcombos: [
