@@ -64,7 +64,7 @@ dvorak:  # {{{
 number:  # {{{
     keys: [
         ['', \&, '*', §, \textasciitilde, '"', 7, 8, 9, '+\\='],
-        [\tab, \$, \%, \textasciicircum, \textasciigrave, :, 4, 5, 6, \_\\-],
+        [\tab, \$, \%, \textasciicircum, \textasciigrave, ':', 4, 5, 6, \_\\-],
         ['\phantom{X}\\\shift', '!\\\ctrl', '@\\\Alt', \#\\\cmd, '$^{\circ}$',
         0, 1\\\cmd, 2\\\Alt, 3\\\ctrl, '.\phantom{X}>\\\shift'],
         [None, None, None, None, '\textsc{trns}',
