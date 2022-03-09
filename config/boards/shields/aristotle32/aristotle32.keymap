@@ -46,7 +46,7 @@
 #define RCTL_N      &ms RIGHT_CONTROL N
 #define RSFT_S      &mf RIGHT_SHIFT S
 // Number
-#define LSFT_TAB    &ms LEFT_SHIFT TAB
+#define LSFT_TILDE  &ms LEFT_SHIFT TILDE
 #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
 #define LALT_PRCNT  &ms LEFT_ALT PRCNT
 #define LGUI_CARET  &ms LEFT_GUI CARET
@@ -167,12 +167,6 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
-        /* combo_question { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <1 2>; */
-        /*     bindings = <&kp QUESTION>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
         combo_lbrace {
             timeout-ms = <40>;
             key-positions = <1 11>;
@@ -197,18 +191,12 @@
             bindings = <&kp DQT>;
             layers = <DEF NUM NLK>;
         };
-        /* combo_pipe { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <6 7>; */
-        /*     bindings = <&kp PIPE>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
-        /* combo_equal { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <7 8>; */
-        /*     bindings = <&kp EQUAL>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <7 8>;
+            bindings = <&kp EQUAL>;
+            layers = <DEF NUM NLK>;
+        };
         combo_return {
             timeout-ms = <40>;
             key-positions = <7 17>;
@@ -245,12 +233,6 @@
         /*     bindings = <&kp HASH>; */
         /*     layers = <DEF NUM NLK>; */
         /* }; */
-        /* combo_minus { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <15 16>; */
-        /*     bindings = <&kp MINUS>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
         combo_rparen {
             timeout-ms = <40>;
             key-positions = <16 25>;
@@ -281,12 +263,12 @@
             bindings = <&kp Z>;
             layers = <DEF>;
         };
-        /* combo_exclamation { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <20 21>; */
-        /*     bindings = <&kp EXCLAMATION>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
+        combo_exclamation {
+            timeout-ms = <30>;
+            key-positions = <20 21>;
+            bindings = <&kp EXCLAMATION>;
+            layers = <DEF NUM NLK>;
+        };
         combo_toDEFLayer {
             timeout-ms = <40>;
             key-positions = <30 31>;
@@ -361,7 +343,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_TAB   LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -376,7 +358,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_TAB   LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
