@@ -41,14 +41,14 @@ from tempfile import gettempdir
 
 
 # VARIABLES. DISTANCES ARE IN INCHES
-SEPARATION = 1.0
+SEPARATION = 1.0    # between keyboard halves
 KEYSIZEHORIZ = .55
 KEYSIZEVERT = .55
 KEYSEPHORIZ = .2
 KEYSEPVERT = .2
 KEYSPACEHORIZ = KEYSIZEHORIZ + KEYSEPHORIZ
 KEYSPACEVERT = KEYSIZEVERT + KEYSEPVERT
-SHADING = "fill=black!7,"
+SHADING = "!7"  # transparency applied to coloring (= 70% tranparent)
 
 HEADER = '''\\documentclass[]{article}
 \\usepackage[oldstyle,sups]{ETbb}% to use free Bembo font (old style numbers)
@@ -107,8 +107,8 @@ FOOTER = "\n\\end{document}"
 
 
 def addShading(row, col, shadeList):
-    if [row, col] in shadeList:
-        return SHADING
+    if (row, col) in shadeList:
+        return 'fill=' + shadeList[(row, col)] + SHADING + ','
     else:
         return ""
 

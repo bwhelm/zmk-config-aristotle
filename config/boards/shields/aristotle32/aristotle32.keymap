@@ -344,9 +344,9 @@
         numbers_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp TILDE  &kp N7     &kp N8     &kp N9     &kp EQUAL
+    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp GRAVE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp GRAVE     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+    LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
