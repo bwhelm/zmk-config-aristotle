@@ -58,7 +58,7 @@ dvorak:  # {{{
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading:
-        [0,3]: red
+        [0,3]: yellow
     lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9],
             [0,4], [0,5], [0,6]]
 # }}}
@@ -86,8 +86,8 @@ number:  # {{{
     shading:
         [0,4]: black
         [3,4]: green
-        [2,4]: red
-        [3,5]: red
+        [2,4]: yellow
+        [3,5]: yellow
     lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9]]
 # }}}
 
@@ -112,7 +112,7 @@ function:  # {{{
         ]
     shading:
         [0,5]: black
-        [2,0]: red
+        [2,0]: yellow
         [1,7]: green
     lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9]]
 # }}}
@@ -120,9 +120,9 @@ function:  # {{{
 gui:  # {{{
     # TODO: Fix homerow mods!
     keys: [
-        ['\faUsb/\faBluetoothB\\toggle', '', Mouse\\\arrowkeyup, Wheel\\\arrowkeyup, Accel\\2, Show\\Wins, Prev\\Win, Win\\Big, Next\\Win, \faBluetoothB~1],
-        ['\shift', Mouse\\\arrowkeyleft, Mouse\\\arrowkeydown, Mouse\\\arrowkeyright, Accel\\1, Show\\App, Win\\1/3 L, Win\\Small, Win\\1/3 R, \faBluetoothB~2\\\shift],
-        [None, '\phantom{X}', '\phantom{X}', Wheel\\\arrowkeydown, Accel\\0, Show\\Desk, Win L\\\cmd, Win C\\\Alt, Win R\\\ctrl, None],
+        ['\faUsb/\faBluetoothB\\toggle', '', M \arrowkeyup, Wheel\\\arrowkeyup, Accel\\2, Show\\Wins, Prev\\Win, Win\\Big, Next\\Win, \faBluetoothB~1],
+        ['\shift', M \arrowkeyleft\\\ctrl, M \arrowkeydown\\\Alt, M \arrowkeyright\\\cmd, Accel\\1, Show\\App, 'W $\frac{1}{3}$ L\\\cmd', 'W Sm\\\Alt', 'W $\frac{1}{3}$ R\\\ctrl', \faBluetoothB~2\\\shift],
+        [None, '\phantom{X}', '\phantom{X}', Wheel\\\arrowkeydown, Accel\\0, Show\\Desk, Win L, Win C, Win R, None],
         [None, None, None, Right\\But, Left\\But, '\textsc{trns}', '\textsc{trns}', None, None, None],
         ]
     rowcombos: [
@@ -142,7 +142,8 @@ gui:  # {{{
         [1,2]: green
         [2,0]: green
         [3,1]: green
-    lines: [[1,6], [1,7], [1,8], [2,9]]
+        [2,9]: red
+    lines: [[2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9]]
 # }}}
 
 # vim: fdm=marker ft=M
