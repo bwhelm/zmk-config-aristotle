@@ -130,7 +130,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <185>;  // 160 is too fast
+            tapping-term-ms = <200>;  // 160 is too fast
+            /* tapping-term-ms = <185>;  // 160 is too fast */
             // 180 might be too slow
             // quick-tap-ms = <250>;
             flavor = "tap-preferred";
@@ -141,7 +142,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <225>;  // 210 is too fast
+            tapping-term-ms = <250>;  // 210 is too fast
             // 225 seems pretty good, though I want to push it down somewhat
             // quick-tap-ms = <225>;
             flavor = "tap-preferred";
