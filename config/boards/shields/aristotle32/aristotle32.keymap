@@ -64,34 +64,33 @@
 #define RCTRL_RGT   &ms RCTRL RIGHT
 #define RSFT_BRD    &ms RSFT C_BRI_DN
 
-// // Bottom Row Mods
-// // Dvorak
-// #define LSFT_BSPC   &mf LEFT_SHIFT BSPC
-// /* #define LSFT_SPACE  &mf LEFT_SHIFT SPACE */
-// #define LCTL_Q      &ms LEFT_CONTROL Q
-// #define LALT_J      &ms LEFT_ALT J
-// #define LGUI_K      &ms LEFT_GUI K
-// #define RGUI_M      &ms RIGHT_GUI M
-// #define RALT_W      &ms RIGHT_ALT W
-// #define RCTL_V      &ms RIGHT_CONTROL V
-// #define RSFT_S      &mf RIGHT_SHIFT S
-// // Number
-// // #define LSFT_TAB    &ms LEFT_SHIFT TAB
-// #define LCTL_EXCL   &ms LEFT_CONTROL EXCLAMATION
-// #define LALT_AT     &ms LEFT_ALT AT_SIGN
-// #define LGUI_HASH   &ms LEFT_GUI HASH
-// #define RGUI_N1     &ms RIGHT_GUI N1
-// #define RALT_N2     &ms RIGHT_ALT N2
-// #define RCTL_N3     &ms RIGHT_CONTROL N3
-// // #define RSFT_MINUS  &mf RIGHT_SHIFT MINUS
-// // Function
-// #define LCTRL_F1    &ms LCTRL F1
-// #define LALT_F2     &ms LALT F2
-// #define LGUI_F3     &ms LGUI F3
-// #define RGUI_END    &ms RGUI END
-// // #define RALT_DWN    &ms RALT DOWN
-// #define RCTL_PDN    &ms RCTRL PG_DN
-// #define RSFT_BRI_DN &mf RSFT C_BRI_DN
+/* // Bottom Row Mods */
+/* // Dvorak */
+/* #define LSFT_BSPC   &mf LEFT_SHIFT BSPC */
+/* #define LCTL_Q      &ms LEFT_CONTROL Q */
+/* #define LALT_J      &ms LEFT_ALT J */
+/* #define LGUI_K      &ms LEFT_GUI K */
+/* #define RGUI_M      &ms RIGHT_GUI M */
+/* #define RALT_W      &ms RIGHT_ALT W */
+/* #define RCTL_V      &ms RIGHT_CONTROL V */
+/* #define RSFT_S      &mf RIGHT_SHIFT S */
+/* // Number */
+/* // #define LSFT_TAB    &ms LEFT_SHIFT TAB */
+/* #define LCTL_EXCL   &ms LEFT_CONTROL EXCLAMATION */
+/* #define LALT_AT     &ms LEFT_ALT AT_SIGN */
+/* #define LGUI_HASH   &ms LEFT_GUI HASH */
+/* #define RGUI_N1     &ms RIGHT_GUI N1 */
+/* #define RALT_N2     &ms RIGHT_ALT N2 */
+/* #define RCTL_N3     &ms RIGHT_CONTROL N3 */
+/* // #define RSFT_MINUS  &mf RIGHT_SHIFT MINUS */
+/* // Function */
+/* #define LCTRL_F1    &ms LCTRL F1 */
+/* #define LALT_F2     &ms LALT F2 */
+/* #define LGUI_F3     &ms LGUI F3 */
+/* #define RGUI_END    &ms RGUI END */
+/* // #define RALT_DWN    &ms RALT DOWN */
+/* #define RCTL_PDN    &ms RCTRL PG_DN */
+/* #define RSFT_BRI_DN &mf RSFT C_BRI_DN */
 
 // Other
 #define BTLDR &bootloader
@@ -318,10 +317,13 @@
     &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
+//  &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
+//             LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &kp SEMI      &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+//                              &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
@@ -332,8 +334,10 @@
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp GRAVE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+//  &kp TILDE  &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
+//             LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &trans          &trans        &kp BSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
@@ -347,8 +351,10 @@
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &none         &kp GRAVE  &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS
+//  &kp TILDE  &kp DLLR   &kp PRCNT  &kp CARET  &kp GRAVE     &kp DOT    &kp N4     &kp N5     &kp N6     &kp MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
+//             LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &trans          &trans        &kp BSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
@@ -361,8 +367,10 @@
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_AT    LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
+//  &kp AT     &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
+//             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &kp LS(BSPC)    &trans        &trans
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
@@ -376,8 +384,10 @@
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     LSFT_AT    LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
+//  &kp AT     &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
+//             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &kp LS(BSPC)    &trans        &trans
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
@@ -394,9 +404,11 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
    &out OUT_TOG &none     &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+    &kp LSHIFT &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+//  &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
+//             &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &trans          &trans        &trans
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
@@ -414,9 +426,11 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
    &out OUT_TOG &none     &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+    &kp LSHIFT &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
+//  &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
+//             &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                 &trans        &trans          &trans        &trans
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
