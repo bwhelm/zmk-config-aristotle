@@ -42,7 +42,7 @@ dvorak:  # {{{
         ['"\\\textquotesingle', '<\\,', '>\\.', P, Y, F, G, C, R, L],
         [A\\\shift, O\\\ctrl, E\\\Alt, U\\\cmd, I, D, H\\\cmd, T\\\Alt, N\\\ctrl, S\\\shift],
         [None, Q, J, K, X, B, M, W, V, None],
-        [None, None, None, ';', '\backdel\\\textsc{num}',
+        [None, None, None, ;\\\shift, '\backdel\\\textsc{num}',
             '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
@@ -60,7 +60,7 @@ dvorak:  # {{{
     shading:
         [0,3]: yellow
     lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9],
-            [0,4], [0,5], [0,6]]
+            [0,3], [0,4], [0,5], [0,6]]
 # }}}
 
 number:  # {{{
@@ -113,7 +113,7 @@ function:  # {{{
     shading:
         [0,5]: black
         [2,0]: yellow
-        [1,7]: green
+        [1,7]: yellow
     lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9]]
 # }}}
 
@@ -138,9 +138,8 @@ gui:  # {{{
         ]
     shading:
         [0,6]: black
-        [1,1]: green
         [1,2]: green
-        [2,0]: green
+        [2,0]: red
         [3,1]: green
         [2,9]: red
     lines: [[2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9]]

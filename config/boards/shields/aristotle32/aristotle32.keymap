@@ -101,6 +101,7 @@
 /* #define RSFT_BRI_DN &mf RSFT C_BRI_DN */
 
 // Other
+#define LSFT_SEMI   &mf LEFT_SHIFT SEMI
 #define BTLDR &bootloader
 
 // }}}
@@ -286,12 +287,12 @@
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
-        combo_capslock {
-            timeout-ms = <50>;
-            key-positions = <10 19>;
-            bindings = <&kp CAPS>;
-            layers = <DEF>;
-        };
+        /* combo_capslock { */
+        /*     timeout-ms = <50>; */
+        /*     key-positions = <10 19>; */
+        /*     bindings = <&kp CAPS>; */
+        /*     layers = <DEF>; */
+        /* }; */
         combo_Z {
             timeout-ms = <30>;
             key-positions = <26 27>;
@@ -358,7 +359,7 @@
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
 //             LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
 //            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &kp SEMI      &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+                                LSFT_SEMI     &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
 //                              &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
@@ -462,7 +463,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
    &out OUT_TOG &none     &none      &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &bt BT_SEL 0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp CLCK   &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &bt BT_SEL 1
+    &kp CAPS   &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &bt BT_SEL 1
 //  &kp LSHIFT &none      &none      &none      &none         &kp LS(F3) WIN3LFT    WIN_SML    WIN3RGT   &bt BT_SEL 1
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &caps_word &none      &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT
