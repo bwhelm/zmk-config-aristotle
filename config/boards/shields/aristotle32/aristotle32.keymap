@@ -20,6 +20,7 @@
 #define FLK 4
 #define GMC 5
 #define GLK 6
+#define MAC 7
 
 
 // Home Row Mods
@@ -101,10 +102,10 @@
 /* #define RSFT_BRI_DN &mf RSFT C_BRI_DN */
 
 // Other
-#define LSFT_SEMI   &mf LEFT_SHIFT SEMI
+/* #define LSFT_SEMI   &mf LEFT_SHIFT SEMI */
 #define BTLDR &bootloader
-
 // }}}
+
 // ==================== OTHER SETTINGS ====================== {{{1
 /* // Set options for mod-tap behavior */
 &mt {
@@ -182,8 +183,14 @@
         /*     bindings = <&kp>, <&kp>; */
         /*     hold-trigger-key-positions = <0>, <1>, <2>, <3>, <4>, <10>, <11>, <12>, <13>, <14>, <20>, <21>, <22>, <23>, <28>, <29>; */
         /* }; */
-    };
-// }}}
+        tdname: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_NAME";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&firstname>, <&lastname>, <&fullname>;
+        };
+    };  // }}}
 
 // ========================= COMBOS ========================= {{{1
     combos {
@@ -230,6 +237,12 @@
             bindings = <&kp DQT>;
             layers = <DEF NUM NLK>;
         };
+        combo_quoteword {
+            timeout-ms = <40>;
+            key-positions = <6 16>;
+            bindings = <&quoteword>;
+            layers = <MAC>;
+        };
         combo_equal {
             timeout-ms = <30>;
             key-positions = <7 8>;
@@ -266,12 +279,6 @@
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
-        /* combo_hash { */
-        /*     timeout-ms = <30>; */
-        /*     key-positions = <13 14>; */
-        /*     bindings = <&kp HASH>; */
-        /*     layers = <DEF NUM NLK>; */
-        /* }; */
         combo_rparen {
             timeout-ms = <40>;
             key-positions = <16 25>;
@@ -306,6 +313,18 @@
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp EXCLAMATION>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_at {
+            timeout-ms = <30>;
+            key-positions = <20 21 22>;
+            bindings = <&kp AT>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_hash {
+            timeout-ms = <30>;
+            key-positions = <21 22>;
+            bindings = <&kp HASH>;
             layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
@@ -344,8 +363,77 @@
         /*     bindings = <&bt BT_SEL 2>; */
         /*     layers = <GMC GLK>; */
         /* }; */
-    };
-// }}}
+    };  // }}}
+
+// ========================= MACROS ========================= {{{1
+    macros {
+        ZMK_MACRO(firstname,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+               = <&macro_press &kp LSHFT>
+               , <&macro_tap &kp B>
+               , <&macro_release &kp LSHFT>
+               , <&macro_tap &kp E &kp N &kp N &kp E &kp T &kp T>;
+        )
+        ZMK_MACRO(lastname,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp H>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp E &kp L &kp M>
+                ;
+        )
+        ZMK_MACRO(fullname,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp E &kp N &kp N &kp E &kp T &kp T &kp SPACE>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp H>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp E &kp L &kp M>
+                ;
+        )
+        ZMK_MACRO(emphword,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+               = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp E &kp M &kp P &kp H &kp LBRC>
+               , <&macro_press &kp LCTRL>
+               , <&macro_tap &kp R>
+               , <&macro_release &kp LCTRL>
+               , <&macro_tap &kp DQT &kp RBRC>
+               ;
+        )
+        ZMK_MACRO(boldword,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+               = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp T &kp E &kp X &kp T &kp B &kp F &kp LBRC>
+               , <&macro_press &kp LCTRL>
+               , <&macro_tap &kp R>
+               , <&macro_release &kp LCTRL>
+               , <&macro_tap &kp DQT &kp RBRC>
+               ;
+        )
+        ZMK_MACRO(quoteword,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+               = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp E &kp N &kp Q &kp U &kp O &kp T &kp E &kp LBRC>
+               , <&macro_press &kp LCTRL>
+               , <&macro_tap &kp R>
+               , <&macro_release &kp LCTRL>
+               , <&macro_tap &kp DQT &kp RBRC>
+               ;
+        )
+    };  // }}}
 
 // ======================== KEYMAPS ========================= {{{1
     keymap {
@@ -361,10 +449,10 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
 //             LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                LSFT_SEMI     &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
-//                              &lt NUM SEMI  LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+//                               &lt NUM SEMI LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 //  ---------------------------------------------------- NUMBERS ------------------------------------------------ {{{2
@@ -378,9 +466,9 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //             LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &trans          &trans        &kp BSLH
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &trans          &trans        &kp BSLH
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 //  ------------------------------------------------- NUMBERS LOCK ---------------------------------------------- {{{2
@@ -395,9 +483,9 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //             LCTL_EXCL  LALT_AT    LGUI_HASH  &kp LA(K)     &kp N0     RGUI_N1    RALT_N2    RCTL_N3
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &trans          &trans        &kp BSLH
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &trans          &trans        &kp BSLH
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 // --------------------------------------------------- FUNCTIONS ------------------------------------------------ {{{2
@@ -411,9 +499,9 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &key_repeat &kp PG_DN
 //             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &kp LS(BSPC)    &trans        &trans
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &kp LS(BSPC)    &trans        &trans
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 // ------------------------------------------------ FUNCTIONS LOCK ---------------------------------------------- {{{2
@@ -428,9 +516,9 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &key_repeat &kp PG_DN
 //             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &kp LS(BSPC)    &trans        &trans
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &kp LS(BSPC)    &trans        &trans
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
 // --------------------------------------------------- GUI/MISC ------------------------------------------------- {{{2
@@ -449,9 +537,9 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &caps_word &none      &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT
 //             &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &trans          &trans        &trans
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &trans          &trans        &trans
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
              >;
       };  // }}}
 // ------------------------------------------------ GUI/MISC LOCK ----------------------------------------------- {{{2
@@ -471,11 +559,25 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &caps_word &none      &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT
 //             &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LG(F3) CD_WIN_LFT A_WIN_CNT  CL_WIN_RGT
-//            ╰──────────┴─────┬────┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                &trans        &trans          &trans        &trans
-//                             ╰─────────────┴────────────╯  ╰─────────────┴────────────╯
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &trans       &trans          &trans        &trans
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
              >;
       }; // }}}
+// ---------------------------------------------------- MACROS -------------------------------------------------- {{{2
+        macros {
+            bindings = <
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &quoteword &none      &none      &none      &none         &none      &none      &none      &none      &none
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &none      &none      &emphword  &none      &none         &none      &none      &none      &tdname    &none
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               &none      &none      &none      &none         &boldword  &none      &none      &none
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &none        &none           &none         &none
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
+            >;
+      };  // }}}
   };  // keymap }}}
 };
 
