@@ -37,12 +37,12 @@
 #define WIN_RGT &kp LA(LG(RIGHT))
 // Dvorak
 #define LSFT_A      &mf LEFT_SHIFT A
-#define LCTL_O      &ms LEFT_CONTROL O
+#define LCTL_O      &mf LEFT_CONTROL O
 #define LALT_E      &ms LEFT_ALT E
 #define LGUI_U      &ms LEFT_GUI U
 #define RGUI_H      &ms RIGHT_GUI H
 #define RALT_T      &ms RIGHT_ALT T
-#define RCTL_N      &ms RIGHT_CONTROL N
+#define RCTL_N      &mf RIGHT_CONTROL N
 #define RSFT_S      &mf RIGHT_SHIFT S
 // Number
 #define LSFT_TILDE  &ms LEFT_SHIFT TILDE
@@ -132,11 +132,13 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_FAST";
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <185>;
             // 190: not getting false positives, but sometimes not getting mod I want. Shorter?
             //   (Worry here: I'm sometimes not getting `s` before space. Will shortening it make
             //   that more likely?)
-            // 180: 
+            // 180: Seeing some false positives
+            // 185: 
+            // Moving CTRL to &mf
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -146,9 +148,11 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <225>;
             // 230: not getting false positives, but failing sometimes to register when I want them. Shorter?
-            // Should I move <CTRL> to &mf?
+            // Should I move <CTRL> to &mf? (That might help with false negatives w/230.)
+            // 220: Seeing some false positives with <CMD>. 225?
+            // 225: 
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -401,7 +405,7 @@
                 ;
         )
         ZMK_MACRO(emphword,
-            wait-ms = <10>;
+            wait-ms = <15>;
             tap-ms = <10>;
             bindings
                = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp E &kp M &kp P &kp H &kp LBRC>
@@ -411,6 +415,7 @@
                , <&macro_tap &kp DQT &kp RBRC>
                ;
         )
+        // Sometimes getting keys out of order on emphword with w=10, t=10
         ZMK_MACRO(boldword,
             wait-ms = <10>;
             tap-ms = <10>;
