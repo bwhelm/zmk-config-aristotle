@@ -107,12 +107,6 @@
 // }}}
 
 // ==================== OTHER SETTINGS ====================== {{{1
-/* // Set options for mod-tap behavior */
-&mt {
-    tapping-term-ms = <170>;
-    quick-tap-ms = <150>;
-    flavor = "tap-preferred";
-};
 // Set options for layer-tap behavior
 &lt {
     tapping-term-ms = <220>; // was 200 -- too fast (without tap-preferred)
@@ -120,7 +114,7 @@
     // 150 was too quick: failed to get <spaces> when desired
     // 175: getting some missed taps, as well as some arrow keys instead of space-char
     // 250 was pretty wonky: getting too many taps when trying to hold
-    quick-tap-ms = <150>;
+    quick-tap-ms = <200>;
     flavor = "tap-preferred";
 };
 // }}}
@@ -139,7 +133,7 @@
             // 180: Seeing some false positives
             // 185: 
             // Moving CTRL to &mf
-            quick-tap-ms = <150>;
+            quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
             bindings = <&kp>, <&kp>;
@@ -153,7 +147,7 @@
             // Should I move <CTRL> to &mf? (That might help with false negatives w/230.)
             // 220: Seeing some false positives with <CMD>. 225?
             // 225: 
-            quick-tap-ms = <150>;
+            quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
             bindings = <&kp>, <&kp>;
@@ -392,7 +386,7 @@
         )
         ZMK_MACRO(fullname,
             wait-ms = <10>;
-            tap-ms = <10>;
+            tap-ms = <5>;
             bindings
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp B>
@@ -404,6 +398,7 @@
                 , <&macro_tap &kp E &kp L &kp M>
                 ;
         )
+        // Sometimes getting keys out of order on the below with w=10, t=10
         ZMK_MACRO(emphword,
             wait-ms = <15>;
             tap-ms = <10>;
@@ -415,10 +410,9 @@
                , <&macro_tap &kp DQT &kp RBRC>
                ;
         )
-        // Sometimes getting keys out of order on emphword with w=10, t=10
         ZMK_MACRO(boldword,
             wait-ms = <10>;
-            tap-ms = <10>;
+            tap-ms = <15>;
             bindings
                = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp T &kp E &kp X &kp T &kp B &kp F &kp LBRC>
                , <&macro_press &kp LCTRL>
@@ -428,8 +422,8 @@
                ;
         )
         ZMK_MACRO(quoteword,
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <15>;
+            tap-ms = <15>;
             bindings
                = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp E &kp N &kp Q &kp U &kp O &kp T &kp E &kp LBRC>
                , <&macro_press &kp LCTRL>
@@ -437,6 +431,12 @@
                , <&macro_release &kp LCTRL>
                , <&macro_tap &kp DQT &kp RBRC>
                ;
+        )
+        ZMK_MACRO(tabedit,
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings
+               = <&macro_tap &kp COLON &kp T &kp A &kp B &kp E &kp RETURN>;
         )
     };  // }}}
 
@@ -574,8 +574,8 @@
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &quoteword &none      &none      &none      &none         &none      &none      &none      &none      &none
-// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      &none      &emphword  &none      &none         &none      &none      &none      &tdname    &none
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤ 
+    &none      &none      &emphword  &none      &none         &none      &none      &tabedit   &tdname    &none
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &boldword  &none      &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
