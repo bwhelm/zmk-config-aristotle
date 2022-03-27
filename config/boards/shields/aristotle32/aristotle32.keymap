@@ -192,7 +192,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_TAB";
             #binding-cells = <0>;
-            tapping-turm-ms = <250>;
+            tapping-term-ms = <250>;
             bindings = <&texfile>, <&tabedit>, <&tabtex>;
         }; 
     };  // }}}
