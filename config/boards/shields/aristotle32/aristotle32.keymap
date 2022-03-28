@@ -413,7 +413,15 @@
             wait-ms = <30>;
             tap-ms = <5>;
             bindings
-                = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp E &kp M &kp P &kp H &kp LBRC>
+                = <&macro_tap &kp ESC>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp BSLH>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp E &kp M &kp P &kp H>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp LBRC>
                 , <&macro_press &kp LCTRL>
                 , <&macro_tap &kp R>
                 , <&macro_release &kp LCTRL>
@@ -422,9 +430,17 @@
         )
         ZMK_MACRO(boldword,
             wait-ms = <30>;
-            tap-ms = <10>;
+            tap-ms = <5>;
             bindings
-                = <&macro_tap &kp ESC &kp C &kp I &kp W &kp BSLH &kp T &kp E &kp X &kp T &kp B &kp F &kp LBRC>
+                = <&macro_tap &kp ESC>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp BSLH>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp E &kp X &kp T &kp B &kp F>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp LBRC>
                 , <&macro_press &kp LCTRL>
                 , <&macro_tap &kp R>
                 , <&macro_release &kp LCTRL>
