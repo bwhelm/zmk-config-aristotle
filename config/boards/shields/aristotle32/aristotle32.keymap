@@ -486,23 +486,32 @@
                 ;
         )
         ZMK_MACRO(texfile,
-            wait-ms = <20>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <5>;
             bindings
-                = <&macro_tap &kp COLON &kp T &kp E &kp X &kp RETURN>;
+                = <&macro_tap &kp ESC &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp COLON &kp T &kp E &kp X &kp RETURN>;
         )
         ZMK_MACRO(tabedit,
-            wait-ms = <20>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <5>;
             bindings
-                = <&macro_tap &kp COLON &kp T &kp A &kp B &kp E &kp RETURN>;
+                = <&macro_tap &kp ESC &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp A &kp B &kp E &kp RETURN>;
         )
             ZMK_MACRO(tabtex,
-            wait-ms = <20>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <5>;
             bindings
-                = <&macro_tap &kp COLON &kp T &kp A &kp B &kp E &kp RETURN>
-                , <&macro_tap &kp COLON &kp T &kp E &kp X &kp RETURN>;
+                = <&macro_tap &kp ESC &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp A &kp B &kp E &kp RETURN>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp E &kp X &kp RETURN>;
         )
 };  // }}}
 
