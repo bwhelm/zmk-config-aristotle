@@ -371,6 +371,8 @@
     };  // }}}
 
 // ========================= MACROS ========================= {{{1
+// Docs say `wait-ms` and `tap-ms` should be at least 30 to avoid
+// out-of-order keystrokes.
     macros {
         ZMK_MACRO(firstname,
             wait-ms = <10>;
@@ -440,6 +442,25 @@
                 , <&macro_tap &kp BSLH>
                 , <&macro_wait_time 10>
                 , <&macro_tap &kp E &kp N &kp Q &kp U &kp O &kp T &kp E>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp LBRC>
+                , <&macro_press &kp LCTRL>
+                , <&macro_tap &kp R>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp DQT &kp RBRC>
+                ;
+        )
+        ZMK_MACRO(smallcap,
+            wait-ms = <30>;
+            tap-ms = <5>;
+            bindings
+                = <&macro_tap &kp ESC>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 30>
+                , <&macro_tap &kp BSLH>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp E &kp X &kp T &kp S &kp C>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp LBRC>
                 , <&macro_press &kp LCTRL>
@@ -603,8 +624,8 @@
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &quoteword &none      &none      &none      &none         &none      &none      &none      &none      &none
-// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤ 
-    &none      &none      &emphword  &none      &none         &none      &none      &tdtextab  &tdname    &none
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &none      &none      &emphword  &none      &none         &none      &none      &tdtextab  &tdname    &smallcap
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &boldword  &none      &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
