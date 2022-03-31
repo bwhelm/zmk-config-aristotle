@@ -22,8 +22,6 @@
 #define GLK 6
 #define MAC 7
 
-
-// Home Row Mods
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_PRV &kp LS(LG(GRAVE))
 #define WIN_BIG &kp LC(LA(LG(RIGHT)))
@@ -31,18 +29,19 @@
 #define CD_WIN3LFT  &ms RIGHT_GUI LC(LA(LEFT))
 #define A_WIN_SML   &ms RIGHT_ALT LC(LA(LG(LEFT)))
 #define CL_WIN3RGT  &ms RIGHT_CONTROL LC(LA(RIGHT))
-/* #define S_BT_SEL1   &ms RIGHT_SHIFT // FIXME: Need to add this! */
 #define WIN_LFT &kp LA(LG(LEFT))
 #define WIN_CNT &kp LC(LG(LA(C)))
 #define WIN_RGT &kp LA(LG(RIGHT))
+
+// Home Row Mods
 // Dvorak
 #define LSFT_A      &mf LEFT_SHIFT A
-#define LCTL_O      &mf LEFT_CONTROL O
+#define LCTL_O      &mm LEFT_CONTROL O
 #define LALT_E      &ms LEFT_ALT E
 #define LGUI_U      &ms LEFT_GUI U
 #define RGUI_H      &ms RIGHT_GUI H
 #define RALT_T      &ms RIGHT_ALT T
-#define RCTL_N      &mf RIGHT_CONTROL N
+#define RCTL_N      &mm RIGHT_CONTROL N
 #define RSFT_S      &mf RIGHT_SHIFT S
 // Number
 #define LSFT_TILDE  &ms LEFT_SHIFT TILDE
@@ -63,7 +62,6 @@
 #define RCTRL_RGT   &ms RCTRL RIGHT
 #define RSFT_BRD    &ms RSFT C_BRI_DN
 
-/* // Bottom Row Mods */
 /* // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows */
 /* #define WIN_PRV &kp LS(LG(GRAVE)) */
 /* #define WIN_BIG &kp LC(LA(LG(RIGHT))) */
@@ -74,14 +72,16 @@
 /* #define CD_WIN_LFT &ms RIGHT_GUI LA(LG(LEFT)) */
 /* #define A_WIN_CNT  &ms RIGHT_ALT LC(LG(LA(C))) */
 /* #define CL_WIN_RGT &ms RIGHT_CONTROL LA(LG(RIGHT)) */
+
+/* // Bottom Row Mods */
 /* // Dvorak */
 /* #define LSFT_BSPC   &mf LEFT_SHIFT BSPC */
-/* #define LCTL_Q      &ms LEFT_CONTROL Q */
+/* #define LCTL_Q      &mm LEFT_CONTROL Q */
 /* #define LALT_J      &ms LEFT_ALT J */
 /* #define LGUI_K      &ms LEFT_GUI K */
 /* #define RGUI_M      &ms RIGHT_GUI M */
 /* #define RALT_W      &ms RIGHT_ALT W */
-/* #define RCTL_V      &ms RIGHT_CONTROL V */
+/* #define RCTL_V      &mm RIGHT_CONTROL V */
 /* #define RSFT_S      &mf RIGHT_SHIFT S */
 /* // Number */
 /* // #define LSFT_TAB    &ms LEFT_SHIFT TAB */
@@ -131,8 +131,18 @@
             //   (Worry here: I'm sometimes not getting `s` before space. Will shortening it make
             //   that more likely?)
             // 180: Seeing some false positives
-            // 185:
-            // Moving CTRL to &mf
+            // 185: Seems pretty good!
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            // retro-tap;
+            bindings = <&kp>, <&kp>;
+        };
+        mm: modtap_medium {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MODTAP_SLOW";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            // Should I create a &mm just for <CTRL>?
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -144,9 +154,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <225>;
             // 230: not getting false positives, but failing sometimes to register when I want them. Shorter?
-            // Should I move <CTRL> to &mf? (That might help with false negatives w/230.)
             // 220: Seeing some false positives with <CMD>. 225?
-            // 225:
+            // 225: Seems pretty good!
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
