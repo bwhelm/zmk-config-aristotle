@@ -499,7 +499,7 @@
             bindings
                 = <&macro_tap &kp ESC &kp COLON>
                 , <&macro_wait_time 10>
-                , <&macro_tap &kp COLON &kp T &kp E &kp X &kp RETURN>;
+                , <&macro_tap &kp T &kp E &kp X &kp RETURN>;
         )
 };  // }}}
 
