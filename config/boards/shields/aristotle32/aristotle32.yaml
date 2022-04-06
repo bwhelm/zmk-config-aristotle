@@ -43,7 +43,7 @@ dvorak:  # {{{
         [A\\\shift, O\\\ctrl, E\\\Alt, U\\\cmd, I, D, H\\\cmd, T\\\Alt, N\\\ctrl, S\\\shift],
         [None, Q, J, K, X, B, M, W, V, None],
         [None, None, None, ';\\\textsc{mac}', '\backdel\\\textsc{num}',
-            '\phantom{M}\vtextvisiblespace\phantom{M}\\\textsc{fun}',
+            '\vtextvisiblespace\\\textsc{fun}',
             '{/}~~?\\\textsc{gui}', None, None, None],
         ]
     rowcombos: [
