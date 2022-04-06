@@ -195,6 +195,13 @@
             tapping-term-ms = <250>;
             bindings = <&tabedit>, <&texfile>;
         };
+        spund: space_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPACE_UNDERSCORE";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp UNDERSCORE>;
+            mods = <MOD_LSFT>;
+        };
     };  // }}}
 
 // ========================= COMBOS ========================= {{{1
@@ -518,7 +525,7 @@
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
 //             LCTL_Q     LALT_J     LGUI_K     &kp X         &kp B      RGUI_M     RALT_W     RCTL_V
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN &spund &lt GMC FSLH
 //                               &lt NUM SEMI LSFT_BSPC       &lt FUN SPACE &lt GMC FSLH
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
