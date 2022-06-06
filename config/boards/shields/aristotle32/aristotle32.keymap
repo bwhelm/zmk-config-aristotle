@@ -36,13 +36,17 @@
 // Home Row Mods
 // Dvorak
 #define LSFT_A      &mf LEFT_SHIFT A
-#define LCTL_O      &mm LEFT_CONTROL O
+// O to mf: try getting <C-W> more reliably
+// #define LCTL_O      &mm LEFT_CONTROL O
+#define LCTL_O      &mf LEFT_CONTROL O
 #define LALT_E      &ms LEFT_ALT E
 #define LGUI_U      &ms LEFT_GUI U
 #define RGUI_H      &ms RIGHT_GUI H
 #define RALT_T      &ms RIGHT_ALT T
 #define RCTL_N      &mm RIGHT_CONTROL N
-#define RSFT_S      &mf RIGHT_SHIFT S
+// S to mm: try cutting down on missed `s`s before space
+// #define RSFT_S      &mf RIGHT_SHIFT S
+#define RSFT_S      &mm RIGHT_SHIFT S
 // Number
 #define LSFT_TILDE  &ms LEFT_SHIFT TILDE
 #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
