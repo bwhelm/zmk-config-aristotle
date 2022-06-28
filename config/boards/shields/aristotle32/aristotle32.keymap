@@ -22,6 +22,13 @@
 #define GLK 6
 #define MAC 7
 
+// Combo timeout speeds (in ms). Note: must be enclosed in <>!
+#define COMBO_SLOW <40>
+// FIXME: Below should be 30, but having it be the same as
+// COMBO_SLOW to try to avoid MOD_TAPS getting stuck.
+// See <https://github.com/zmkfirmware/zmk/issues/986>
+#define COMBO_FAST <40>
+
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_PRV &kp LS(LG(GRAVE))
 #define WIN_BIG &kp LC(LA(LG(RIGHT)))
@@ -205,169 +212,169 @@
     combos {
         compatible = "zmk,combos";
         combo_plus3 {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <6 7 8>;
             bindings = <&kp PLUS>;
             layers = <DEF NUM NLK>;
         };
         combo_minus3 {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <16 17 18>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM NLK>;
         };
         combo_underscore3 {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <25 26 27>;
             bindings = <&kp UNDERSCORE>;
             layers = <DEF NUM NLK>;
         };
         combo_lbrace {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <1 11>;
             bindings = <&kp LEFT_BRACE>;
             layers = <DEF NUM NLK>;
         };
         combo_esc {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <2 12>;
             bindings = <&kp ESC>;
             layers = <DEF NUM NLK FUN FLK>;
         };
         combo_asterisk {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <3 13>;
             bindings = <&kp ASTRK>;
             layers = <DEF NUM NLK>;
         };
         combo_doublequote {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <6 16>;
             bindings = <&kp DQT>;
             layers = <DEF NUM NLK>;
         };
         combo_quoteword {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <6 16>;
             bindings = <&quoteword>;
             layers = <MAC>;
         };
         combo_equal {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <7 8>;
             bindings = <&kp EQUAL>;
             layers = <DEF NUM NLK>;
         };
         combo_return {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <7 17>;
             bindings = <&kp ENTER>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_rbrace {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <8 18>;
             bindings = <&kp RIGHT_BRACE>;
             layers = <DEF NUM NLK>;
         };
         combo_lbracket {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <11 20>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
         combo_tab {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <12 21>;
             bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
         combo_lparen {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <13 22>;
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
         combo_rparen {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <16 25>;
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
         combo_colon {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <17 26>;
             bindings = <&kp COLON>;
             layers = <DEF NUM NLK>;
         };
         combo_rbracket {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <18 27>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
         /* combo_capslock { */
-        /*     timeout-ms = <50>; */
+        /*     timeout-ms = COMBO_SLOW; */
         /*     key-positions = <10 19>; */
         /*     bindings = <&kp CAPS>; */
         /*     layers = <DEF>; */
         /* }; */
         combo_Z {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <26 27>;
             bindings = <&kp Z>;
             layers = <DEF>;
         };
         combo_exclamation {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <20 21>;
             bindings = <&kp EXCLAMATION>;
             layers = <DEF NUM NLK>;
         };
         combo_at {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <20 21 22>;
             bindings = <&kp AT>;
             layers = <DEF NUM NLK>;
         };
         combo_hash {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <21 22>;
             bindings = <&kp HASH>;
             layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
             bindings = <&to DEF>;
             layers = <DEF NUM NLK FUN FLK GUI GLK>;
         };
         combo_numLock {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <0 10>;
             bindings = <&tog NLK>;
             layers = <NUM NLK>;
         };
         combo_funLock {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <0 10>;
             bindings = <&tog FLK>;
             layers = <FUN FLK>;
         };
         combo_GMCLock {
-            timeout-ms = <40>;
+            timeout-ms = COMBO_SLOW;
             key-positions = <0 10>;
             bindings = <&tog GLK>;
             layers = <GMC GLK>;
         };
         combo_BTclr {
-            timeout-ms = <30>;
+            timeout-ms = COMBO_FAST;
             key-positions = <1 11>;
             bindings = <&bt BT_CLR>;
             layers = <GMC GLK>;
         };
         /* combo_BT3 { */
-        /*     timeout-ms = <30>; */
+        /*     timeout-ms = COMBO_FAST; */
         /*     key-positions = <9 19>; */
         /*     bindings = <&bt BT_SEL 2>; */
         /*     layers = <GMC GLK>; */
