@@ -150,7 +150,7 @@
         };
         mm: modtap_medium {
             compatible = "zmk,behavior-hold-tap";
-            label = "MODTAP_SLOW";
+            label = "MODTAP_MEDIUM";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             // Should I create a &mm just for <CTRL>?
@@ -211,19 +211,19 @@
 // ========================= COMBOS ========================= {{{1
     combos {
         compatible = "zmk,combos";
-        combo_plus3 {
+        combo_plus {
             timeout-ms = COMBO_SLOW;
             key-positions = <6 7 8>;
             bindings = <&kp PLUS>;
             layers = <DEF NUM NLK>;
         };
-        combo_minus3 {
+        combo_minus {
             timeout-ms = COMBO_SLOW;
             key-positions = <16 17 18>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM NLK>;
         };
-        combo_underscore3 {
+        combo_underscore {
             timeout-ms = COMBO_SLOW;
             key-positions = <25 26 27>;
             bindings = <&kp UNDERSCORE>;
