@@ -502,15 +502,35 @@
             bindings
                 = <&macro_tap &kp ESC &kp COLON>
                 , <&macro_wait_time 10>
-                , <&macro_tap &kp T &kp A &kp B &kp E &kp RETURN>;
+                , <&macro_tap &kp T &kp A &kp B &kp E &kp RETURN>
+                ;
         )
         ZMK_MACRO(texfile,
             wait-ms = <30>;
             tap-ms = <5>;
             bindings
-                = <&macro_tap &kp ESC &kp COLON>
+                = <&macro_tap &kp COLON>
                 , <&macro_wait_time 10>
-                , <&macro_tap &kp T &kp E &kp X &kp RETURN>;
+                , <&macro_tap &kp T &kp E &kp X &kp RETURN>
+                ;
+        )
+        ZMK_MACRO(texclean,
+            wait-ms = <30>;
+            tap-ms = <5>;
+            bindings
+                = <&macro_tap &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp T &kp E &kp X &kp TAB &kp RETURN>
+                ;
+        )
+        ZMK_MACRO(enew,
+            wait-ms = <30>;
+            tap-ms = <5>;
+            bindings
+                = <&macro_tap &kp COLON>
+                , <&macro_wait_time 10>
+                , <&macro_tap &kp e &kp n &kp e &kp w &kp RETURN>
+                ;
         )
 };  // }}}
 
@@ -647,9 +667,9 @@
         macros {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &quoteword &none      &none      &none      &none         &none      &none      &none      &none      &none
+    &quoteword &none      &none      &none      &none         &none      &none      &texclean  &none      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      &none      &emphword  &none      &none         &none      &none      &tdtextab  &tdname    &smallcap
+    &none      &enew      &emphword  &none      &none         &none      &none      &tdtextab  &tdname    &smallcap
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &boldword  &none      &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
