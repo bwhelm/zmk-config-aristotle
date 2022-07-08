@@ -153,7 +153,7 @@ gui:  # {{{
 macros:  # {{{
     keys: [
         ["``...''", '', '', '', '', '', '', '\TeX{}\\Clean', '', ''],
-        ['', ':enew', '\emph{emph}', '', '', '', '', 'tab\slash\\\TeX', 'Name', '\textsc{caps}'],
+        ['', ':enew', '\emph{emph}', '', '', '', '', 'tab\slash\\\TeX', 'name\\f\slash l\slash a', '\textsc{caps}'],
         [None, '', '', '', '', '\textbf{bold}', '', '', '', None],
         [None, None, None, '', '', '', '', None, None, None],
         ]

@@ -206,6 +206,13 @@
             tapping-term-ms = <250>;
             bindings = <&tabedit>, <&texfile>;
         };
+        texclean: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CLEAN";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&texclean1>, <&texclean2>;
+        };
     };  // }}}
 
 // ========================= COMBOS ========================= {{{1
@@ -497,7 +504,7 @@
                 ;
         )
         ZMK_MACRO(tabedit,
-            wait-ms = <30>;
+            wait-ms = <50>;
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp ESC &kp COLON>
@@ -506,7 +513,7 @@
                 ;
         )
         ZMK_MACRO(texfile,
-            wait-ms = <30>;
+            wait-ms = <50>;
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp COLON>
@@ -514,8 +521,18 @@
                 , <&macro_tap &kp T &kp E &kp X &kp RETURN>
                 ;
         )
-        ZMK_MACRO(texclean,
-            wait-ms = <30>;
+        ZMK_MACRO(texclean1,
+            wait-ms = <50>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_tap &kp COMMA &kp L>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LSHFT>
+                ;
+        )
+        ZMK_MACRO(texclean2,
+            wait-ms = <50>;
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp COLON>
@@ -524,7 +541,7 @@
                 ;
         )
         ZMK_MACRO(enew,
-            wait-ms = <30>;
+            wait-ms = <50>;
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp COLON>
