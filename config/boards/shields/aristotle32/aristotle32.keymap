@@ -537,7 +537,14 @@
             bindings
                 = <&macro_tap &kp COLON>
                 , <&macro_wait_time 10>
-                , <&macro_tap &kp T &kp E &kp X &kp C &kp L &kp E &kp A &kp N &kp TAB &kp RETURN>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp E &kp X>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp L &kp E &kp A &kp N &kp RETURN>
                 ;
         )
         ZMK_MACRO(enew,
