@@ -27,7 +27,8 @@
 // FIXME: Below should be 30, but having it be the same as
 // COMBO_SLOW to try to avoid MOD_TAPS getting stuck.
 // See <https://github.com/zmkfirmware/zmk/issues/986>
-#define COMBO_FAST <40>
+// That should be fixed now: <https://github.com/zmkfirmware/zmk/commit/fc511e40cc1a274473a753c959f8d7e5fcc317d0>
+#define COMBO_FAST <30>
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_PRV &kp LS(LG(GRAVE))
@@ -114,7 +115,9 @@
 
 // Other
 /* #define LSFT_SEMI   &mf LEFT_SHIFT SEMI */
-#define BTLDR &bootloader
+
+/* #define BTLDR &bootloader */
+
 // }}}
 
 // ==================== OTHER SETTINGS ====================== {{{1
@@ -645,10 +648,10 @@
             >;
       };  // }}}
 // --------------------------------------------------- GUI/MISC ------------------------------------------------- {{{2
-// |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
-// |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
-// |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
-//                                 | LftBtn|     | RgtBtn|  ---- |
+// |       |       |  M Up | Whl Up|  Accl2|          |       |       |       |       |       |
+// |       |  M Lft|  M Dn |  M Rgt|  Accl1|          |       |       |       |       |       |
+// |       |       |       | Whl Dn|  Accl0|          |       |       |       |       |       |
+//                                 | LftBtn|          | RgtBtn|  ---- |
 //
         gui_misc {
             bindings = <
@@ -666,10 +669,10 @@
              >;
       };  // }}}
 // ------------------------------------------------ GUI/MISC LOCK ----------------------------------------------- {{{2
-// |BT<>USB|       |  M Up | Whl Up|  Accl2|     |   F3  | PrvWin| WinBig| NxtWin| BT #1 |
-// |       |  M Lft|  M Dn |  M Rgt|  Accl1|     | Sft-F3|  Win3L|  WinSm|  Win3R| BT #2 |
-// |  SHFT |  CTRL |       | Whl Dn|  Accl0|     | Cmd-F3| WinLft| WinCen| WinRgt| BT #3 |
-//                                 | LftBtn|     | RgtBtn|  ---- |
+// |       |       |  M Up | Whl Up|  Accl2|          |       |       |       |       |       |
+// |       |  M Lft|  M Dn |  M Rgt|  Accl1|          |       |       |       |       |       |
+// |       |       |       | Whl Dn|  Accl0|          |       |       |       |       |       |
+//                                 | LftBtn|          | RgtBtn|  ---- |
 //
 // NOTE: This is exactly the same as GUI/MISC
         gui_misc_lock {
