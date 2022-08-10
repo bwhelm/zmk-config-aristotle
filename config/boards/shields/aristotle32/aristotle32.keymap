@@ -305,12 +305,6 @@
             bindings = <&kp LPAR>;
             layers = <DEF NUM NLK>;
         };
-        combo_fslash {                  // temp combo for slash
-            timeout-ms = COMBO_FAST;
-            key-positions = <13 14>;
-            bindings = <&lt GMC FSLH>;
-            layers = <DEF>;
-        };
         combo_rparen {
             timeout-ms = COMBO_SLOW;
             key-positions = <16 25>;

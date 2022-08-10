@@ -4,20 +4,20 @@
 if SHIELD_ARISTOTLE32
 
 config ZMK_KEYBOARD_NAME
-    default "Aristotle 32'22"
+    default "Aristotle 32'22t"
 
 endif
 
 if SHIELD_ARISTOTLE32_A
 
 config ZMK_KEYBOARD_NAME
-    default "Aristotle 32'22a"
+    default "Aristotle 32'22ta"
 
 endif
 
 if SHIELD_ARISTOTLE32_B
 
 config ZMK_KEYBOARD_NAME
-    default "Aristotle 32'22b"
+    default "Aristotle 32'22tb"
 
 endif
