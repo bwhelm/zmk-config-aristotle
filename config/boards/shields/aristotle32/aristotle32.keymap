@@ -52,9 +52,9 @@
 #define RGUI_H      &ms RIGHT_GUI H
 #define RALT_T      &mm RIGHT_ALT T
 #define RCTL_N      &mm RIGHT_CONTROL N
+#define RSFT_S      &mf RIGHT_SHIFT S
 // S to mm: try cutting down on missed `s`s before space
-// #define RSFT_S      &mf RIGHT_SHIFT S
-#define RSFT_S      &mm RIGHT_SHIFT S
+// #define RSFT_S      &mm RIGHT_SHIFT S
 // Number
 #define LSFT_TILDE  &ms LEFT_SHIFT TILDE
 #define LCTL_DLLR   &ms LEFT_CONTROL DLLR
@@ -167,9 +167,9 @@
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
             tapping-term-ms = <240>;
-            // 230: not getting false positives, but failing sometimes to register when I want them. Shorter?
+            // 230: getting a few false positives, but failing sometimes to register when I want them
             // 220: Seeing some false positives with <CMD>. 225?
-            // 225: Seems pretty good!
+            // 225: Seems pretty good! ... But getting "<C-e><C-space>" instead of "he ".
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
