@@ -47,10 +47,10 @@
 // O to mf: try getting <C-W> more reliably
 // #define LCTL_O      &mm LEFT_CONTROL O
 #define LCTL_O      &mf LEFT_CONTROL O
-#define LALT_E      &ms LEFT_ALT E
+#define LALT_E      &mm LEFT_ALT E
 #define LGUI_U      &ms LEFT_GUI U
 #define RGUI_H      &ms RIGHT_GUI H
-#define RALT_T      &ms RIGHT_ALT T
+#define RALT_T      &mm RIGHT_ALT T
 #define RCTL_N      &mm RIGHT_CONTROL N
 // S to mm: try cutting down on missed `s`s before space
 // #define RSFT_S      &mf RIGHT_SHIFT S
@@ -155,7 +155,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_MEDIUM";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <210>;
             // Should I create a &mm just for <CTRL>?
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
@@ -166,7 +166,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "MODTAP_SLOW";
             #binding-cells = <2>;
-            tapping-term-ms = <225>;
+            tapping-term-ms = <240>;
             // 230: not getting false positives, but failing sometimes to register when I want them. Shorter?
             // 220: Seeing some false positives with <CMD>. 225?
             // 225: Seems pretty good!
