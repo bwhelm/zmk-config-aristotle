@@ -31,15 +31,22 @@
 #define COMBO_FAST <30>
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
-#define WIN_PRV &kp LS(LG(GRAVE))
-#define WIN_BIG &kp LC(LA(LG(RIGHT)))
-#define WIN_NXT &kp LG(GRAVE)
-#define CD_WIN3LFT  &ms RIGHT_GUI LC(LA(LEFT))
-#define A_WIN_SML   &ms RIGHT_ALT LC(LA(LG(LEFT)))
-#define CL_WIN3RGT  &ms RIGHT_CONTROL LC(LA(RIGHT))
-#define WIN_LFT &kp LA(LG(LEFT))
-#define WIN_CNT &kp LC(LG(LA(C)))
-#define WIN_RGT &kp LA(LG(RIGHT))
+#define WIN_PRV     &kp LG(LS(GRAVE))
+#define WIN_NXT     &kp LG(GRAVE)
+/* #define WIN_BIG &kp LC(LA(LG(RIGHT))) */
+/* #define A_WIN_SML   &ms RIGHT_ALT LC(LA(LG(LEFT))) */
+/* #define CD_WIN3LFT  &ms RIGHT_GUI LC(LA(LEFT)) */
+/* #define CL_WIN3RGT  &ms RIGHT_CONTROL LC(LA(RIGHT)) */
+/* #define WIN_LFT &kp LA(LG(LEFT)) */
+/* #define WIN_CNT &kp LC(LG(LA(C))) */
+/* #define WIN_RGT &kp LA(LG(RIGHT)) */
+#define WIN_BIG     &kp LC(LA(EQUAL))
+#define A_WIN_SML   &kp LC(LA(MINUS))
+#define CD_WIN3LFT  &kp LC(LA(D))
+#define CL_WIN3RGT  &kp LC(LA(G))
+#define WIN_LFT     &kp LC(LA(LEFT))
+#define WIN_CNT     &kp LC(LA(C))
+#define WIN_RGT     &kp LC(LA(RIGHT))
 
 // Home Row Mods
 // Dvorak
