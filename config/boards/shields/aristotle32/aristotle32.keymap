@@ -364,7 +364,7 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK GUI GLK>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_numLock {
             timeout-ms = COMBO_SLOW;
@@ -389,6 +389,18 @@
             key-positions = <1 11>;
             bindings = <&bt BT_CLR>;
             layers = <GMC GLK>;
+        };
+        combo_LShift {
+            timeout-ms = COMBO_FAST;
+            key-positions = <0 10>;
+            bindings = <&kp LSHIFT>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK MAC>;
+        };
+        combo_RShift {
+            timeout-ms = COMBO_FAST;
+            key-positions = <9 19>;
+            bindings = <&kp RSHIFT>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK MAC>;
         };
         /* combo_BT3 { */
         /*     timeout-ms = COMBO_FAST; */
@@ -577,7 +589,8 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S
+    &kp A      LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     &kp S
+    /* LSFT_A     LCTL_O     LALT_E     LGUI_U     &kp I         &kp D      RGUI_H     RALT_T     RCTL_N     RSFT_S */
 //  &kp A      &kp O      &kp E      &kp U      &kp I         &kp D      &kp H      &kp T      &kp N      &kp S
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
