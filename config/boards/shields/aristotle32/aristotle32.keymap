@@ -442,11 +442,11 @@
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp ESC>
-                , <&macro_wait_time 10>
-                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 15>
+                , <&macro_tap &kp H &kp C &kp I &kp W>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 10>
+                , <&macro_wait_time 15>
                 , <&macro_tap &kp E &kp M &kp P &kp H>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp LBRC>
@@ -461,11 +461,11 @@
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp ESC>
-                , <&macro_wait_time 10>
-                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 15>
+                , <&macro_tap &kp H &kp C &kp I &kp W>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 10>
+                , <&macro_wait_time 15>
                 , <&macro_tap &kp T &kp E &kp X &kp T &kp B &kp F>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp LBRC>
@@ -480,11 +480,11 @@
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp ESC>
-                , <&macro_wait_time 10>
-                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 15>
+                , <&macro_tap &kp H &kp C &kp I &kp W>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 10>
+                , <&macro_wait_time 15>
                 , <&macro_tap &kp E &kp N &kp Q &kp U &kp O &kp T &kp E>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp LBRC>
@@ -499,11 +499,11 @@
             tap-ms = <5>;
             bindings
                 = <&macro_tap &kp ESC>
-                , <&macro_wait_time 10>
-                , <&macro_tap &kp C &kp I &kp W>
+                , <&macro_wait_time 15>
+                , <&macro_tap &kp H &kp C &kp I &kp W>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 10>
+                , <&macro_wait_time 15>
                 , <&macro_tap &kp T &kp E &kp X &kp T &kp S &kp C>
                 , <&macro_wait_time 30>
                 , <&macro_tap &kp LBRC>
