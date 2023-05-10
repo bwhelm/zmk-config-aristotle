@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // }}}
-// ====================== SHORTHANDS ======================== {{{1
+// ======================= SHORTHANDS ======================= {{{1
 // These are shorthand references to keep things simple and tidy in the keymap
 // below.
 
@@ -127,7 +127,7 @@
 
 // }}}
 
-// ==================== OTHER SETTINGS ====================== {{{1
+// ===================== OTHER SETTINGS ===================== {{{1
 // Set options for layer-tap behavior
 &lt {
     tapping-term-ms = <220>;
@@ -141,7 +141,7 @@
 // }}}
 
 / {
-// ======================= BEHAVIORS ======================== {{{1
+// =================== BEHAVIORS/TAPDANCE =================== {{{1
     behaviors {
         mf: modtap_fast {
             compatible = "zmk,behavior-hold-tap";
@@ -222,6 +222,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&texclean1>, <&texclean2>;
+        };
+        emphEmail: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CLEAN";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&emphword>, <&email>;
         };
     };  // }}}
 
@@ -364,7 +371,7 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK GUI GLK>;
+            layers = <DEF NUM NLK FUN FLK K_CMENU GLK>;
         };
         combo_numLock {
             timeout-ms = COMBO_SLOW;
@@ -454,6 +461,14 @@
                 , <&macro_tap &kp R>
                 , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp DQT &kp RBRC>
+                ;
+        )
+        ZMK_MACRO(email,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_tap &kp B &kp E &kp N &kp N &kp E &kp T &kp T &kp DOT &kp H &kp E &kp L &kp M>
+                , <&macro_tap &kp AT &kp F &kp A &kp N &kp D &kp M &kp DOT &kp E &kp D &kp U>
                 ;
         )
         ZMK_MACRO(boldword,
@@ -627,10 +642,10 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSFT   LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
+    &kp LSHIFT LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
 //  &kp AT     &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
-               &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &trans     &kp PG_DN
+               &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                  &trans       &trans          &trans        &trans
@@ -644,13 +659,13 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    LSFT_AT    LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
+    &kp LSHIFT LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD
 //  &kp AT     &kp F4     &kp F5     &kp F6     &kp F11      &kp C_VOL_DN &kp LEFT  &kp DOWN   &kp RIGHT &kp C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
-               &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &caps_word &kp PG_DN
+               &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //             LCTRL_F1   LALT_F2    LGUI_F3    &kp F10       &kp C_MUTE RGUI_END   &kp RALT   RCTL_PDN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                 &trans       &kp LS(BSPC)    &trans        &trans
+                                 &trans       &trans          &trans        &trans
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
@@ -703,7 +718,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &quoteword &none      &none      &none      &none         &none      &none      &texclean  &none      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      &enew      &emphword  &none      &none         &none      &none      &tdtextab  &tdname    &smallcap
+    &none      &enew      &emphEmail &none      &none         &none      &none      &tdtextab  &tdname    &smallcap
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &boldword  &none      &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
