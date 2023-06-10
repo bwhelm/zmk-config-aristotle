@@ -371,7 +371,7 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK K_CMENU GLK>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_numLock {
             timeout-ms = COMBO_SLOW;
