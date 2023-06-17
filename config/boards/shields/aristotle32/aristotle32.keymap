@@ -467,8 +467,11 @@
             wait-ms = <10>;
             tap-ms = <10>;
             bindings
-                = <&macro_tap &kp B &kp E &kp N &kp N &kp E &kp T &kp T &kp DOT &kp H &kp E &kp L &kp M>
-                , <&macro_tap &kp AT &kp F &kp A &kp N &kp D &kp M &kp DOT &kp E &kp D &kp U>
+                = <&macro_tap &kp B &kp E &kp N &kp N &kp E &kp T &kp T>
+                , <&macro_wait_time 15>
+                , <&bacro_tap &kp DOT &kp H &kp E &kp L &kp M &kp AT &kp F &kp A &kp N &kp D &kp M>
+                , <&macro_wait_time 15>
+                , <&macro_tap &kp DOT &kp E &kp D &kp U>
                 ;
         )
         ZMK_MACRO(boldword,
