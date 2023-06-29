@@ -225,7 +225,7 @@
         };
         emphEmail: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_CLEAN";
+            label = "TAP_DANCE_EMAIL";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&emphword>, <&email>;
