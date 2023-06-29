@@ -150,8 +150,8 @@ gui:  # {{{
 
 macros:  # {{{
     keys: [
-        ["``...''", '', '', '', '', '', '', '\TeX{}\\Clean', '', ''],
-        ['', ':enew', '\emph{emph}', '', '', '', '', 'tab\slash\\\TeX', 'name\\f\slash l\slash a', '\textsc{caps}'],
+        ["``...''", '', '', '', '', '', '', '2$\times$\TeX{}\\Clean', '', ''],
+        ['', ':enew', '\emph{emph}\slash\\email', '', '', '', '', 'tab\slash\\\TeX', 'name\\f\slash l\slash a', '\textsc{caps}'],
         [None, '', '', '', '', '\textbf{bold}', '', '', '', None],
         [None, None, None, '', '', '', '', None, None, None],
         ]
