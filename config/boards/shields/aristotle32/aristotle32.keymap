@@ -228,7 +228,8 @@
             label = "TAP_DANCE_EMAIL";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&emphword>, <&email>;
+            bindings = <&kp LA(J)>, <&email>;
+            /* bindings = <&emphword>, <&email>; */
         };
     };  // }}}
 
@@ -280,7 +281,7 @@
         combo_quoteword {
             timeout-ms = COMBO_SLOW;
             key-positions = <6 16>;
-            bindings = <&quoteword>;
+            bindings = <&kp LA(LEFT_BRACKET)>;
             layers = <MAC>;
         };
         combo_equal {
@@ -443,26 +444,26 @@
                 , <&macro_tap &kp E &kp L &kp M>
                 ;
         )
-        // Sometimes getting keys out of order on the below with w=10, t=10
-        ZMK_MACRO(emphword,
-            wait-ms = <30>;
-            tap-ms = <5>;
-            bindings
-                = <&macro_tap &kp ESC>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp H &kp C &kp I &kp W>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp E &kp M &kp P &kp H>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp LBRC>
-                , <&macro_press &kp LCTRL>
-                , <&macro_tap &kp R>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp DQT &kp RBRC>
-                ;
-        )
+        /* // Sometimes getting keys out of order on the below with w=10, t=10 */
+        /* ZMK_MACRO(emphword, */
+        /*     wait-ms = <30>; */
+        /*     tap-ms = <5>; */
+        /*     bindings */
+        /*         = <&macro_tap &kp ESC> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp BSLH> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp E &kp M &kp P &kp H> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp LBRC> */
+        /*         , <&macro_press &kp LCTRL> */
+        /*         , <&macro_tap &kp R> */
+        /*         , <&macro_release &kp LCTRL> */
+        /*         , <&macro_tap &kp DQT &kp RBRC> */
+        /*         ; */
+        /* ) */
         ZMK_MACRO(email,
             wait-ms = <10>;
             tap-ms = <10>;
@@ -474,63 +475,63 @@
                 , <&macro_tap &kp DOT &kp E &kp D &kp U>
                 ;
         )
-        ZMK_MACRO(boldword,
-            wait-ms = <30>;
-            tap-ms = <5>;
-            bindings
-                = <&macro_tap &kp ESC>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp H &kp C &kp I &kp W>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp T &kp E &kp X &kp T &kp B &kp F>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp LBRC>
-                , <&macro_press &kp LCTRL>
-                , <&macro_tap &kp R>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp DQT &kp RBRC>
-                ;
-        )
-        ZMK_MACRO(quoteword,
-            wait-ms = <30>;
-            tap-ms = <5>;
-            bindings
-                = <&macro_tap &kp ESC>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp H &kp C &kp I &kp W>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp E &kp N &kp Q &kp U &kp O &kp T &kp E>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp LBRC>
-                , <&macro_press &kp LCTRL>
-                , <&macro_tap &kp R>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp DQT &kp RBRC>
-                ;
-        )
-        ZMK_MACRO(sc_word,
-            wait-ms = <30>;
-            tap-ms = <5>;
-            bindings
-                = <&macro_tap &kp ESC>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp H &kp C &kp I &kp W>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp BSLH>
-                , <&macro_wait_time 15>
-                , <&macro_tap &kp T &kp E &kp X &kp T &kp S &kp C>
-                , <&macro_wait_time 30>
-                , <&macro_tap &kp LBRC>
-                , <&macro_press &kp LCTRL>
-                , <&macro_tap &kp R>
-                , <&macro_release &kp LCTRL>
-                , <&macro_tap &kp DQT &kp RBRC>
-                ;
-        )
+        /* ZMK_MACRO(boldword, */
+        /*     wait-ms = <30>; */
+        /*     tap-ms = <5>; */
+        /*     bindings */
+        /*         = <&macro_tap &kp ESC> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp BSLH> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp T &kp E &kp X &kp T &kp B &kp F> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp LBRC> */
+        /*         , <&macro_press &kp LCTRL> */
+        /*         , <&macro_tap &kp R> */
+        /*         , <&macro_release &kp LCTRL> */
+        /*         , <&macro_tap &kp DQT &kp RBRC> */
+        /*         ; */
+        /* ) */
+        /* ZMK_MACRO(quoteword, */
+        /*     wait-ms = <30>; */
+        /*     tap-ms = <5>; */
+        /*     bindings */
+        /*         = <&macro_tap &kp ESC> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp BSLH> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp E &kp N &kp Q &kp U &kp O &kp T &kp E> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp LBRC> */
+        /*         , <&macro_press &kp LCTRL> */
+        /*         , <&macro_tap &kp R> */
+        /*         , <&macro_release &kp LCTRL> */
+        /*         , <&macro_tap &kp DQT &kp RBRC> */
+        /*         ; */
+        /* ) */
+        /* ZMK_MACRO(sc_word, */
+        /*     wait-ms = <30>; */
+        /*     tap-ms = <5>; */
+        /*     bindings */
+        /*         = <&macro_tap &kp ESC> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp BSLH> */
+        /*         , <&macro_wait_time 15> */
+        /*         , <&macro_tap &kp T &kp E &kp X &kp T &kp S &kp C> */
+        /*         , <&macro_wait_time 30> */
+        /*         , <&macro_tap &kp LBRC> */
+        /*         , <&macro_press &kp LCTRL> */
+        /*         , <&macro_tap &kp R> */
+        /*         , <&macro_release &kp LCTRL> */
+        /*         , <&macro_tap &kp DQT &kp RBRC> */
+        /*         ; */
+        /* ) */
         ZMK_MACRO(tabedit,
             wait-ms = <50>;
             tap-ms = <5>;
@@ -716,14 +717,19 @@
              >;
       }; // }}}
 // ---------------------------------------------------- MACROS -------------------------------------------------- {{{2
+// NOTE: I have the following mappings defined in vim:
+//   ∆ -> \emph{}
+//   “ -> \enquote{}
+//   ≥ -> \textbf{}
+//   ß -> \textsc{}
         macros {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &quoteword &none      &none      &none      &none         &none      &none      &texclean  &none      &none
+    &none      &none      &none      &none      &none         &none      &none      &texclean  &none      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      &enew      &emphEmail &none      &none         &none      &none      &tdtextab  &tdname    &sc_word
+    &none      &enew      &emphEmail &none      &none         &none      &none      &tdtextab  &tdname    &kp LA(S)
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
-               &none      &none      &none      &none         &boldword  &none      &none      &none
+               &none      &none      &none      &none         &kp LA(DOT) &none     &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                  &none        &none           &none         &none
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
