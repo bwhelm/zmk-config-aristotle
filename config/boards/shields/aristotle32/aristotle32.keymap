@@ -164,6 +164,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <210>;
             // Should I create a &mm just for <CTRL>?
+            require-prior-idle-ms = <125>;
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
@@ -177,6 +178,7 @@
             // 230: getting a few false positives, but failing sometimes to register when I want them
             // 220: Seeing some false positives with <CMD>. 225?
             // 225: Seems pretty good! ... But getting "<C-e><C-space>" instead of "he ".
+            require-prior-idle-ms = <125>;
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             // retro-tap;
