@@ -321,6 +321,12 @@
             bindings = <&kp RPAR>;
             layers = <DEF NUM NLK>;
         };
+        combo_parenword {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <16 25>;
+            bindings = <&kp LA(RIGHT_BRACKET)>;
+            layers = <MAC>;
+        };
         combo_colon {
             timeout-ms = COMBO_SLOW;
             key-positions = <17 26>;
@@ -710,9 +716,10 @@
 // ---------------------------------------------------- MACROS -------------------------------------------------- {{{2
 // NOTE: I have the following mappings defined in vim:
 //   ∆ -> \emph{}
-//   “ -> \enquote{}
+//   “ -> \enquote{} -- defined in combos
 //   ≥ -> \textbf{}
 //   ß -> \textsc{}
+//   ” -> ( ... ) [surround with parens] -- defined in combos
         macros {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
