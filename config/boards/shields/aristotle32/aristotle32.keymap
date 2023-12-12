@@ -364,7 +364,7 @@
             key-positions = <28 29>;
             bindings = <&capdance>;
             layers = <DEF>;
-        }
+        };
         /* combo_BT3 { */
         /*     timeout-ms = COMBO_FAST; */
         /*     key-positions = <9 19>; */
