@@ -49,25 +49,6 @@
 #define WIN_CNT     &kp LC(LA(C))
 #define WIN_RGT     &kp LC(LA(RIGHT))
 
-/* // Number */
-/* #define LSFT_TILDE  &ms LEFT_SHIFT TILDE */
-/* #define LCTL_DLLR   &ms LEFT_CONTROL DLLR */
-/* #define LALT_PRCNT  &ms LEFT_ALT PRCNT */
-/* #define LGUI_CARET  &ms LEFT_GUI CARET */
-/* #define RGUI_N4     &ms RIGHT_GUI N4 */
-/* #define RALT_N5     &ms RIGHT_ALT N5 */
-/* #define RCTL_N6     &ms RIGHT_CONTROL N6 */
-/* #define RSFT_MINUS  &ms RIGHT_SHIFT MINUS */
-/* // Function */
-/* #define LSFT_AT     &ms LSFT AT */
-/* #define LCTRL_F4    &ms LCTRL F4 */
-/* #define LALT_F5     &ms LALT F5 */
-/* #define LGUI_F6     &ms LGUI F6 */
-/* #define RGUI_LFT    &ms RGUI LEFT */
-/* #define RALT_DWN    &ms RALT DOWN */
-/* #define RCTRL_RGT   &ms RCTRL RIGHT */
-/* #define RSFT_BRD    &ms RSFT C_BRI_DN */
-
 // }}}
 
 // ===================== OTHER SETTINGS ===================== {{{1
@@ -91,7 +72,7 @@
             label = "HOMEROW_FAST_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <185>;
-            /* quick-tap-ms = <200>; */
+            quick-tap-ms = <200>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -152,47 +133,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 28 29>;
         };
-        mf: modtap_fast {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MODTAP_FAST";
-            #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            // 190: not getting false positives, but sometimes not getting mod I want. Shorter?
-            //   (Worry here: I'm sometimes not getting `s` before space. Will shortening it make
-            //   that more likely?)
-            // 180: Seeing some false positives
-            // 185: Seems pretty good!
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            // retro-tap;
-            bindings = <&kp>, <&kp>;
-        };
-        mm: modtap_medium {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MODTAP_MEDIUM";
-            #binding-cells = <2>;
-            tapping-term-ms = <210>;
-            // Should I create a &mm just for <CTRL>?
-            require-prior-idle-ms = <175>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            // retro-tap;
-            bindings = <&kp>, <&kp>;
-        };
-        ms: modtap_slow {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MODTAP_SLOW";
-            #binding-cells = <2>;
-            tapping-term-ms = <240>;
-            // 230: getting a few false positives, but failing sometimes to register when I want them
-            // 220: Seeing some false positives with <CMD>. 225?
-            // 225: Seems pretty good! ... But getting "<C-e><C-space>" instead of "he ".
-            require-prior-idle-ms = <225>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            // retro-tap;
-            bindings = <&kp>, <&kp>;
-        };
         /* lht: left_positional_hold_tap {  // hold left hand key, only apply mod to keys on right */
         /*     compatible = "zmk,behavior-hold-tap"; */
         /*     label = "LEFT_POSITIONAL_HOLD_TAP"; */
@@ -233,6 +173,12 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp LA(J)>, <&email>;
+        };
+        capdance: capdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&caps_word>, <&kp CAPS>;
         };
     };  // }}}
 
@@ -413,6 +359,12 @@
             bindings = <&mkp MCLK>;
             layers = <GMC GLK>;
         };
+        combo_capdance {
+            timeout-ms = COMBO_FAST;
+            key-positions = <28 29>;
+            bindings = <&capdance>;
+            layers = <DEF>;
+        };
         /* combo_BT3 { */
         /*     timeout-ms = COMBO_FAST; */
         /*     key-positions = <9 19>; */
@@ -513,83 +465,6 @@
                 , <&macro_tap &kp E &kp N &kp E &kp W &kp RETURN>
                 ;
         )
-        /* // Sometimes getting keys out of order on the below with w=10, t=10 */
-        /* ZMK_MACRO(emphword, */
-        /*     wait-ms = <30>; */
-        /*     tap-ms = <5>; */
-        /*     bindings */
-        /*         = <&macro_tap &kp ESC> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp BSLH> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp E &kp M &kp P &kp H> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp LBRC> */
-        /*         , <&macro_press &kp LCTRL> */
-        /*         , <&macro_tap &kp R> */
-        /*         , <&macro_release &kp LCTRL> */
-        /*         , <&macro_tap &kp DQT &kp RBRC> */
-        /*         ; */
-        /* ) */
-        /* ZMK_MACRO(boldword, */
-        /*     wait-ms = <30>; */
-        /*     tap-ms = <5>; */
-        /*     bindings */
-        /*         = <&macro_tap &kp ESC> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp BSLH> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp T &kp E &kp X &kp T &kp B &kp F> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp LBRC> */
-        /*         , <&macro_press &kp LCTRL> */
-        /*         , <&macro_tap &kp R> */
-        /*         , <&macro_release &kp LCTRL> */
-        /*         , <&macro_tap &kp DQT &kp RBRC> */
-        /*         ; */
-        /* ) */
-        /* ZMK_MACRO(quoteword, */
-        /*     wait-ms = <30>; */
-        /*     tap-ms = <5>; */
-        /*     bindings */
-        /*         = <&macro_tap &kp ESC> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp BSLH> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp E &kp N &kp Q &kp U &kp O &kp T &kp E> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp LBRC> */
-        /*         , <&macro_press &kp LCTRL> */
-        /*         , <&macro_tap &kp R> */
-        /*         , <&macro_release &kp LCTRL> */
-        /*         , <&macro_tap &kp DQT &kp RBRC> */
-        /*         ; */
-        /* ) */
-        /* ZMK_MACRO(sc_word, */
-        /*     wait-ms = <30>; */
-        /*     tap-ms = <5>; */
-        /*     bindings */
-        /*         = <&macro_tap &kp ESC> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp H &kp C &kp I &kp W> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp BSLH> */
-        /*         , <&macro_wait_time 15> */
-        /*         , <&macro_tap &kp T &kp E &kp X &kp T &kp S &kp C> */
-        /*         , <&macro_wait_time 30> */
-        /*         , <&macro_tap &kp LBRC> */
-        /*         , <&macro_press &kp LCTRL> */
-        /*         , <&macro_tap &kp R> */
-        /*         , <&macro_release &kp LCTRL> */
-        /*         , <&macro_tap &kp DQT &kp RBRC> */
-        /*         ; */
-        /* ) */
 };  // }}}
 
 // ======================== KEYMAPS ========================= {{{1
@@ -616,7 +491,6 @@
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &kp GRAVE     &none      &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &hsl LSHFT TILDE &hsl LCTRL DLLR &hsl LALT PRCNT &hsl LGUI CARET &kp COMMA   &kp DOT &hsr RGUI N4 &hsr RALT N5 &hsr RCTRL N6 &hsr RSHFT MINUS
-    /* LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS */
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -632,7 +506,6 @@
     &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &kp GRAVE     &none      &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &hsl LSHFT TILDE &hsl LCTRL DLLR &hsl LALT PRCNT &hsl LGUI CARET &kp COMMA   &kp DOT &hsr RGUI N4 &hsr RALT N5 &hsr RCTRL N6 &hsr RSHFT MINUS
-    /* LSFT_TILDE LCTL_DLLR  LALT_PRCNT LGUI_CARET &kp COMMA     &kp DOT    RGUI_N4    RALT_N5    RCTL_N6    RSFT_MINUS */
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -647,7 +520,6 @@
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp LSHFT &hsl LCTRL F4 &hsl LALT F5 &hsl LGUI F6 &kp F11 &kp C_VOL_DN &hsr RGUI LEFT &hsr RALT DOWN &hsr RCTRL RIGHT &hsr RSHFT C_BRI_DN
-    /* &kp LSHIFT LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD */
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -663,7 +535,6 @@
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &kp LSHFT &hsl LCTRL F4 &hsl LALT F5 &hsl LGUI F6 &kp F11 &kp C_VOL_DN &hsr RGUI LEFT &hsr RALT DOWN &hsr RCTRL RIGHT &hsr RSHFT C_BRI_DN
-    /* &kp LSHIFT LCTRL_F4   LALT_F5    LGUI_F6    &kp F11      &kp C_VOL_DN RGUI_LFT  RALT_DWN   RCTRL_RGT  RSFT_BRD */
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
