@@ -262,6 +262,42 @@
             bindings = <&kp RIGHT_BRACE>;
             layers = <DEF NUM NLK AUS>;
         };
+        combo_lctrl {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <11 12>;
+            bindings = <&kp LCTRL>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
+        combo_lalt {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <12 13>;
+            bindings = <&kp LALT>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
+        combo_lcommand {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <13 14>;
+            bindings = <&kp LCMD>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
+        combo_rcommand {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <15 16>;
+            bindings = <&kp RCMD>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
+        combo_ralt {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <16 17>;
+            bindings = <&kp RALT>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
+        combo_rctrl {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <17 18>;
+            bindings = <&kp RCTRL>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
+        };
         combo_lbracket {
             timeout-ms = COMBO_SLOW;
             key-positions = <11 20>;
@@ -334,18 +370,18 @@
             bindings = <&kp HASH>;
             layers = <DEF NUM NLK AUS>;
         };
-        combo_toAUSLayer {
+        combo_toggleAutoshiftLayer {
             timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
-            bindings = <&to AUS>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
+            bindings = <&tog AUS>;
+            layers = <DEF AUS>;
         };
-        combo_toDEFLayer {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <30 31>;
-            bindings = <&to DEF>;
-            layers = <AUS>;
-        };
+        /* combo_toDEFLayer { */
+        /*     timeout-ms = COMBO_SLOW; */
+        /*     key-positions = <30 31>; */
+        /*     bindings = <&to DEF>; */
+        /*     layers = <AUS>; */
+        /* }; */
         combo_numLock {
             timeout-ms = COMBO_SLOW;
             key-positions = <0 10>;

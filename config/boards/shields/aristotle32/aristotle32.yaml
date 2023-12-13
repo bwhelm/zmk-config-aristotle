@@ -40,7 +40,7 @@ dvorak:  # {{{
     # TODO: Figure out something for leftmost thumb key!
     keys: [
         ['"\\\textquotesingle', '<\\,', '>\\.', P, Y, F, G, C, R, L],
-        [A\\\shift, O\\\ctrl, E\\\Alt, U\\\cmd, I, D, H\\\cmd, T\\\Alt, N\\\ctrl, S\\\shift],
+        [A, O, E, U, I, D, H, T, N, S],
         [None, Q, J, K, X, B, M, W, V, None],
         [None, None, None, ';\\\textsc{mac}', '\backdel\\\textsc{num}',
             '\vtextvisiblespace\\\textsc{fun}',
@@ -48,7 +48,7 @@ dvorak:  # {{{
         ]
     rowcombos: [
         ['', '', '', '', '', '', '+\\=', ''],
-        ['', '', '', '?\\/', '', '', '', ''],
+        ['', '\rotatebox{90}{ctrl}', '\Alt', '\cmd', '\cmd', '\Alt', '\rotatebox{90}{ctrl}', ''],
         ['', '!', '\#', '', '', '', 'Z', ''],
         ['', '', '', '\rotatebox{90}{\textsc{caps}}', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
         ]
@@ -57,8 +57,7 @@ dvorak:  # {{{
         ['', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
-    lines: [[2,0], [2,1], [2,2], [2,3], [2,6], [2,7], [2,8], [2,9],
-            [0,3], [0,4], [0,5], [0,6]]
+    lines: [[0,3], [0,4], [0,5], [0,6]]
 # }}}
 
 number:  # {{{
