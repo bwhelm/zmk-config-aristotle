@@ -156,27 +156,28 @@
         tdname: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NAME";
-            #binding-cells = <0>;
             tapping-term-ms = <250>;
+            #binding-cells = <0>;
             bindings = <&firstname>, <&lastname>, <&fullname>;
         };
         tdtextab: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_TAB";
-            #binding-cells = <0>;
             tapping-term-ms = <250>;
+            #binding-cells = <0>;
             bindings = <&tabedit>, <&texfile>;
         };
         emphEmail: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_EMAIL";
-            #binding-cells = <0>;
             tapping-term-ms = <250>;
+            #binding-cells = <0>;
             bindings = <&kp LA(J)>, <&email>;
         };
         capdance: capdance {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPDANCE";
+            tapping-term-ms = <250>;
             #binding-cells = <0>;
             bindings = <&caps_word>, <&kp CAPS>;
         };
