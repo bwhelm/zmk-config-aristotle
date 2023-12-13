@@ -22,6 +22,7 @@
 #define GMC 5
 #define GLK 6
 #define MAC 7
+#define AUS 8
 
 // Combo timeout speeds (in ms). Note: must be enclosed in <>!
 #define COMBO_SLOW <40>
@@ -153,6 +154,16 @@
         /*     bindings = <&kp>, <&kp>; */
         /*     hold-trigger-key-positions = <0>, <1>, <2>, <3>, <4>, <10>, <11>, <12>, <13>, <14>, <20>, <21>, <22>, <23>, <28>, <29>; */
         /* }; */
+        as_ht: autoshift_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTOSHIFT_HOLD_TAP";
+            tapping-term-ms = <190>;
+            /* tapping-term-ms = <240>; */
+            /* quick-tap-ms = <200>; */
+            flavor = "tap-preferred";
+            #binding-cells = <2>;
+            bindings = <&shift>, <&kp>;
+       };
         tdname: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_NAME";
@@ -189,43 +200,43 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <6 7 8>;
             bindings = <&kp PLUS>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_minus {
             timeout-ms = COMBO_SLOW;
             key-positions = <16 17 18>;
             bindings = <&kp MINUS>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_underscore {
             timeout-ms = COMBO_SLOW;
             key-positions = <25 26 27>;
             bindings = <&kp UNDERSCORE>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_lbrace {
             timeout-ms = COMBO_SLOW;
             key-positions = <1 11>;
             bindings = <&kp LEFT_BRACE>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_esc {
             timeout-ms = COMBO_SLOW;
             key-positions = <2 12>;
             bindings = <&kp ESC>;
-            layers = <DEF NUM NLK FUN FLK>;
+            layers = <DEF NUM NLK FUN FLK AUS>;
         };
         combo_asterisk {
             timeout-ms = COMBO_SLOW;
             key-positions = <3 13>;
             bindings = <&kp ASTRK>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_doublequote {
             timeout-ms = COMBO_SLOW;
             key-positions = <6 16>;
             bindings = <&kp DQT>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_quoteword {
             timeout-ms = COMBO_SLOW;
@@ -237,43 +248,43 @@
             timeout-ms = COMBO_FAST;
             key-positions = <7 8>;
             bindings = <&kp EQUAL>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_return {
             timeout-ms = COMBO_SLOW;
             key-positions = <7 17>;
             bindings = <&kp ENTER>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK AUS>;
         };
         combo_rbrace {
             timeout-ms = COMBO_SLOW;
             key-positions = <8 18>;
             bindings = <&kp RIGHT_BRACE>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_lbracket {
             timeout-ms = COMBO_SLOW;
             key-positions = <11 20>;
             bindings = <&kp LEFT_BRACKET>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_tab {
             timeout-ms = COMBO_SLOW;
             key-positions = <12 21>;
             bindings = <&kp TAB>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_lparen {
             timeout-ms = COMBO_SLOW;
             key-positions = <13 22>;
             bindings = <&kp LPAR>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_rparen {
             timeout-ms = COMBO_SLOW;
             key-positions = <16 25>;
             bindings = <&kp RPAR>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_parenword {
             timeout-ms = COMBO_SLOW;
@@ -285,13 +296,13 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <17 26>;
             bindings = <&kp COLON>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_rbracket {
             timeout-ms = COMBO_SLOW;
             key-positions = <18 27>;
             bindings = <&kp RIGHT_BRACKET>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         /* combo_capslock { */
         /*     timeout-ms = COMBO_SLOW; */
@@ -303,31 +314,37 @@
             timeout-ms = COMBO_FAST;
             key-positions = <26 27>;
             bindings = <&kp Z>;
-            layers = <DEF>;
+            layers = <DEF AUS>;
         };
         combo_exclamation {
             timeout-ms = COMBO_FAST;
             key-positions = <20 21>;
             bindings = <&kp EXCLAMATION>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_at {
             timeout-ms = COMBO_FAST;
             key-positions = <20 21 22>;
             bindings = <&kp AT>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
         };
         combo_hash {
             timeout-ms = COMBO_FAST;
             key-positions = <21 22>;
             bindings = <&kp HASH>;
-            layers = <DEF NUM NLK>;
+            layers = <DEF NUM NLK AUS>;
+        };
+        combo_toAUSLayer {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <30 31>;
+            bindings = <&to AUS>;
+            layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
         combo_toDEFLayer {
             timeout-ms = COMBO_SLOW;
             key-positions = <30 31>;
             bindings = <&to DEF>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
+            layers = <AUS>;
         };
         combo_numLock {
             timeout-ms = COMBO_SLOW;
@@ -363,7 +380,7 @@
             timeout-ms = COMBO_FAST;
             key-positions = <28 29>;
             bindings = <&capdance>;
-            layers = <DEF>;
+            layers = <DEF AUS>;
         };
         /* combo_BT3 { */
         /*     timeout-ms = COMBO_FAST; */
@@ -465,7 +482,32 @@
                 , <&macro_tap &kp E &kp N &kp E &kp W &kp RETURN>
                 ;
         )
-};  // }}}
+        shift: with_lshift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            label = "KEY_PRESS_WITH_LEFT_SHIFT_MODIFIER";
+            bindings
+                = <&macro_press>
+                , <&kp LSHFT>
+                , <&macro_tap>
+                , <&macro_param_1to1 &kp MACRO_PLACEHOLDER>
+                , <&macro_release>
+                , <&kp LSHFT>
+                ;
+        };
+        as: autoshift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            label = "AUTOSHIFT_KEYPRESS";
+            bindings
+                = <&macro_press>
+                , <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_release>
+                , <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+                ;
+        };
+    };  // }}}
 
 // ======================== KEYMAPS ========================= {{{1
     keymap {
@@ -598,6 +640,20 @@
                &none      &none      &none      &none         &kp LA(DOT) &none     &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
                                  &none        &none           &none         &none
+//                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
+            >;
+      };  // }}}
+// --------------------------------------------------- AUTOSHIFT ------------------------------------------------ {{{2
+        autoshift {
+            bindings = <
+// ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp SQT    &kp COMMA  &kp DOT    &as P      &as Y         &as F      &as G      &as C      &as R      &as L
+// ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
+    &as A      &as O      &as E      &as U      &as I         &as D      &as H      &as T      &as N      &as S
+// ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
+               &as Q      &as J      &as K      &as X         &as B      &as M      &as W      &as V
+//            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
+                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
