@@ -25,11 +25,13 @@
 
 // Combo timeout speeds (in ms). Note: must be enclosed in <>!
 #define COMBO_SLOW <40>
-// FIXME: Below should be 30, but having it be the same as
-// COMBO_SLOW to try to avoid MOD_TAPS getting stuck.
-// See <https://github.com/zmkfirmware/zmk/issues/986>
-// That should be fixed now: <https://github.com/zmkfirmware/zmk/commit/fc511e40cc1a274473a753c959f8d7e5fcc317d0>
 #define COMBO_FAST <30>
+
+// tapping-term-ms for home-row mods
+#define HOME_FAST <185>
+#define HOME_MEDIUM <210>
+#define HOME_SLOW <240>
+#define QUICK_TAP <200>
 
 // WINxxxx defines are for shortcuts with Rectangle.app to manipulate windows
 #define WIN_PRV     &kp LG(LS(GRAVE))
@@ -59,7 +61,7 @@
     // 150 was too quick: failed to get <spaces> when desired
     // 175: getting some missed taps, as well as some arrow keys instead of space-char
     // 250 was pretty wonky: getting too many taps when trying to hold
-    quick-tap-ms = <200>;
+    quick-tap-ms = <QUICK_TAP>;
     flavor = "tap-preferred";
 };
 // }}}
@@ -70,8 +72,8 @@
         lhf: homewrow_mods_fast_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_FAST>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -80,8 +82,8 @@
         rhf: homewrow_mods_fast_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_FAST>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -90,8 +92,8 @@
         lhm: homewrow_mods_medium_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <210>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_MEDIUM>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -100,8 +102,8 @@
         rhm: homewrow_mods_medium_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <210>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_MEDIUM>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -110,8 +112,8 @@
         lhs: homewrow_mods_slow_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_SLOW>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -120,8 +122,8 @@
         rhs: homewrow_mods_slow_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <HOME_SLOW>;
+            quick-tap-ms = <QUICK_TAP>;
             flavor = "tap-preferred";
             /* flavor = "retro-tap"; */
             bindings = <&kp>, <&kp>;
@@ -132,7 +134,7 @@
         /*     #binding-cells = <2>; */
         /*     flavor = "hold-preferred"; */
         /*     tapping-term-ms = <400>; */
-        /*     quick-tap-ms = <200>; */
+        /*     quick-tap-ms = <QUICK_TAP>; */
         /*     bindings = <&kp>, <&kp>; */
         /*     hold-trigger-key-positions = <5>, <6>, <7>, <8>, <9>, <15>, <16>, <17>, <18>, <19>, <24>, <25>, <26>, <27>, <30>, <31>; */
         /* }; */
@@ -141,7 +143,7 @@
         /*     #binding-cells = <2>; */
         /*     flavor = "hold-preferred"; */
         /*     tapping-term-ms = <400>; */
-        /*     quick-tap-ms = <200>; */
+        /*     quick-tap-ms = <QUICK_TAP>; */
         /*     bindings = <&kp>, <&kp>; */
         /*     hold-trigger-key-positions = <0>, <1>, <2>, <3>, <4>, <10>, <11>, <12>, <13>, <14>, <20>, <21>, <22>, <23>, <28>, <29>; */
         /* }; */
