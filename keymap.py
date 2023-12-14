@@ -88,8 +88,8 @@ LAYERHEADER = '''\\begin{centering}
 
 \\begin{tikzpicture}[
     rectStyle/.style={inner sep=0pt,minimum size=''' + str(KEYSIZEVERT) + ''' in,draw,font=\\Large,align=center},
-    vcomboStyle/.style={minimum width=''' + str(KEYSIZEHORIZ) + ''', align=center, font=\\Large},
-    hcomboStyle/.style={minimum width=''' + str(KEYSEPHORIZ) + ''', align=center, font=\\Large},
+    vcomboStyle/.style={minimum width=''' + str(KEYSIZEHORIZ) + ''', align=center, font=\\large},
+    hcomboStyle/.style={minimum width=''' + str(KEYSEPHORIZ) + ''', align=center, font=\\large},
     ]
 '''
 
