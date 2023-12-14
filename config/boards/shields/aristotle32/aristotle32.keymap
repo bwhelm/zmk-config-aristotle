@@ -204,6 +204,18 @@
             bindings = <&kp UNDERSCORE>;
             layers = <DEF NUM NLK>;
         };
+        combo_question {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <1 2>;
+            bindings = <&kp QUESTION>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_slash {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <2 3>;
+            bindings = <&kp SLASH>;
+            layers = <DEF NUM NLK>;
+        };
         combo_lbrace {
             timeout-ms = COMBO_SLOW;
             key-positions = <1 11>;
@@ -215,6 +227,18 @@
             key-positions = <2 12>;
             bindings = <&kp ESC>;
             layers = <DEF NUM NLK FUN FLK>;
+        };
+        combo_backslash {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <13 14>;
+            bindings = <&kp BACKSLASH>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_pipe {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <15 16>;
+            bindings = <&kp PIPE>;
+            layers = <DEF NUM NLK>;
         };
         combo_asterisk {
             timeout-ms = COMBO_SLOW;
@@ -268,6 +292,12 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <13 22>;
             bindings = <&kp LPAR>;
+            layers = <DEF NUM NLK>;
+        };
+        combo_question2 {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <6 7>;
+            bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
         combo_rparen {
