@@ -204,31 +204,31 @@
     combos {
         compatible = "zmk,combos";
         combo_plus {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <6 7 8>;
+            timeout-ms = COMBO_FAST;
+            key-positions = <7 8>;
             bindings = <&kp PLUS>;
             layers = <DEF NUM NLK>;
         };
         combo_minus {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <16 17 18>;
+            timeout-ms = COMBO_FAST;
+            key-positions = <16 17>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM NLK>;
         };
         combo_underscore {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <25 26 27>;
+            timeout-ms = COMBO_FAST;
+            key-positions = <25 26>;
             bindings = <&kp UNDERSCORE>;
             layers = <DEF NUM NLK>;
         };
         combo_question {
-            timeout-ms = COMBO_SLOW;
+            timeout-ms = COMBO_FAST;
             key-positions = <1 2>;
             bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
         combo_slash {
-            timeout-ms = COMBO_SLOW;
+            timeout-ms = COMBO_FAST;
             key-positions = <2 3>;
             bindings = <&kp SLASH>;
             layers = <DEF NUM NLK>;
@@ -246,14 +246,14 @@
             layers = <DEF NUM NLK FUN FLK>;
         };
         combo_backslash {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <13 14>;
+            timeout-ms = COMBO_FAST;
+            key-positions = <3 4>;
             bindings = <&kp BACKSLASH>;
             layers = <DEF NUM NLK>;
         };
         combo_pipe {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <15 16>;
+            timeout-ms = COMBO_FAST;
+            key-positions = <5 6>;
             bindings = <&kp PIPE>;
             layers = <DEF NUM NLK>;
         };
@@ -277,7 +277,7 @@
         };
         combo_equal {
             timeout-ms = COMBO_FAST;
-            key-positions = <7 8>;
+            key-positions = <17 18>;
             bindings = <&kp EQUAL>;
             layers = <DEF NUM NLK>;
         };
@@ -309,12 +309,6 @@
             timeout-ms = COMBO_SLOW;
             key-positions = <13 22>;
             bindings = <&kp LPAR>;
-            layers = <DEF NUM NLK>;
-        };
-        combo_question2 {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <6 7>;
-            bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
         combo_rparen {
@@ -372,7 +366,7 @@
             layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
-            timeout-ms = COMBO_SLOW;
+            timeout-ms = COMBO_FAST;
             key-positions = <30 31>;
             bindings = <&to DEF>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
