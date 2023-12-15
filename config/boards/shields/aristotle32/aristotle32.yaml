@@ -44,13 +44,13 @@ dvorak:  # {{{
         [None, Q, J, K, X, B, M, W, V, None],
         [None, None, None, ';\\\textsc{mac}', '\backdel\\\textsc{num}',
             '\vtextvisiblespace\\\textsc{fun}',
-            '{/}~~?\\\textsc{gui}', None, None, None],
+            '\return\\\textsc{gui}', None, None, None],
         ]
     rowcombos: [
-        ['', '?', '/', '\textbackslash', '|', '', '+', ''],
-        ['', '', '', '', '', '-', '=', ''],
+        ['', '?', '/', '', '', '', '+', ''],
+        ['', '', '', '\textbackslash', '|', '-', '=', ''],
         ['', '!', '\#', '', '', '\\\_', 'Z', ''],
-        ['', '', '', '\rotatebox{90}{\textsc{word}}', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\textsc{word}}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
@@ -71,10 +71,10 @@ number:  # {{{
             '\textsc{trns}', '|\\\textbackslash', None, None, None],
         ]
     rowcombos: [
-        ['', '?', '/', '\textbackslash', '|', '', '+', ''],
-        ['', '', '', '', '', '-', '=', ''],
+        ['', '?', '/', '', '', '', '+', ''],
+        ['', '', '', '\textbackslash', '|', '-', '=', ''],
         ['', '!', '\#', '', '', '\\\_', '', ''],
-        ['', '', '', '', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['\textsc{num lk}', '\{', '\esc', '*', '', '', '"', '\return', '\}', ''],
@@ -99,7 +99,7 @@ function:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['\textsc{fun lk}', '', '\esc', '', '', '', '', '\return', '', ''],
@@ -124,7 +124,7 @@ gui:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '\rotatebox{90}{\small Mdl But}', '\rotatebox{90}{\textsc{dvo}}', '', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\small Mdl But}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['\textsc{gui lk}', \faBluetoothB Clear, '', '', '', '', '', '', '', ''],
@@ -157,7 +157,7 @@ macros:  # {{{
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '', '', '', '', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '', '', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['', '', '', '', '', '', "``...''", '', '', ''],

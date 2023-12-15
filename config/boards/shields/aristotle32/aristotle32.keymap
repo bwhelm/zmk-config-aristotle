@@ -247,13 +247,13 @@
         };
         combo_backslash {
             timeout-ms = COMBO_FAST;
-            key-positions = <3 4>;
+            key-positions = <13 14>;
             bindings = <&kp BACKSLASH>;
             layers = <DEF NUM NLK>;
         };
         combo_pipe {
             timeout-ms = COMBO_FAST;
-            key-positions = <5 6>;
+            key-positions = <15 16>;
             bindings = <&kp PIPE>;
             layers = <DEF NUM NLK>;
         };
@@ -522,7 +522,7 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN SPACE &lt GMC FSLH
+                                 &lt MAC SEMI &lt NUM BSPC    &lt FUN SPACE &lt GMC ENTER
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
