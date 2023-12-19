@@ -281,12 +281,12 @@
             bindings = <&kp EQUAL>;
             layers = <DEF NUM NLK>;
         };
-        combo_return {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <7 17>;
-            bindings = <&kp ENTER>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
-        };
+        /* combo_return { */
+        /*     timeout-ms = COMBO_SLOW; */
+        /*     key-positions = <7 17>; */
+        /*     bindings = <&kp ENTER>; */
+        /*     layers = <DEF NUM NLK FUN FLK GMC GLK>; */
+        /* }; */
         combo_rbrace {
             timeout-ms = COMBO_SLOW;
             key-positions = <8 18>;
@@ -536,7 +536,7 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                 &trans       &trans          &trans        &kp BSLH
+                                 &trans       &trans          &trans        &trans
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
@@ -551,7 +551,7 @@
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp EXCL   &kp AT     &kp HASH   &kp LA(K)     &kp N0     &kp N1     &kp N2     &kp N3
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
-                                 &trans       &trans          &trans        &kp BSLH
+                                 &trans       &trans          &trans        &trans
 //                              ╰────────────┴────────────╯  ╰─────────────┴────────────╯
             >;
       };  // }}}
