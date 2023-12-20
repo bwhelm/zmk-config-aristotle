@@ -234,12 +234,12 @@
             #binding-cells = <0>;
             bindings = <&firstname>, <&lastname>, <&fullname>;
         };
-        tdTexTab: tdTexTab {
-            compatible = "zmk,behavior-tap-dance";
-            tapping-term-ms = <250>;
-            #binding-cells = <0>;
-            bindings = <&tabedit>, <&texfile>;
-        };
+        /* tdTexTab: tdTexTab { */
+        /*     compatible = "zmk,behavior-tap-dance"; */
+        /*     tapping-term-ms = <250>; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = <&tabedit>, <&texfile>; */
+        /* }; */
         tdEmphEmail: tdEmphEmail {
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <250>;
@@ -396,12 +396,6 @@
         /*     bindings = <&kp CAPS>; */
         /*     layers = <DEF>; */
         /* }; */
-
-
-
-
-
-
         combo_Z {
             timeout-ms = COMBO_FAST;
             key-positions = <RB2 RB3>;
@@ -468,12 +462,12 @@
             bindings = <&tdCapDance>;
             layers = <DEF>;
         };
-        /* combo_BT3 { */
-        /*     timeout-ms = COMBO_FAST; */
-        /*     key-positions = <9 19>; */
-        /*     bindings = <&bt BT_SEL 2>; */
-        /*     layers = <GMC GLK>; */
-        /* }; */
+        combo_tabedit {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <LM2 LB2>;
+            bindings = <&tabedit>;
+            layers = <MAC>;
+        };
     };  // }}}
 
 // ========================= MACROS ========================= {{{1
@@ -579,7 +573,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp SQT    &kp COMMA  &kp DOT    &kp P      &kp Y         &kp F      &kp G      &kp C      &kp R      &kp L
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &hf LSHFT A &hf LCTRL O &hm LALT E &hs LGUI U &kp I         &kp D      &hs RGUI H &hm RALT T &hm RCTRL N &hf RSHFT S
+    &hf LSHFT A &hf LCTRL O &hm LALT E &hs LGUI U &kp I       &kp D      &hs RGUI H &hm RALT T &hm RCTRL N &hf RSHFT S
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp Q      &kp J      &kp K      &kp X         &kp B      &kp M      &kp W      &kp V
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -622,7 +616,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHFT &hs LCTRL F4 &hs LALT F5 &hs LGUI F6 &kp F11 &kp C_VOL_DN &hs RGUI LEFT &hs RALT DOWN &hs RCTRL RIGHT &hs RSHFT C_BRI_DN
+    &kp LSHFT &hs LCTRL F4 &hs LALT F5 &hs LGUI F6 &kp F11   &kp C_VOL_DN &hs RGUI LEFT &hs RALT DOWN &hs RCTRL RIGHT &hs RSHFT C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -637,7 +631,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &kp TAB    &kp F7     &kp F8     &kp F9     &kp F12      &kp C_VOL_UP &kp HOME  &kp UP     &kp PG_UP &kp C_BRI_UP
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp LSHFT &hs LCTRL F4 &hs LALT F5 &hs LGUI F6 &kp F11 &kp C_VOL_DN &hs RGUI LEFT &hs RALT DOWN &hs RCTRL RIGHT &hs RSHFT C_BRI_DN
+    &kp LSHFT &hs LCTRL F4 &hs LALT F5 &hs LGUI F6 &kp F11   &kp C_VOL_DN &hs RGUI LEFT &hs RALT DOWN &hs RCTRL RIGHT &hs RSHFT C_BRI_DN
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &kp F1     &kp F2     &kp F3     &kp F10       &kp C_MUTE &kp END    &none      &kp PG_DN
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -654,9 +648,9 @@
         gui_misc {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-   &bt BT_SEL 0 &bt BT_SEL 1 &none   &none      &none        &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &out OUT_TOG
+   &bt BT_SEL 0 &bt BT_SEL 1 &none   &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &out OUT_TOG
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp CAPS   &kp LCTRL   &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &kp RSHIFT
+    &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &kp RSHIFT
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &caps_word &none      &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -674,9 +668,9 @@
         gui_misc_lock {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-   &bt BT_SEL 0 &bt BT_SEL 1 &none   &none      &none        &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &out OUT_TOG
+   &bt BT_SEL 0 &bt BT_SEL 1 &none   &none      &none         &kp F3     WIN_PRV    WIN_BIG    WIN_NXT   &out OUT_TOG
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &kp CAPS   &kp LCTRL   &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &kp RSHIFT
+    &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &none         &kp LS(F3) CD_WIN3LFT A_WIN_SML  CL_WIN3RGT &kp RSHIFT
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &caps_word &none      &none      &none         &kp LG(F3) WIN_LFT    WIN_CNT    WIN_RGT
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯
@@ -696,7 +690,7 @@
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     &none      &none      &none      &none      &none         &none      &none      &texclean  &none      &none
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    &none      &enew      &tdEmphEmail &none    &none         &none      &none      &tdTexTab  &tdName    &kp LA(S)
+    &none      &enew      &tdEmphEmail &none    &none         &none      &none      &texfile   &tdName    &kp LA(S)
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
                &none      &none      &none      &none         &kp LA(DOT) &none     &none      &none
 //            ╰──────────┴──────┬───┴────────┬─┴──────────┤  ├──────────┴──┬───────┴────┬─────┴──────────╯

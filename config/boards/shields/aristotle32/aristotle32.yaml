@@ -50,7 +50,7 @@ dvorak:  # {{{
         ['', '?', '/', '', '', '', '+', ''],
         ['', '', '', '\textbackslash', '|', '-', '=', ''],
         ['', '!', '\#', '', '', '\\\_', 'Z', ''],
-        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\textsc{word}}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\capslock{}w / \capslock}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['', '\{', '\esc', '*', '', '', '"', '', '\}', ''],
@@ -116,15 +116,15 @@ gui:  # {{{
     # TODO: Fix homerow mods!
     keys: [
         [\faBluetoothB~1, \faBluetoothB~2, M \arrowkeyup, Wheel\\\arrowkeyup, Accel\\2, Show\\Wins, Prev\\Win, Win\\Big, Next\\Win, '\faUsb/\faBluetoothB\\toggle'],
-        ['\capslock', M \arrowkeyleft\\\ctrl, M \arrowkeydown\\\Alt, M \arrowkeyright\\\cmd, Accel\\1, Show\\App, 'Win $\frac{1}{3}$\\\cmd', 'W Sm\\\Alt', 'Win $\frac{2}{3}$\\\ctrl', \shift],
-        [None, '\capslock\\\textsc{word}', '\phantom{X}', Wheel\\\arrowkeydown, Accel\\0, Show\\Desk, Win L, Win C, Win R, None],
-        [None, None, None, Right\\But, Left\\But, '\textsc{trns}', '\textsc{trns}', None, None, None],
+        ['\shift', M \arrowkeyleft\\\ctrl, M \arrowkeydown\\\Alt, M \arrowkeyright\\\cmd, Accel\\1, Show\\App, 'Win $\frac{1}{3}$\\\cmd', 'W Sm\\\Alt', 'Win $\frac{2}{3}$\\\ctrl', \shift],
+        [None, '', '\phantom{X}', Wheel\\\arrowkeydown, Accel\\0, Show\\Desk, Win L, Win C, Win R, None],
+        [None, None, None, Right\\Btn, Left\\Btn, '\textsc{trns}', '\textsc{trns}', None, None, None],
         ]
     rowcombos: [
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
         ['', '', '', '', '', '', '', ''],
-        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\small Mdl But}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
+        ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\small Mdl Btn}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
         ['\textsc{gui lk}', \faBluetoothB Clear, '', '', '', '', '', '', '', ''],
@@ -142,14 +142,15 @@ gui:  # {{{
         [1,4]: red
         [1,3]: red
         [1,2]: green
+        [1,1]: green
         [0,6]: black
     lines: [[2,1], [2,2], [2,3], [2,6], [2,7], [2,8]]
 # }}}
 
 macros:  # {{{
     keys: [
-        ['', '', '', '', '', '', '', '2$\times$\TeX{}\\Clean', '', ''],
-        ['', ':enew', '\emph{emph}\slash\\email', '', '', '', '', 'tab\slash\\\TeX', 'name\\f\slash l\slash a', '\textsc{caps}'],
+        ['', '', '', '', '', '', '', '\TeX{}\\Clean', '', ''],
+        ['', ':enew', '\emph{emph}\slash\\email', '', '', '', '', '\TeX', 'name\\f\slash l\slash a', '\textsc{caps}'],
         [None, '', '', '', '', '\textbf{bold}', '', '', '', None],
         [None, None, None, '', '', '', '', None, None, None],
         ]
@@ -161,7 +162,7 @@ macros:  # {{{
         ]
     colcombos: [
         ['', '', '', '', '', '', "``...''", '', '', ''],
-        ['', '', '', '', '', '', '( ... )', '', '', ''],
+        ['', '', ':tabe', '', '', '', '( ... )', '', '', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
     shading:
