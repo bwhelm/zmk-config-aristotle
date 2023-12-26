@@ -24,8 +24,8 @@
 #define MAC 7
 
 // Combo timeout speeds (in ms). Note: must be enclosed in <>!
-#define COMBO_SLOW <40>
-#define COMBO_FAST <25>
+#define COMBO_SLOW <35>
+#define COMBO_FAST <20>
 
 // tapping-term-ms for home-row mods
 #define HOME_FAST <185>
