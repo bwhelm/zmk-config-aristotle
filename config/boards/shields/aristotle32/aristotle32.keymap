@@ -25,7 +25,7 @@
 
 // Combo timeout speeds (in ms). Note: must be enclosed in <>!
 #define COMBO_SLOW <35>
-#define COMBO_FAST <20>
+#define COMBO_FAST <15>
 
 // tapping-term-ms for home-row mods
 #define HOME_FAST <185>
