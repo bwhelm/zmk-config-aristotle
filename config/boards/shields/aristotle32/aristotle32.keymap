@@ -25,7 +25,7 @@
 
 // Combo timeout speeds (in ms). Note: must be enclosed in <>!
 #define COMBO_SLOW <35>
-#define COMBO_FAST <15>
+#define COMBO_FAST <13>
 
 // tapping-term-ms for home-row mods
 #define HOME_FAST <185>
@@ -300,13 +300,13 @@
             layers = <DEF NUM NLK FUN FLK>;
         };
         combo_backslash {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LM1 LM0>;
             bindings = <&kp BACKSLASH>;
             layers = <DEF NUM NLK>;
         };
         combo_pipe {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <RM0 RM1>;
             bindings = <&kp PIPE>;
             layers = <DEF NUM NLK>;
@@ -338,7 +338,7 @@
         // FIXME: The below is to wean me off of former location of <Return> -- it should be deleted!
         combo_return {
             timeout-ms = COMBO_SLOW;
-            key-positions = <7 17>;
+            key-positions = <RT2 RM2>;
             bindings = <&none>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
         };
@@ -421,7 +421,7 @@
             layers = <DEF NUM NLK>;
         };
         combo_toDEFLayer {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <RH0 RH1>;
             bindings = <&to DEF>;
             layers = <DEF NUM NLK FUN FLK GMC GLK>;
@@ -451,7 +451,7 @@
             layers = <GMC GLK>;
         };
         combo_MCLK {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LH0 LH1>;
             bindings = <&mkp MCLK>;
             layers = <GMC GLK>;
