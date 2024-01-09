@@ -280,13 +280,13 @@
             layers = <DEF NUM NLK>;
         };
         combo_question {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LT3 LT2>;
             bindings = <&kp QUESTION>;
             layers = <DEF NUM NLK>;
         };
         combo_slash {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LT2 LT1>;
             bindings = <&kp SLASH>;
             layers = <DEF NUM NLK>;
@@ -401,7 +401,7 @@
         /*     layers = <DEF>; */
         /* }; */
         combo_Z {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <RB2 RB3>;
             bindings = <&kp Z>;
             layers = <DEF>;
