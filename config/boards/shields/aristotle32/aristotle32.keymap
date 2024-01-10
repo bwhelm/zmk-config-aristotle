@@ -339,13 +339,6 @@
             bindings = <&kp EQUAL>;
             layers = <DEF NUM NLK>;
         };
-        // FIXME: The below is to wean me off of former location of <Return> -- it should be deleted!
-        combo_return {
-            timeout-ms = COMBO_SLOW;
-            key-positions = <RT2 RM2>;
-            bindings = <&none>;
-            layers = <DEF NUM NLK FUN FLK GMC GLK>;
-        };
         combo_rbrace {
             timeout-ms = COMBO_SLOW;
             key-positions = <RT3 RM3>;
@@ -372,7 +365,7 @@
         /* }; */
         combo_tab {
             timeout-ms = COMBO_SLOW;
-            key-positions = <RM2 RB2>;
+            key-positions = <RT2 RM2>;
             bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
