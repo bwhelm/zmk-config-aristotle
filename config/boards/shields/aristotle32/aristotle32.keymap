@@ -412,19 +412,19 @@
             layers = <DEF>;
         };
         combo_exclamation {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LB3 LB2>;
             bindings = <&kp EXCLAMATION>;
             layers = <DEF NUM NLK>;
         };
         combo_at {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LB3 LB2 LB1>;
             bindings = <&kp AT>;
             layers = <DEF NUM NLK>;
         };
         combo_hash {
-            timeout-ms = COMBO_FAST;
+            timeout-ms = COMBO_SLOW;
             key-positions = <LB2 LB1>;
             bindings = <&kp HASH>;
             layers = <DEF NUM NLK>;
@@ -473,7 +473,7 @@
         };
         combo_tabedit {
             timeout-ms = COMBO_SLOW;
-            key-positions = <LM2 LB2>;
+            key-positions = <RT2 RM2>;
             bindings = <&tabedit>;
             layers = <MAC>;
         };
