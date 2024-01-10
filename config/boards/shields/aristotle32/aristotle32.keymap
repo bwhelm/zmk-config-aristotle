@@ -384,7 +384,7 @@
         combo_parenword {
             timeout-ms = COMBO_SLOW;
             key-positions = <RM1 RB1>;
-            bindings = <&kp LA(RIGHT_BRACKET)>;
+            bindings = <&kp LA(RBKT)>;
             layers = <MAC>;
         };
         combo_colon {
@@ -594,7 +594,7 @@
         numbers {
             bindings = <
 // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &kp GRAVE     &none      &kp N7     &kp N8     &kp N9     &kp EQUAL
+    &kp TAB    &kp AMPS   &kp ASTRK  &kp LA(N6) &kp GRAVE     &kp LA(RBKT) &kp N7     &kp N8     &kp N9     &kp EQUAL
 // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
     &hs LSHFT TILDE &hs LCTRL DLLR &hs LALT PRCNT &hs LGUI CARET &kp COMMA   &kp DOT &hs RGUI N4 &hs RALT N5 &hs RCTRL N6 &hs RSHFT MINUS
 // ╰──────────┴──────────┴──────────┴──────────┴──────────┤  ├──────────┴──────────┴──────────┴──────────┴──────────╯
