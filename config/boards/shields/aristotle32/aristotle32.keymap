@@ -358,6 +358,12 @@
             bindings = <&kp LEFT_BRACKET>;
             layers = <DEF NUM NLK>;
         };
+        combo_tilde {
+            timeout-ms = COMBO_SLOW;
+            key-positions = <LM2 LB2>;
+            bindings = <&kp TILDE>;
+            layers = <DEF NUM NLK>;
+        };
         /* combo_tab { */
         /*     timeout-ms = COMBO_SLOW; */
         /*     key-positions = <LM2 LB2>; */
