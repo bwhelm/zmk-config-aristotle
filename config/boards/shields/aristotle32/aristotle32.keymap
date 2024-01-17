@@ -269,7 +269,7 @@
         };
         combo_minus {
             timeout-ms = COMBO_SLOW;
-            key-positions = <RM2 RB2>;
+            key-positions = <RM2 RT2>;
             bindings = <&kp MINUS>;
             layers = <DEF NUM NLK>;
         };
@@ -365,7 +365,7 @@
         /* }; */
         combo_tab {
             timeout-ms = COMBO_SLOW;
-            key-positions = <RT2 RM2>;
+            key-positions = <LM2 LB2>;
             bindings = <&kp TAB>;
             layers = <DEF NUM NLK>;
         };
@@ -389,7 +389,7 @@
         };
         combo_colon {
             timeout-ms = COMBO_SLOW;
-            key-positions = <LM2 LB2>;
+            key-positions = <RM2 RB2>;
             bindings = <&kp COLON>;
             layers = <DEF NUM NLK>;
         };
