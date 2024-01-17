@@ -473,7 +473,7 @@
         };
         combo_tabedit {
             timeout-ms = COMBO_SLOW;
-            key-positions = <RT2 RM2>;
+            key-positions = <LM2 LB2>;
             bindings = <&tabedit>;
             layers = <MAC>;
         };
