@@ -1,5 +1,5 @@
 // ================ COPYRIGHT AND INCLUDES ================== {{{1
-// Copyright (c) 2022 Bennett Helm
+// Copyright (c) 2022-24 by Bennett Helm
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
@@ -29,8 +29,8 @@
 
 // tapping-term-ms for home-row mods
 #define HOME_FAST <185>
-#define HOME_MEDIUM <210>
-#define HOME_SLOW <240>
+#define HOME_MEDIUM <220>
+#define HOME_SLOW <250>
 #define QUICK_TAP <200>
 
 // Simplify Combos
@@ -213,24 +213,6 @@
         /*     /1* flavor = "retro-tap"; *1/ */
         /*     bindings = <&kp>, <&kp>; */
         /*     /1* hold-trigger-key-positions = LEFTKEYS; *1/ */
-        /* }; */
-        /* lht: left_positional_hold_tap {  // hold left hand key, only apply mod to keys on right */
-        /*     compatible = "zmk,behavior-hold-tap"; */
-        /*     #binding-cells = <2>; */
-        /*     flavor = "hold-preferred"; */
-        /*     tapping-term-ms = <400>; */
-        /*     quick-tap-ms = QUICK_TAP; */
-        /*     bindings = <&kp>, <&kp>; */
-        /*     hold-trigger-key-positions = RIGHTKEYS; */
-        /* }; */
-        /* rht: right_positional_hold_tap {  // hold right hand key, only apply mod to keys on left */
-        /*     compatible = "zmk,behavior-hold-tap"; */
-        /*     #binding-cells = <2>; */
-        /*     flavor = "hold-preferred"; */
-        /*     tapping-term-ms = <400>; */
-        /*     quick-tap-ms = QUICK_TAP; */
-        /*     bindings = <&kp>, <&kp>; */
-        /*     hold-trigger-key-positions = LEFTKEYS; */
         /* }; */
         tdName: tdName {
             compatible = "zmk,behavior-tap-dance";
