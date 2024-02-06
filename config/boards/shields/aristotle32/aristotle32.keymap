@@ -23,16 +23,6 @@
 #define GLK 6
 #define MAC 7
 
-// Combo timeout speeds (in ms). Note: must be enclosed in <>!
-#define COMBO_SLOW <35>
-#define COMBO_FAST <13>
-
-// tapping-term-ms for home-row mods
-#define HOME_FAST <185>
-#define HOME_MEDIUM <220>
-#define HOME_SLOW <250>
-#define QUICK_TAP <200>
-
 // Simplify Combos
 /*                              32 KEY MATRIX / LAYOUT MAPPING
 
@@ -113,6 +103,9 @@
 
 // ===================== OTHER SETTINGS ===================== {{{1
 // Set options for layer-tap behavior
+
+#define QUICK_TAP <200>
+
 &lt {
     tapping-term-ms = <220>;
     // 200: getting some <spaces> *after* subsequently hit keys.
@@ -126,6 +119,12 @@
 
 / {
 // =================== BEHAVIORS/TAPDANCE =================== {{{1
+
+// tapping-term-ms for home-row mods
+#define HOME_FAST <185>
+#define HOME_MEDIUM <220>
+#define HOME_SLOW <250>
+
     behaviors {
         hf: homewrow_mods_fast_left {
             compatible = "zmk,behavior-hold-tap";
@@ -220,12 +219,6 @@
             #binding-cells = <0>;
             bindings = <&firstname>, <&lastname>, <&fullname>;
         };
-        /* tdTexTab: tdTexTab { */
-        /*     compatible = "zmk,behavior-tap-dance"; */
-        /*     tapping-term-ms = <250>; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = <&tabedit>, <&texfile>; */
-        /* }; */
         tdEmphEmail: tdEmphEmail {
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <250>;
@@ -241,6 +234,11 @@
     };  // }}}
 
 // ========================= COMBOS ========================= {{{1
+
+// Combo timeout speeds (in ms). Note: must be enclosed in <>!
+#define COMBO_SLOW <35>
+#define COMBO_FAST <13>
+
     combos {
         compatible = "zmk,combos";
         combo_plus {
