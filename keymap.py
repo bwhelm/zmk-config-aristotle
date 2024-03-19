@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env pipenv run python3
 
 """
 This script will convert a properly formatted .yaml file specifying a keymap
@@ -51,7 +51,11 @@ KEYSPACEVERT = KEYSIZEVERT + KEYSEPVERT
 SHADING = "!7"  # transparency applied to coloring (= 70% tranparent)
 
 HEADER = '''\\documentclass[]{article}
-\\usepackage[oldstyle,sups]{ETbb}% to use free Bembo font (old style numbers)
+%\\usepackage[oldstyle,sups]{ETbb}% to use free Bembo font (old style numbers)
+\\usepackage[scaled=.95,type1]{cabin}
+\\renewcommand{\\familydefault}{\\sfdefault}
+\\usepackage{sfmath}
+\\usepackage[varqu,varl]{zi4}
 \\usepackage[margin=.75in]{geometry}
 \\pagestyle{empty}
 \\usepackage[T1]{fontenc}

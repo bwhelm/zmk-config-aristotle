@@ -32,7 +32,7 @@
 # need to be doubled up; hence `\\\\\\` will produce `\\\`.)}}}
 
 keyboard:
-    name: Aristotle 32thumb (2023)
+    name: Aristotle 32thumb (2024)
     rows: 4
     columns: 10
 
@@ -53,7 +53,7 @@ dvorak:  # {{{
         ['', '', '\emph{upper~~~~~~}\\\\~', '\rotatebox{90}{\capslock{}w / \capslock}', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
-        ['', '\{', '\esc', '*', '', '', '"', '-', '\}', ''],
+        ['', '\{', '\esc', '*', '', '', '"', '--', '\}', ''],
         ['', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
@@ -77,7 +77,7 @@ number:  # {{{
         ['', '', '\emph{upper~~~~~~}\\\\~', '', '\rotatebox{90}{\textsc{dvo}}', '\emph{~~~~~upper}\\\\~', '', ''],
         ]
     colcombos: [
-        ['\textsc{num lk}', '\{', '\esc', '*', '', '', '"', '-', '\}', ''],
+        ['\textsc{num lk}', '\{', '\esc', '*', '', '', '"', '--', '\}', ''],
         ['', '{[}~~\{', '\tab', '(', '', '', ')', ':', '{]}~~\}', ''],
         ['', '', '', '', '', '', '', '', '', ''],
         ]
